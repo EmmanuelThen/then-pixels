@@ -2,7 +2,7 @@
 import { CheckIcon } from '@radix-ui/react-icons'
 import React, { useState } from 'react'
 import ArrowButton from './ArrowButton'
-import FeatureBulletPoint from '../pixelcare/components/FeatureBulletPoint'
+import FeatureBulletPoint from '@/app/dashboard/components/FeaureBulletPoint'
 
 type Props = {}
 

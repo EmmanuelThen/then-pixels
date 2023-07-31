@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import * as Label from '@radix-ui/react-label';
-import ToastButton from '../dashboard/components/ToastButton';
+import ToastButton from '@/app/dashboard/components/ToastButton';
 
 type Props = {
     label: string,

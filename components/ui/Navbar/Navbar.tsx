@@ -4,7 +4,7 @@ import { createServerSupabaseClient } from '@/app/supabase-server';
 import Logo from '@/components/icons/Logo';
 import SignOutButton from './SignOutButton';
 
-import s from './Navbar.module.css';
+import s from './Navbar.module.css';     
 
 export default async function Navbar() {
   const supabase = createServerSupabaseClient();

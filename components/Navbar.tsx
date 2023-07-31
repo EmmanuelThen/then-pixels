@@ -6,6 +6,10 @@ import Link from 'next/link';
 import MobileNav from './MobileNav';
 import ArrowButton from './ArrowButton';
 import { createClientSupabase } from '@/app/supabase-client';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { getSession } from '@/app/supabase-client';
+import SignOutButton from './ui/Navbar/SignOutButton';
+// import { createServerSupabaseClient } from '@/app/supabase-server';
 
 
 type Props = {
@@ -36,19 +40,25 @@ const ListItem = ({ description, children, href }: Props) => {
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [user, setUser] = useState(null);
+    const [userData, setUserData] = useState(null);
 
     useEffect(() => {
         const getUser = async () => {
             const supabase = createClientSupabase();
 
-            const {
-                data: { user }
-            } = await supabase.auth.getUser();
-            setUser(user);
-        }
+            try {
+                const { data: { user } } = await supabase.auth.getUser();
+                console.log(user)
+
+                setUserData(user);
+                console.log(userData);
+            } catch (error) {
+                console.error('Error fetching user:', error);
+            }
+        };
         getUser();
     }, []);
+    console.log(userData)
 
     return (
         <>
@@ -220,8 +230,9 @@ const Navbar = () => {
                 </div>
 
                 <div className='flex justify-between gap-3'>
-                    <ArrowButton buttonText='Pricing' href='/pricing' />
-                    <ArrowButton buttonText={user ? 'Dashboard' : 'Sign in'} href={user ? '/dashboard' : '/signin'} />
+                    <SignOutButton />
+                    {userData ? <SignOutButton /> : <ArrowButton buttonText='Pricing' href='/pricing' />}
+                    <ArrowButton buttonText={userData ? 'Dashboard' : 'Sign in'} href={userData ? '/dashboard' : '/signin'} />
                 </div>
             </NavigationMenu.Root>
         </>
