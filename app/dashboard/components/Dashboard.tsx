@@ -10,6 +10,7 @@ import InboxSection from './InboxSection'
 import AccountSection from './AccountSection'
 import MobileFullDashboard from './MobileFullDashboard'
 import InsightsSection from './InsightsSection'
+import DocumentsSection from './DocumentsSection'
 
 
 
@@ -30,6 +31,12 @@ const Dashboard = (props: Props) => {
     const handleAccountClick = () => {
         setValue('account')
     }
+
+    const handleDocumentsClick = () => {
+        setValue('documents')
+    }
+
+    
 
     return (
         <div className='flex w-full max-h-screen overflow-y-auto' id='full-dash'>
@@ -67,7 +74,7 @@ const Dashboard = (props: Props) => {
 
                             <button
                                 value={value}
-                                className='p-1 flex items-center gap-2 hover:bg-slate2 hover:rounded-md'
+                                className='focus-selector p-1 flex items-center gap-2 hover:bg-slate2 hover:rounded-md'
                                 onClick={handleDashboardClick}
                             >
                                 <svg id='stroke-color' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.2" stroke="currentColor" className="w-6 h-6">
@@ -78,7 +85,7 @@ const Dashboard = (props: Props) => {
 
                             <button
                                 value={value}
-                                className='p-1 flex items-center gap-2 hover:bg-slate2 hover:rounded-md '
+                                className='focus-selector p-1 flex items-center gap-2 hover:bg-slate2 hover:rounded-md '
                                 onClick={handleInboxClick}
                             >
                                 <svg id='stroke-color' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="w-6 h-6">
@@ -90,7 +97,7 @@ const Dashboard = (props: Props) => {
 
                             <button
                                 value={value}
-                                className='p-1 flex items-center gap-2 hover:bg-slate2 hover:rounded-md '
+                                className='focus-selector p-1 flex items-center gap-2 hover:bg-slate2 hover:rounded-md '
                                 onClick={handleInsightsClick}
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6">
@@ -110,7 +117,7 @@ const Dashboard = (props: Props) => {
 
                             <button
                                 value={value}
-                                className='p-1 flex items-center gap-2 hover:bg-slate2 hover:rounded-md '
+                                className='focus-selector p-1 flex items-center gap-2 hover:bg-slate2 hover:rounded-md '
                                 onClick={handleAccountClick}
                             >
                                 <svg id='stroke-color' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="w-6 h-6">
@@ -119,6 +126,17 @@ const Dashboard = (props: Props) => {
 
 
                             </button>
+
+                            <button
+                                value={value}
+                                className='focus-selector p-1 flex items-center gap-2 hover:bg-slate2 hover:rounded-md '
+                                onClick={handleDocumentsClick}
+                            >
+                                <svg id='stroke-color' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                                </svg>
+                            </button>
+                            
 
                         </div>
                         <div className='hidden lg:block'>
@@ -147,6 +165,8 @@ const Dashboard = (props: Props) => {
                             return <InsightsSection />
                         case 'account':
                             return <AccountSection />;
+                        case 'documents':
+                            return <DocumentsSection />
                         default:
                             return null; // Render nothing or fallback UI
                     }

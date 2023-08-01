@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 
-*:focus {
-  @apply outline-none ring-2 ring-blue9 ring-opacity-50;
+.focus-selector:focus {
+  @apply outline-none ring-2 ring-blue9 ring-opacity-50 rounded-md;
 }
 
 

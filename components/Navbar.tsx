@@ -55,8 +55,8 @@ const Navbar = () => {
             }
         };
         getUser();
-        console.log(userData)
-    }, [userData]);
+        // console.log(userData)
+    }, []);
 
 
     return (
