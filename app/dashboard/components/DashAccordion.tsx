@@ -25,7 +25,7 @@ const DashAccordion = ({ title1, title2, title3, title4, title5, title6 }: Props
         collapsible
     >
 
-        <AccordionItem value="item-1">
+        <Accordion.Item value="item-1">
             <AccordionTrigger>{title1}</AccordionTrigger>
             <AccordionContent>
                 <div className='flex flex-col gap-2 mb-10'>
@@ -51,7 +51,7 @@ const DashAccordion = ({ title1, title2, title3, title4, title5, title6 }: Props
                     </div>
                 </div>
             </AccordionContent>
-        </AccordionItem>
+        </Accordion.Item>
 
         <AccordionItem value="item-2">
             <AccordionTrigger>{title2}</AccordionTrigger>
@@ -92,7 +92,7 @@ const DashAccordion = ({ title1, title2, title3, title4, title5, title6 }: Props
     </Accordion.Root>
 );
 
-const AccordionItem = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
+const AccordionItem = React.forwardRef(({ children, className, ...props }: any, forwardedRef) => (
     <Accordion.Item
         className={classNames(
             ' mt-px overflow-hidden first:mt-0 first:rounded-t last:rounded-b focus-within:relative focus-within:z-10 border-b-[1px]',
@@ -105,7 +105,7 @@ const AccordionItem = React.forwardRef(({ children, className, ...props }, forwa
     </Accordion.Item>
 ));
 
-const AccordionTrigger = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
+const AccordionTrigger = React.forwardRef(({ children, className, ...props }: any, forwardedRef) => (
     <Accordion.Header className="flex">
         <Accordion.Trigger
         id='back-ground'
@@ -125,7 +125,7 @@ const AccordionTrigger = React.forwardRef(({ children, className, ...props }, fo
     </Accordion.Header>
 ));
 
-const AccordionContent = React.forwardRef(({ children, className, ...props }, forwardedRef) => (
+const AccordionContent = React.forwardRef(({ children, className, ...props }: any, forwardedRef) => (
     <Accordion.Content
     id='back-ground'
         className={classNames(
