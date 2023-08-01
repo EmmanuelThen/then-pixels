@@ -16,10 +16,10 @@ const AccountToggle = ({ toggleTitle, toggleSubTitle }: Props) => {
                             <h1 className='font-medium'>{toggleTitle}</h1>
                             <p className='mt-1 text-[10px] text-slate8'>{toggleSubTitle}</p>
                         </div>
-                    </>
-                }
-                defaultChecked={true}
-            />
+                    </>}
+                defaultChecked={true} checked={false} onCheckedChange={function (checked: boolean): void {
+                    throw new Error('Function not implemented.');
+                }} />
         </div>
     )
 }

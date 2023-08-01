@@ -14,14 +14,11 @@ const ForgotPassword = (props: Props) => {
                 buttonText='Forgot password?'
                 dialogTitle=''
                 dialogDesc=''
-                content={
-                    <ForgotPasswordModal modalContentDisplay='' confirmationDisplay=''/>
-                }
+                content={<ForgotPasswordModal modalContentDisplay='' confirmationDisplay='' />}
                 saveButton=''
                 buttonDisplay='hidden'
                 myOwnButtonDisplay='hidden'
-                myOwnButton={<ConfirmationButton buttonText='Continue' toastTitle='Email sent to:' toastContent='session.user.email'/>}
-
+                myOwnButton={<ConfirmationButton buttonText='Continue' toastTitle='Email sent to:' toastContent='session.user.email' />} onClickfunction={undefined} disabled={undefined} saveButtonColor={undefined} saveButtonType={undefined}
             />
         </div>
     )

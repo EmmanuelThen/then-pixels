@@ -29,7 +29,7 @@ const MobileNav = ({ nav1, nav2, nav3, nav4, nav5, nav6, nav7, navnavnav }: Prop
                             <button
                                 className=" rounded-full w-[35px] h-[35px] inline-flex items-center justify-center  shadow-[0_2px_10px] shadow-blackA7 outline-none hover:bg-slate2"
                                 aria-label="Customise options"
-                                onClick={() => setDisplay('hidden')}
+                                // onClick={() => setDisplay('hidden')}
                             >
                                 <Cross1Icon />
                             </button>

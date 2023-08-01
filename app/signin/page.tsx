@@ -30,7 +30,6 @@ export default function Login() {
       password,
       options: {
         emailRedirectTo: `${location.origin}/auth/callback`,
-
       },
     })
     setView('check-email')
@@ -51,7 +50,7 @@ export default function Login() {
   const handlePasswordReset = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: 'http://localhost:3000/account/update-password',
+      redirectTo: `${location.origin}/account/update-password`,
     })
 
   }
@@ -173,26 +172,19 @@ export default function Login() {
                     <div className='text-[10px] text-center '>
                       <div>
                         <DialogButton
-                          buttonText='Forgot password?'
-                          dialogTitle=''
-                          dialogDesc=''
-                          content={
-                            <ForgotPasswordModal
+                            buttonText='Forgot password?'
+                            dialogTitle=''
+                            dialogDesc=''
+                            content={<ForgotPasswordModal
                               modalContentDisplay=''
-                              confirmationDisplay=''
-                            />
-                          }
-                          saveButton=''
-                          buttonDisplay='hidden'
-                          myOwnButtonDisplay='hidden'
-                          myOwnButton={
-                            <ConfirmationButton
+                              confirmationDisplay='' />}
+                            saveButton=''
+                            buttonDisplay='hidden'
+                            myOwnButtonDisplay='hidden'
+                            myOwnButton={<ConfirmationButton
                               buttonText='Continue'
                               toastTitle='Email sent to:'
-                              toastContent='session.user.email'
-                            />
-                          }
-                        />
+                              toastContent='session.user.email' />} onClickfunction={undefined} disabled={undefined} saveButtonColor={undefined} saveButtonType={undefined}                        />
                       </div>
                     </div>
                   </div>

@@ -16,7 +16,7 @@ const DashProgress = () => {
     return (
         <div className='flex flex-col gap-10 w-full'>
             <div className='flex items-center justify-center'>
-                <LabelDemo label='ORDER-ID' defaultValue='#123ABC123ABC' />
+                <LabelDemo label='ORDER-ID' defaultValue='#123ABC123ABC' buttonDisplay={undefined} onChange={undefined} />
                 {/*<ToastButton />*/}
             </div>
             <Progress.Root

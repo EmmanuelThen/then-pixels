@@ -86,17 +86,15 @@ const AccountSection = (props: Props) => {
                                     saveButtonColor='bg-blue9'
                                     buttonText={
                                         <>
-                                            <div className='hover:cursor-pointer bg-blue9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none' >
+                                            <div className='hover:cursor-pointer bg-blue9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'>
                                                 Edit
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                                                 </svg>
                                             </div>
-                                        </>
-                                    }
+                                        </>}
                                     dialogTitle='Edit Profile'
-                                    dialogDesc={`Edit your profile below.`}
-                                />
+                                    dialogDesc={`Edit your profile below.`} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined} />
                             </div>
                         </div>
                         {/** Second Card */}
@@ -111,17 +109,15 @@ const AccountSection = (props: Props) => {
                                         saveButtonColor='bg-blue9'
                                         buttonText={
                                             <>
-                                                <div className='hover:cursor-pointer bg-blue9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none' >
+                                                <div className='hover:cursor-pointer bg-blue9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'>
                                                     Edit
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                                                     </svg>
                                                 </div>
-                                            </>
-                                        }
+                                            </>}
                                         dialogTitle='Personal Information'
-                                        dialogDesc={`Edit your personal information below.`}
-                                    />
+                                        dialogDesc={`Edit your personal information below.`} content={undefined} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined} />
                                 </div>
                             </div>
                             <div className='flex justify-between lg:w-[50%]'>
@@ -164,61 +160,49 @@ const AccountSection = (props: Props) => {
                                 <div className=' flex flex-col  justify-between'>
                                     <div className='mb-3 lg:mb-0 lg:mr-5'>
                                         <Toggle
-                                            label={
-                                                <>
-                                                    <div className='mb-2 text-xs lg:text-base'>
-                                                        <h1 className='font-semibold'>Marketing </h1>
-                                                        <p className='mt-1 text-[10px] text-slate8'>Monthly marketing emails</p>
-                                                    </div>
-                                                </>
-                                            }
+                                            label={<>
+                                                <div className='mb-2 text-xs lg:text-base'>
+                                                    <h1 className='font-semibold'>Marketing </h1>
+                                                    <p className='mt-1 text-[10px] text-slate8'>Monthly marketing emails</p>
+                                                </div>
+                                            </>}
                                             onCheckedChange={() => handleToggle(0)}
-                                            checked={checked[0]}
-                                        />
+                                            checked={checked[0]} defaultChecked={false} />
                                     </div>
                                     <div className='mb-3 lg:mb-0 lg:mr-5'>
                                         <Toggle
-                                            label={
-                                                <>
-                                                    <div className='mb-2 text-xs lg:text-base'>
-                                                        <h1 className='font-semibold'>Production</h1>
-                                                        <p className='mt-1 text-[10px] text-slate8'>Weekly production emails</p>
-                                                    </div>
-                                                </>
-                                            }
+                                            label={<>
+                                                <div className='mb-2 text-xs lg:text-base'>
+                                                    <h1 className='font-semibold'>Production</h1>
+                                                    <p className='mt-1 text-[10px] text-slate8'>Weekly production emails</p>
+                                                </div>
+                                            </>}
                                             onCheckedChange={() => handleToggle(1)}
-                                            checked={checked[1]}
-                                        />
+                                            checked={checked[1]} defaultChecked={false} />
                                     </div>
                                 </div>
                                 <div className=' flex flex-col justify-between'>
                                     <div className='mb-3 lg:mb-0 lg:mr-5'>
                                         <Toggle
-                                            label={
-                                                <>
-                                                    <div className='mb-2 text-xs lg:text-base'>
-                                                        <h1 className='font-semibold'>Something</h1>
-                                                        <p className='mt-1 text-[10px] text-slate8'>Something emails</p>
-                                                    </div>
-                                                </>
-                                            }
+                                            label={<>
+                                                <div className='mb-2 text-xs lg:text-base'>
+                                                    <h1 className='font-semibold'>Something</h1>
+                                                    <p className='mt-1 text-[10px] text-slate8'>Something emails</p>
+                                                </div>
+                                            </>}
                                             onCheckedChange={() => handleToggle(2)}
-                                            checked={checked[2]}
-                                        />
+                                            checked={checked[2]} defaultChecked={false} />
                                     </div>
                                     <div className='mb-3 lg:mb-0 lg:mr-5'>
                                         <Toggle
-                                            label={
-                                                <>
-                                                    <div className='mb-2 text-xs lg:text-base'>
-                                                        <h1 className='font-semibold'>Something</h1>
-                                                        <p className='mt-1 text-[10px] text-slate8'>Something emails</p>
-                                                    </div>
-                                                </>
-                                            }
+                                            label={<>
+                                                <div className='mb-2 text-xs lg:text-base'>
+                                                    <h1 className='font-semibold'>Something</h1>
+                                                    <p className='mt-1 text-[10px] text-slate8'>Something emails</p>
+                                                </div>
+                                            </>}
                                             onCheckedChange={() => handleToggle(3)}
-                                            checked={checked[3]}
-                                        />
+                                            checked={checked[3]} defaultChecked={false} />
                                     </div>
                                 </div>
                             </div>
@@ -272,19 +256,16 @@ const AccountSection = (props: Props) => {
                                     content=''
                                     saveButton='Save changes'
                                     saveButtonColor='bg-blue9'
-                                    buttonText={
-                                        <>
-                                            <div className='hover:cursor-pointer bg-blue9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none' >
-                                                Edit
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                                                </svg>
-                                            </div>
-                                        </>
-                                    }
+                                    buttonText={<>
+                                        <div className='hover:cursor-pointer bg-blue9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'>
+                                            Edit
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                            </svg>
+                                        </div>
+                                    </>}
                                     dialogTitle='Edit Profile'
-                                    dialogDesc={`Edit your profile below.`}
-                                />
+                                    dialogDesc={`Edit your profile below.`} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined} />
                             </div>
                         </div>
                         {/** Card Two Billing*/}
@@ -297,19 +278,16 @@ const AccountSection = (props: Props) => {
                                         disabled=''
                                         saveButton='Save changes'
                                         saveButtonColor='bg-blue9'
-                                        buttonText={
-                                            <>
-                                                <div className='hover:cursor-pointer bg-blue9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none' >
-                                                    Edit
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                                                    </svg>
-                                                </div>
-                                            </>
-                                        }
+                                        buttonText={<>
+                                            <div className='hover:cursor-pointer bg-blue9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'>
+                                                Edit
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                                </svg>
+                                            </div>
+                                        </>}
                                         dialogTitle='Membership Information'
-                                        dialogDesc={`Edit your personal information below.`}
-                                    />
+                                        dialogDesc={`Edit your personal information below.`} content={undefined} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined} />
                                 </div>
                             </div>
                             <div className='flex justify-between text-xs lg:text-base lg:w-[50%]'>
@@ -324,17 +302,14 @@ const AccountSection = (props: Props) => {
                                                 disabled=''
                                                 saveButton='Purchase'
                                                 saveButtonColor='bg-blue9'
-                                                buttonText={
-                                                    <>
-                                                        <div className='text-xs hover:cursor-pointer bg-blue9 text-white inline-flex lg:h-[25px] items-center justify-center lg:gap-2 rounded-[4px] py-1 px-2 lg:px-[10px] font-medium leading-none focus:outline-none' >
-                                                            Explore plans
-                                                        </div>
-                                                    </>
-                                                }
+                                                buttonText={<>
+                                                    <div className='text-xs hover:cursor-pointer bg-blue9 text-white inline-flex lg:h-[25px] items-center justify-center lg:gap-2 rounded-[4px] py-1 px-2 lg:px-[10px] font-medium leading-none focus:outline-none'>
+                                                        Explore plans
+                                                    </div>
+                                                </>}
                                                 content={<SubTiers />}
                                                 dialogTitle='Explore plans'
-                                                dialogDesc={`Choose your plan`}
-                                            />
+                                                dialogDesc={`Choose your plan`} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined} />
 
                                         </div>
                                     </div>
@@ -344,24 +319,19 @@ const AccountSection = (props: Props) => {
                                             onClickfunction=''
                                             disabled=''
                                             saveButton='Cancel membership'
-                                            myOwnButton={
-                                                <>
-                                                    <div className='ml-[38px] hover:cursor-pointer bg-blue9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-2 px-2 text-xs lg:text-base lg:py-0 lg:px-[10px] lg:h-[35px] font-medium leading-none focus:outline-none' >
-                                                        Keep membership
-                                                    </div>
-                                                </>
-                                            }
+                                            myOwnButton={<>
+                                                <div className='ml-[38px] hover:cursor-pointer bg-blue9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-2 px-2 text-xs lg:text-base lg:py-0 lg:px-[10px] lg:h-[35px] font-medium leading-none focus:outline-none'>
+                                                    Keep membership
+                                                </div>
+                                            </>}
                                             saveButtonColor='bg-red9'
-                                            buttonText={
-                                                <>
-                                                    <div className='hover:cursor-pointer bg-red9 text-white inline-flex lg:h-[25px] items-center justify-center gap-1 lg:gap-2 rounded-[4px] py-2 px-2 text-xs  lg:py-0 lg:px-[10px] font-medium leading-none focus:outline-none' >
-                                                        Cancel membership
-                                                    </div>
-                                                </>
-                                            }
+                                            buttonText={<>
+                                                <div className='hover:cursor-pointer bg-red9 text-white inline-flex lg:h-[25px] items-center justify-center gap-1 lg:gap-2 rounded-[4px] py-2 px-2 text-xs  lg:py-0 lg:px-[10px] font-medium leading-none focus:outline-none'>
+                                                    Cancel membership
+                                                </div>
+                                            </>}
                                             dialogTitle='Cancel Membership'
-                                            dialogDesc={`We're sorry to see you go {client.name}! Stay with us and get 15% off for the next three months!`}
-                                        />
+                                            dialogDesc={`We're sorry to see you go {client.name}! Stay with us and get 15% off for the next three months!`} content={undefined} buttonDisplay={''} myOwnButtonDisplay={''} saveButtonType={undefined} />
                                     </div>
                                 </div>
                                 <div className='flex flex-wrap flex-col justify-between '>
@@ -373,16 +343,13 @@ const AccountSection = (props: Props) => {
                                             disabled=''
                                             saveButton='Save changes'
                                             saveButtonColor='bg-blue9'
-                                            buttonText={
-                                                <>
-                                                    <div className='text-xs hover:cursor-pointer bg-slate8 text-white inline-flex lg:h-[25px] items-center justify-center lg:gap-2 rounded-[4px] py-1 px-2 lg:px-[10px] font-medium leading-none focus:outline-none' >
-                                                        Change billing period
-                                                    </div>
-                                                </>
-                                            }
+                                            buttonText={<>
+                                                <div className='text-xs hover:cursor-pointer bg-slate8 text-white inline-flex lg:h-[25px] items-center justify-center lg:gap-2 rounded-[4px] py-1 px-2 lg:px-[10px] font-medium leading-none focus:outline-none'>
+                                                    Change billing period
+                                                </div>
+                                            </>}
                                             dialogTitle='Membership Information'
-                                            dialogDesc={`Edit your personal information below.`}
-                                        />
+                                            dialogDesc={`Edit your personal information below.`} content={undefined} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined} />
                                     </div>
 
                                 </div>
@@ -398,19 +365,16 @@ const AccountSection = (props: Props) => {
                                     content=''
                                     saveButton='Save changes'
                                     saveButtonColor='bg-red9'
-                                    buttonText={
-                                        <>
-                                            <div className='hover:cursor-pointer bg-red9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none' >
-                                                Clear all invoices
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
-                                        </>
-                                    }
+                                    buttonText={<>
+                                        <div className='hover:cursor-pointer bg-red9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'>
+                                            Clear all invoices
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                    </>}
                                     dialogTitle='Edit Profile'
-                                    dialogDesc={`Edit your profile below.`}
-                                />
+                                    dialogDesc={`Edit your profile below.`} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined} />
                             </div>
                             <div className='flex justify-between w-full'>
                                 <BillingHistoryTable />

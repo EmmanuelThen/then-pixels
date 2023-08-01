@@ -34,8 +34,7 @@ const DashNavbar = () => {
                                     dialogTitle='Edit Profile'
                                     dialogDesc='Make changes to your profile here. Click save when youre done.'
                                     content='hi'
-                                    saveButton='Save changes'
-
+                                    saveButton='Save changes' buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} onClickfunction={undefined} disabled={undefined} saveButtonColor={undefined} saveButtonType={undefined}
                                 />
                             </div>
                         </div>
@@ -74,9 +73,9 @@ const DashNavbar = () => {
                         </button>
 
                     </div>
-                    <div className='hidden md:block'>
+                    {/* <div className='hidden md:block'>
                         <Toggle />
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

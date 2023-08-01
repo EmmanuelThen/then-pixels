@@ -8,7 +8,7 @@ type Props = {}
 
 const DashMobileNavbar = (props: Props) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    
+
     return (
         <>
             {/** Mobile screen dash-nav */}
@@ -36,7 +36,7 @@ const DashMobileNavbar = (props: Props) => {
                             nav4='Showcase'
                             nav5='Membership'
                             nav6='Account'
-                            nav7='Log out'
+                            nav7='Log out' navnavnav={undefined}
                         />
                     </>
                 )}

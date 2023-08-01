@@ -15,18 +15,13 @@ const PaymentStatusButton = ({ paymentStatus }: PaymentStatusButtonProps) => {
                 content=''
                 saveButton='Save changes'
                 saveButtonColor='bg-blue9'
-                buttonText={
-
-                    <>
-                        <button className='hover:cursor-pointer hover:bg-blue9/80 rounded-[4px] bg-blue9 text-white inline-flex items-center justify-center py-1 px-1 text-xs lg:text-base lg:px-3 font-light leading-none focus:outline-none'>
-                            <p className='text-[10px]'>Pay now</p>
-                        </button>
-                    </>
-
-                }
+                buttonText={<>
+                    <button className='hover:cursor-pointer hover:bg-blue9/80 rounded-[4px] bg-blue9 text-white inline-flex items-center justify-center py-1 px-1 text-xs lg:text-base lg:px-3 font-light leading-none focus:outline-none'>
+                        <p className='text-[10px]'>Pay now</p>
+                    </button>
+                </>}
                 dialogTitle='Edit Profile'
-                dialogDesc={`Edit your profile below.`}
-            />
+                dialogDesc={`Edit your profile below.`} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined}            />
         )
     }
     return null;
