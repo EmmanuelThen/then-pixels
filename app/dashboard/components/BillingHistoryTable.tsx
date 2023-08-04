@@ -89,9 +89,9 @@ const BillingHistoryTable = () => {
                         ) : (
                             billingHistory.map((entry: any, i: any) => (
                                 <tr className='flex justify-between items-center text-[10px] lg:text-base' key={i}>
-                                    <td className="w-1/5 lg:py-3 flex justify-center">{entry.date}</td>
-                                    <td className="w-1/5 lg:py-3 flex justify-center">{entry.invoice}</td>
-                                    <td className="w-1/5 lg:py-3 flex justify-center font-medium">{entry.amount}</td>
+                                    <td className="w-1/5 font-light lg:py-3 flex justify-center">{entry.date}</td>
+                                    <td className="w-1/5 font-light lg:py-3 flex justify-center">{entry.invoice}</td>
+                                    <td className="w-1/5 font-light lg:py-3 flex justify-center">{entry.amount}</td>
                                     <div className='w-1/5 py-3 grid grid-cols-1 place-items-center justify-items-center gap-0 lg:flex lg:justify-center lg:gap-2 items-center'>
                                         <td className='mb-1 lg:mb-0 lg:py-3'><BillingStatusBadge paymentStatus={entry.paymentStatus} /></td>
                                         {entry.paymentStatus === 'failed' && (
