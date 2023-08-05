@@ -2,6 +2,10 @@ import React from 'react'
 import ShinyText from '@/components/ShinyText'
 import PopoverButton from '@/components/PopoverButton'
 import Tooltips from '@/components/Tooltips'
+import RadioGroupButtons from '@/components/RadioGroupButtons'
+import Star from '@/components/icons/Star'
+import FeedbackStarOptions from './FeedbackStarOptions'
+import FeedbackTextOptions from './FeedbackTextOptions'
 
 type Props = {}
 
@@ -29,26 +33,82 @@ const FeedbackSection = (props: Props) => {
 
             {/* First card */}
             <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5'>
-                <div>
-                    <Tooltips
-                        button={
-                        
-                                <button
-                                    className='focus-selector p-1 flex items-center gap-2 hover:bg-slate10 hover:rounded-md '
-                                >
-                                    <svg id='stroke-color' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                                    </svg>
-                                </button>
-                            
-                        }
-                        tooltipContent={
-                        
-                            <span>hi</span>
-                            
-                        }
-                    />
-                </div>
+                <h1 className='text-blue9 font-semibold'>Overall Experience</h1>
+                <form action="" className='flex justify-between mt-5'>
+                    <div>
+                        <h1 className='text-slate10'>
+                            How was your overall experience?
+                        </h1>
+                        <div className='mt-5'>
+                            <FeedbackStarOptions />
+                        </div>
+                    </div>
+                    <div>
+                        <h1 className='text-slate10'>
+                            How likely are you to recommend ThenPixels?
+                        </h1>
+                        <div className='mt-5'>
+                            <FeedbackStarOptions />
+                        </div>
+                    </div>
+                    <div>
+                        <h1 className='text-slate10'>
+                            Would you consider us again for future projects?
+                        </h1>
+                        <div className='mt-5'>
+                            <FeedbackStarOptions />
+                        </div>
+                    </div>
+                    <div>
+                        <h1 className='text-slate10'>
+                            How was your overall experience?
+                        </h1>
+                        <div className='mt-5'>
+                            <FeedbackStarOptions />
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            {/* Second card */}
+            <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5'>
+                <h1 className='text-blue9 font-semibold'>Development Experience</h1>
+                <form action="" className='flex justify-between mt-5'>
+                    <div>
+                        <h1 className='text-slate10'>
+                            How was your overall experience?
+                        </h1>
+                        <div className='mt-5'>
+                            <FeedbackTextOptions />
+                        </div>
+                    </div>
+                    <div>
+                        <h1 className='text-slate10'>
+                            How likely are you to recommend ThenPixels?
+                        </h1>
+                        <div className='mt-5'>
+                            <FeedbackTextOptions />
+                        </div>
+                    </div>
+                    <div>
+                        <h1 className='text-slate10'>
+                            How was your overall experience?
+                        </h1>
+                        <div className='mt-5'>
+                            <FeedbackTextOptions />
+                        </div>
+                    </div>
+                    <div>
+                        <h1 className='text-slate10'>
+                            How was your overall experience?
+                        </h1>
+                        <div className='mt-5'>
+                            <FeedbackTextOptions />
+                        </div>
+                    </div>
+
+                </form>
             </div>
         </div>
     )

@@ -95,7 +95,7 @@ const Dashboard = (props: Props) => {
                                 button={
                                     <button
                                         value={value}
-                                        className='focus-selector p-1 flex items-center gap-2 hover:bg-slate10 hover:rounded-md'
+                                        className='focus-selector p-1 flex items-center gap-2  hover:rounded-md'
                                         onClick={handleDashboardClick}
                                     >
                                         <svg id='stroke-color' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.2" stroke="currentColor" className="w-6 h-6">
@@ -110,7 +110,7 @@ const Dashboard = (props: Props) => {
                                 button={
                                     <button
                                         value={value}
-                                        className='focus-selector p-1 flex items-center gap-2 hover:bg-slate10 hover:rounded-md '
+                                        className='focus-selector p-1 flex items-center gap-2  hover:rounded-md '
                                         onClick={handleInboxClick}
                                     >
                                         <svg id='stroke-color' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="w-6 h-6">
@@ -125,7 +125,7 @@ const Dashboard = (props: Props) => {
                                 button={
                                     <button
                                         value={value}
-                                        className='focus-selector p-1 flex items-center gap-2 hover:bg-slate10 hover:rounded-md '
+                                        className='focus-selector p-1 flex items-center gap-2  hover:rounded-md '
                                         onClick={handleDocumentsClick}
                                     >
                                         <svg id='stroke-color' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="w-6 h-6">
@@ -140,7 +140,7 @@ const Dashboard = (props: Props) => {
                                 button={
                                     <button
                                         value={value}
-                                        className='focus-selector p-1 flex items-center gap-2 hover:bg-slate10 hover:rounded-md '
+                                        className='focus-selector p-1 flex items-center gap-2  hover:rounded-md '
                                         onClick={handleUploadsClick}
                                     >
                                         <svg id='stroke-color' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="w-6 h-6">
@@ -154,7 +154,7 @@ const Dashboard = (props: Props) => {
                             <Tooltips button={
                                 <button
                                     value={value}
-                                    className='focus-selector p-1 flex items-center gap-2 hover:bg-slate10 hover:rounded-md '
+                                    className='focus-selector p-1 flex items-center gap-2  hover:rounded-md '
                                     onClick={handleFeedbackClick}
                                 >
                                     <svg id='stroke-color' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="w-6 h-6">
@@ -169,7 +169,7 @@ const Dashboard = (props: Props) => {
                             <Tooltips button={
                                 <button
                                     value={value}
-                                    className='focus-selector p-1 flex items-center gap-2 hover:bg-slate10 hover:rounded-md '
+                                    className='focus-selector p-1 flex items-center gap-2  hover:rounded-md '
                                     onClick={handleInsightsClick}
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6">
@@ -195,7 +195,7 @@ const Dashboard = (props: Props) => {
                             <Tooltips button={
                                 <button
                                     value={value}
-                                    className='focus-selector p-1 flex items-center gap-2 hover:bg-slate10 hover:rounded-md '
+                                    className='focus-selector p-1 flex items-center gap-2  hover:rounded-md '
                                     onClick={handleChatClick}
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6">
@@ -222,7 +222,7 @@ const Dashboard = (props: Props) => {
                                 button={
                                     <button
                                         value={value}
-                                        className='focus-selector p-1 flex items-center gap-2 hover:bg-slate10 hover:rounded-md '
+                                        className='focus-selector p-1 flex items-center gap-2  hover:rounded-md '
                                         onClick={handleSupportTicketClick}
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6">
@@ -252,7 +252,7 @@ const Dashboard = (props: Props) => {
                                 button={
                                     <button
                                         value={value}
-                                        className='focus-selector p-1 flex items-center gap-2 hover:bg-slate2 hover:rounded-md '
+                                        className='focus-selector p-1 flex items-center gap-2 hover:rounded-md '
                                         onClick={handleAccountClick}
                                     >
                                         <svg id='stroke-color' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="w-6 h-6">
