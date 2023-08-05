@@ -6,6 +6,7 @@ import RadioGroupButtons from '@/components/RadioGroupButtons'
 import Star from '@/components/icons/Star'
 import FeedbackStarOptions from './FeedbackStarOptions'
 import FeedbackTextOptions from './FeedbackTextOptions'
+import FeedbackSlide from './FeedbackSlide'
 
 type Props = {}
 
@@ -74,41 +75,10 @@ const FeedbackSection = (props: Props) => {
             {/* Second card */}
             <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5'>
                 <h1 className='text-blue9 font-semibold'>Development Experience</h1>
-                <form action="" className='flex justify-between mt-5'>
-                    <div>
-                        <h1 className='text-slate10'>
-                            How was your overall experience?
-                        </h1>
-                        <div className='mt-5'>
-                            <FeedbackTextOptions />
-                        </div>
-                    </div>
-                    <div>
-                        <h1 className='text-slate10'>
-                            How likely are you to recommend ThenPixels?
-                        </h1>
-                        <div className='mt-5'>
-                            <FeedbackTextOptions />
-                        </div>
-                    </div>
-                    <div>
-                        <h1 className='text-slate10'>
-                            How was your overall experience?
-                        </h1>
-                        <div className='mt-5'>
-                            <FeedbackTextOptions />
-                        </div>
-                    </div>
-                    <div>
-                        <h1 className='text-slate10'>
-                            How was your overall experience?
-                        </h1>
-                        <div className='mt-5'>
-                            <FeedbackTextOptions />
-                        </div>
-                    </div>
+                <div  className='flex justify-between mt-5'>
+                    <FeedbackSlide />
 
-                </form>
+                </div>
             </div>
         </div>
     )
