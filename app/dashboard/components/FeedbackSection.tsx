@@ -33,7 +33,7 @@ const FeedbackSection = (props: Props) => {
             </h1>
 
             {/* First card */}
-            <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5'>
+            <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10'>
                 <h1 className='text-blue9 font-semibold'>Overall Experience</h1>
                 <form action="" className='flex justify-between mt-5'>
                     <div>
