@@ -48,16 +48,21 @@ const FeedbackSlide = (props: Props) => {
     const handlePreviousQuestion = () => {
         setCurrentQuestion((prevQuestion) => prevQuestion - 1);
     };
-
     return (
         <>
-            <div className='w-full p-5'>
+            <form className='w-full p-5'>
                 {currentQuestion === questions.length - 1 ?
                     <div>
-                        <div className='flex justify-center text-slate10 text-3xl mb-5 text-center'>
-                            Thank you for completing our survey! We truley value and take into account your feedback.
+                        <div>
+                            <h1 className='flex justify-center text-slate10 text-3xl mb-5 text-center'>
+                                Thank you for completing our survey! We truley value and take into account your feedback.
+                            </h1>
+                            <p className='text-center mb-5'>
+                                Please feel free to write any specific feedback you'd like below
+                            </p>
                         </div>
-                        <textarea className='w-full rounded-md bg-slate4' name="" id="" cols={30} rows={5}>
+
+                        <textarea className='shadow-blackA9 shadow-[0_4px_7px] border border-blue9 border-1 w-full rounded-md bg-slate4' name="" id="" cols={30} rows={5}>
                         </textarea>
                     </div>
                     :
@@ -78,12 +83,15 @@ const FeedbackSlide = (props: Props) => {
                 }
 
 
-                <div className='flex justify-between w-full'>
+                <div className={currentQuestion === 0 || currentQuestion === questions.length - 1 ? 'flex justify-end w-full' : 'flex justify-between w-full'}>
                     {/* Previous Question Button */}
                     <button
                         onClick={handlePreviousQuestion}
-                        disabled={currentQuestion === 0}
-                        className='mt-10 shadow-blackA9 shadow-[0_4px_7px] px-4 py-2 bg-blue9 hover:opacity-80 text-white rounded cursor-pointer'
+                        // disabled={currentQuestion === 0}
+                        className={currentQuestion === 0 || currentQuestion === questions.length - 1 ?
+                            'hidden' :
+                            'mt-10 shadow-blackA9 shadow-[0_4px_7px] px-4 py-2 bg-blue9 hover:opacity-80 text-white rounded cursor-pointer'
+                        }
                     >
                         {currentQuestion === questions.length - 1 ?
                             ''
@@ -96,7 +104,8 @@ const FeedbackSlide = (props: Props) => {
                     {/* Next Question Button */}
                     <button
                         onClick={handleNextQuestion}
-                        disabled={currentQuestion === questions.length - 1}
+                        disabled={currentQuestion === questions.length - 1 ? true : false}
+                        type={currentQuestion === questions.length + 1 ? 'submit' : 'button'}
                         className='mt-10 shadow-blackA9 shadow-[0_4px_7px] px-4 py-2 bg-blue9 hover:opacity-80 text-white rounded cursor-pointer'
                     >
                         {currentQuestion === questions.length - 1 ?
@@ -110,9 +119,10 @@ const FeedbackSlide = (props: Props) => {
                         }
                     </button>
                 </div>
-            </div>
+            </form>
         </>
     );
+
 };
 
 export default FeedbackSlide;

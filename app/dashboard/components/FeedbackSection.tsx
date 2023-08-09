@@ -77,7 +77,6 @@ const FeedbackSection = (props: Props) => {
                 <h1 className='text-blue9 font-semibold'>Development Experience</h1>
                 <div  className='flex justify-between mt-5'>
                     <FeedbackSlide />
-
                 </div>
             </div>
         </div>

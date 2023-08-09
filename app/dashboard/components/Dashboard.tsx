@@ -2,18 +2,16 @@
 import React, { useState } from 'react'
 import DashNavbar from './DashNavbar'
 import DashGridSection from './DashGridSection'
-
 import Toggle from '@/components/Toggle'
 import DialogButton from '@/components/DialogButton'
 import InboxSection from './InboxSection'
-
 import AccountSection from './AccountSection'
 import MobileFullDashboard from './MobileFullDashboard'
 import InsightsSection from './InsightsSection'
 import DocumentsSection from './DocumentsSection'
 import UploadsSection from './UploadsSection'
 import FeedbackSection from './FeedbackSection'
-import ChatSection from './ChatSection'
+import PixelCareSection from './PixelCareSection'
 import SupportTicketsSections from './SupportTicketsSections'
 import Tooltips from '@/components/Tooltips'
 
@@ -62,35 +60,7 @@ const Dashboard = (props: Props) => {
             <div className='flex lg:h-screen'>
                 <div className='lg:w-1/5'>
                     <div className='hidden lg:flex lg:flex-col items-center justify-between border-r-[1px] p-1 w-fit  h-screen'>
-                        {/*<div id='loginLogo' className='hidden lg:block'>
-                            <span className='font-semibold text-blue9'>Then</span>
-                            <span className='font-semibold text-red9'>Pixels</span>
-    </div>*/}
-                        {/*<div id='loginName' className='hidden lg:flex lg:flex-col items-center font-semibold text-sm'>
-                            <div id='loginAvatar' className='mb-5'>
-                                <DashAvatar iconHeight='h-[65px]' iconWidth='w-[65px]' />
-                            </div>
-                            <p className='hidden lg:block'>client.name</p>
-                            <div className='hidden lg:flex justify-center mt-3'>
-                                <div className='px-1 rounded-md w-fit text-[9px]'>
-                                    <DialogButton
-                                        buttonText='Edit'
-                                        dialogTitle='Edit Profile'
-                                        dialogDesc='Make changes to your profile here. Click save when youre done.'
-                                        content={<AccountForm  />}
-                                        saveButton='Save changes'
-                                        saveButtonColor='bg-blue9'
-                                        buttonDisplay=''
-                                        myOwnButton=''
-                                        myOwnButtonDisplay=''
-
-                                    />
-                                </div>
-                            </div>
-    </div>*/}
-
                         <div id='loginTabs' className='hidden lg:flex flex-col justify-around h-full mt-10 '>
-
                             <Tooltips
                                 button={
                                     <button
@@ -105,7 +75,6 @@ const Dashboard = (props: Props) => {
                                 }
                                 tooltipContent={'Dashboard'}
                             />
-
                             <Tooltips
                                 button={
                                     <button
@@ -120,7 +89,6 @@ const Dashboard = (props: Props) => {
                                 }
                                 tooltipContent={'Messages'}
                             />
-
                             <Tooltips
                                 button={
                                     <button
@@ -135,7 +103,6 @@ const Dashboard = (props: Props) => {
                                 }
                                 tooltipContent={'Documents & Invoices'}
                             />
-
                             <Tooltips
                                 button={
                                     <button
@@ -150,7 +117,6 @@ const Dashboard = (props: Props) => {
                                 }
                                 tooltipContent={'File Sharing'}
                             />
-
                             <Tooltips button={
                                 <button
                                     value={value}
@@ -165,7 +131,6 @@ const Dashboard = (props: Props) => {
                             }
                                 tooltipContent={'Feedback'}
                             />
-
                             <Tooltips button={
                                 <button
                                     value={value}
@@ -191,7 +156,6 @@ const Dashboard = (props: Props) => {
                                     <span id='text_gradient'>Insights</span>
                                 }
                             />
-
                             <Tooltips button={
                                 <button
                                     value={value}
@@ -217,7 +181,6 @@ const Dashboard = (props: Props) => {
                                     <span id='text_gradient'>Live Chat</span>
                                 }
                             />
-
                             <Tooltips
                                 button={
                                     <button
@@ -244,10 +207,6 @@ const Dashboard = (props: Props) => {
                                     <span id='text_gradient'>Support Tickets</span>
                                 }
                             />
-
-
-
-
                             <Tooltips
                                 button={
                                     <button
@@ -262,10 +221,6 @@ const Dashboard = (props: Props) => {
                                 }
                                 tooltipContent={'Account'}
                             />
-
-
-
-
                         </div>
                         {/* <div className='hidden lg:block'>
                             <form action="/auth/signout" method="post">
@@ -300,7 +255,7 @@ const Dashboard = (props: Props) => {
                         case 'feedback':
                             return <FeedbackSection />
                         case 'chat':
-                            return <ChatSection />
+                            return <PixelCareSection />
                         case 'supporttickets':
                             return <SupportTicketsSections />
                         default:
