@@ -1,13 +1,41 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import ShinyText from '@/components/ShinyText'
 import PopoverButton from '@/components/PopoverButton'
 import { createServerSupabaseClient } from '@/app/supabase-server'
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import ArrowButton from '@/components/ArrowButton'
+import DialogButton from '@/components/DialogButton'
+import SubTiers from '@/components/SubTiers'
+
 
 type Props = {}
 
 const PixelCareSection = (props: Props) => {
-    
+    const [customer, setCustomer] = useState(null);
+    const [isMember, setIsMember] = useState(true);
 
+    const handleNonMember = () => {
+        setIsMember(!isMember)
+    }
+
+    useEffect(() => {
+        const getUser = async () => {
+            const supabase = createClientComponentClient();
+
+
+
+            let { data: customers, error } = await supabase
+                .from('customers')
+                .select('*')
+
+
+            setCustomer(customers);
+        }
+        getUser();
+    }, []);
+
+    console.log(customer);
     return (
         <div>
             <div className="p-5 lg:p-0 lg:flex lg:items-center lg:justify-between lg:ml-2 ">
@@ -24,6 +52,73 @@ const PixelCareSection = (props: Props) => {
                     />
                 </div>
             </div>
+            <h1 className='text-slate10 p-3'>
+                Use your PixelCare perks below
+            </h1>
+
+            {customer ? (
+                <>
+                    <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10'>
+                        <h1 id='text_gradient' className='font-semibold'>Pixelcare</h1>
+                    </div>
+
+                    <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10'>
+                        <h1 id='text_gradient' className='font-semibold'>Pixelcare +</h1>
+                    </div>
+
+                    <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10 animate-backgroundShine bg-[linear-gradient(115deg,#262626,45%,#e6e6e6,55%,#262626)] bg-[length:250%_100%] bg-transparent'>
+                        <h1 id='text_gradient' className='font-semibold'>Pixelcare Elite</h1>
+                        <article className='grid grid-cols-4 gap-5'>
+                            <div className='bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                hi
+                            </div>
+                            <div className='bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                hi
+                            </div>
+                            <div className='bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                hi
+                            </div>
+                            <div className='bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                hi
+                            </div>
+                        </article>
+                    </div>
+                </>
+            ) :
+                (
+                    <div>
+                        <div className='flex flex-col gap-2 mb-10'>
+                            <p className='font-light text-3xl tracking-[-0.06em] text-center'>What are you waiting for?</p>
+                            <p className='text-slate10 text-xs font-medium text-center'>
+                                Maintain and secure your investment the correct way!
+                            </p>
+                            <div className='flex justify-center'>
+                                <ArrowButton buttonText='Learn more' href='/pixelcare' />
+                            </div>
+                            <button onClick={handleNonMember}>click for Member</button>
+                        </div>
+
+                        <div className='flex justify-center'>
+                            <button type='button'>
+                                <DialogButton
+                                    buttonText={<p className='bg-blue9 hover:bg-[#3fcf8e] text-white  py-1 px-3 lg:px-8 lg:py-2 rounded '>
+                                        Purchase
+                                    </p>}
+                                    dialogTitle={<>
+                                        <div id='text_gradient'>PixelCare</div>
+                                    </>}
+                                    dialogDesc='Choose your tier'
+                                    content={<SubTiers />}
+                                    saveButton='Purchase'
+                                    saveButtonColor='bg-blue9' buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} onClickfunction={undefined} disabled={undefined} saveButtonType={undefined} />
+                            </button>
+                        </div>
+
+                    </div>
+                )
+            }
+
+
 
 
 
