@@ -23,19 +23,15 @@ const PixelCareSection = (props: Props) => {
         const getUser = async () => {
             const supabase = createClientComponentClient();
 
-
-
             let { data: customers, error } = await supabase
                 .from('customers')
                 .select('*')
-
 
             setCustomer(customers);
         }
         getUser();
     }, []);
 
-    console.log(customer);
     return (
         <div>
             <div className="p-5 lg:p-0 lg:flex lg:items-center lg:justify-between lg:ml-2 ">
@@ -59,27 +55,46 @@ const PixelCareSection = (props: Props) => {
             {customer ? (
                 <>
                     <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10'>
-                        <h1 id='text_gradient' className='font-semibold'>Pixelcare</h1>
+                        <h1 id='text_gradient' className='font-semibold mb-5'>Pixelcare</h1>
+                        <article className='grid grid-cols-4 gap-5'>
+                            {/*  Card 1 */}
+                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Theme/template update</h1>
+                            </div>
+                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Content update</h1>
+                            </div>
+                        </article>
                     </div>
 
                     <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10'>
-                        <h1 id='text_gradient' className='font-semibold'>Pixelcare +</h1>
+                        <h1 id='text_gradient' className='font-semibold mb-5'>Pixelcare +</h1>
+                        <article className='grid grid-cols-4 gap-5'>
+                            {/*  Card 1 */}
+                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Content update</h1>
+                            </div>
+                        </article>
                     </div>
 
                     <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10 animate-backgroundShine bg-[linear-gradient(115deg,#262626,45%,#e6e6e6,55%,#262626)] bg-[length:250%_100%] bg-transparent'>
-                        <h1 id='text_gradient' className='font-semibold'>Pixelcare Elite</h1>
+                        <h1 id='text_gradient' className='font-semibold mb-5'>Pixelcare Elite</h1>
                         <article className='grid grid-cols-4 gap-5'>
-                            <div className='bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                hi
+                            {/*  Card 1 */}
+                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Advanced content update</h1>
                             </div>
-                            <div className='bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                hi
+                            {/*  Card 2 */}
+                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Contact account manager</h1>
                             </div>
-                            <div className='bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                hi
+                            {/*  Card 3 */}
+                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Contact account manager</h1>
                             </div>
-                            <div className='bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                hi
+                            {/*  Card 4 */}
+                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Contact account manager</h1>
                             </div>
                         </article>
                     </div>
