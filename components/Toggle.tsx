@@ -9,8 +9,12 @@ type Props = {
     onCheckedChange: (checked: boolean) => void;
 }
 
+const buttonStyle = {
+    '-webkit-tap-highlight-color': 'hsl(206 100% 50.0%)',
+};
+
 const Toggle = ({ label, defaultChecked, checked, onCheckedChange }: Props) => {
-    
+
 
     return (
         <form>
@@ -24,7 +28,7 @@ const Toggle = ({ label, defaultChecked, checked, onCheckedChange }: Props) => {
                     defaultChecked={defaultChecked}
                     onCheckedChange={onCheckedChange}
                     checked={checked}
-                    style={{ '-webkit-tap-highlight-color': 'hsl(206 100% 50.0%)' }}
+                    style={buttonStyle as React.CSSProperties}
                 >
                     <Switch.Thumb className="block w-[21px] h-[21px] bg-white rounded-full shadow-[0_2px_2px] shadow-blackA7 transition-transform duration-100 translate-x-0.5 will-change-transform data-[state=checked]:translate-x-[19px]" />
                 </Switch.Root>
