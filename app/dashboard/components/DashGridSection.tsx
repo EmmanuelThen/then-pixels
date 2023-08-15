@@ -26,7 +26,7 @@ const DashGridSection = (props: Props) => {
                 </div>
             </div>
 
-            <div  className='flex flex-wrap justify-center gap-5 {w-[1275px]} overflow-y-scroll'>
+            <div  className='flex flex-wrap justify-center gap-5 {w-[1275px]} overflow-y-scroll p-5'>
                 <div>
                     <DashCards
                         cardTitle='production tracker'
@@ -52,27 +52,7 @@ const DashGridSection = (props: Props) => {
                         bgColor='bg-white'
                     />
                 </div>
-                <div>
-                    <DashCards
-                        cardTitle='Contracts & Docs'
-                        mainSection={<DashOrderHistory />}
-                        bgColor='bg-white'
-                    />
-                </div>
-                <div>
-                    <DashCards
-                        cardTitle='production tracker'
-                        mainSection={<DashOrderHistory />}
-                        bgColor='bg-white'
-                    />
-                </div>
-                <div>
-                    <DashCards
-                        cardTitle='Technical Support'
-                        mainSection={<DashFileUpload />}
-                        bgColor='bg-white'
-                    />
-                </div>
+                
             </div>
 
         </div>

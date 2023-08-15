@@ -51,6 +51,7 @@ const PixelCareSection = (props: Props) => {
             <h1 className='text-slate10 p-3'>
                 Use your PixelCare perks below
             </h1>
+            
 
             {customer ? (
                 <>
@@ -58,11 +59,16 @@ const PixelCareSection = (props: Props) => {
                         <h1 id='text_gradient' className='font-semibold mb-5'>Pixelcare</h1>
                         <article className='grid grid-cols-4 gap-5'>
                             {/*  Card 1 */}
-                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                            <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
                                 <h1 className='font-semibold'>Theme/template update</h1>
                             </div>
-                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                            {/*  Card 2 */}
+                            <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
                                 <h1 className='font-semibold'>Content update</h1>
+                            </div>
+                            {/*  Card 3 */}
+                            <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Technical support</h1>
                             </div>
                         </article>
                     </div>
@@ -71,8 +77,16 @@ const PixelCareSection = (props: Props) => {
                         <h1 id='text_gradient' className='font-semibold mb-5'>Pixelcare +</h1>
                         <article className='grid grid-cols-4 gap-5'>
                             {/*  Card 1 */}
-                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                            <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Theme/template update</h1>
+                            </div>
+                            {/*  Card 2 */}
+                            <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
                                 <h1 className='font-semibold'>Content update</h1>
+                            </div>
+                            {/*  Card 3 */}
+                            <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Technical support</h1>
                             </div>
                         </article>
                     </div>
@@ -81,20 +95,28 @@ const PixelCareSection = (props: Props) => {
                         <h1 id='text_gradient' className='font-semibold mb-5'>Pixelcare Elite</h1>
                         <article className='grid grid-cols-4 gap-5'>
                             {/*  Card 1 */}
-                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                <h1 className='font-semibold'>Advanced content update</h1>
+                            <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Theme/template update</h1>
                             </div>
                             {/*  Card 2 */}
-                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                <h1 className='font-semibold'>Contact account manager</h1>
+                            <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Content update</h1>
                             </div>
                             {/*  Card 3 */}
-                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                <h1 className='font-semibold'>Contact account manager</h1>
+                            <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>Advanced content update</h1>
                             </div>
                             {/*  Card 4 */}
-                            <div className='transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                            <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
                                 <h1 className='font-semibold'>Contact account manager</h1>
+                            </div>
+                            {/*  Card 5 */}
+                            <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>feature</h1>
+                            </div>
+                            {/*  Card 6 */}
+                            <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <h1 className='font-semibold'>feature</h1>
                             </div>
                         </article>
                     </div>

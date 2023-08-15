@@ -23,7 +23,7 @@ const ListItem = ({ description, children, href }: Props) => {
         <>
             <li>
                 <NavigationMenu.Link asChild>
-                    <Link href={`${href}`} className='focus:shadow-[0_0_0_2px] focus:shadow-blue7 hover:bg-mauve3 block select-none rounded-[6px] p-3 text-sm leading-none no-underline outline-none transition-colors'>
+                    <Link target='_blank' href={`${href}`} className='focus:shadow-[0_0_0_2px] focus:shadow-blue7 hover:bg-mauve3 block select-none rounded-[6px] p-3 text-sm leading-none no-underline outline-none transition-colors'>
                         <h1 id='custom-text' className='font-medium mb-1 leading-[1.2] '>
                             {children}
                         </h1>
