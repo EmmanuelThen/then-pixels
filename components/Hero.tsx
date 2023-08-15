@@ -43,7 +43,7 @@ const Hero = (props: Props) => {
                     </div>
                 </div>
                 <div className='hidden absolute right-0 top-[50%] bottom-[50%] lg:flex justify-center items-center w-[50%]'>
-                    <HeroSVG />
+                    {/* <HeroSVG /> */}
                 </div>
             </div>
 

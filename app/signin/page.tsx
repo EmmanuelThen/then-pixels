@@ -12,6 +12,7 @@ import ForgotPasswordModal from './components/ForgotPasswordModal'
 import ConfirmationButton from '@/components/ConfirmationButton'
 import DialogButton from '@/components/DialogButton'
 import ShinyText from '@/components/ShinyText'
+import LoadingState from '@/components/LoadingState'
 
 
 export default function Login() {
@@ -106,10 +107,13 @@ export default function Login() {
               </label>
               <input
                 className="rounded-md px-4 py-2 bg-slate4  mb-6"
+                type='email'
+                id='email'
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 placeholder="you@example.com"
+                pattern='[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}'
                 required
               />
               <label id='custom-text' className="text-md" htmlFor="password">
@@ -163,28 +167,30 @@ export default function Login() {
               {view === 'sign-in' && (
                 <>
                   <button
-                    className="bg-blue9 hover:opacity-80 rounded px-4 py-2 text-white hover:cursor-pointer"
+                    className={!email || !password ?
+                      'bg-slate9 text-white rounded px-4 py-2 cursor-not-allowed' :
+                      "bg-blue9 hover:opacity-80 rounded px-4 py-2 text-white hover:cursor-pointer"}
                     disabled={!email || !password}
                   >
-                    {loading ? 'Sign In' : <p className='text-white scale-in-center'> Loading...</p>}
+                    {loading ? 'Sign In' : <p>Loading...</p>}
                   </button>
                   <div id='signup-terms' className=' flex justify-center mb-6'>
                     <div className='text-[10px] text-center '>
                       <div>
                         <DialogButton
-                            buttonText='Forgot password?'
-                            dialogTitle=''
-                            dialogDesc=''
-                            content={<ForgotPasswordModal
-                              modalContentDisplay=''
-                              confirmationDisplay='' />}
-                            saveButton=''
-                            buttonDisplay='hidden'
-                            myOwnButtonDisplay='hidden'
-                            myOwnButton={<ConfirmationButton
-                              buttonText='Continue'
-                              toastTitle='Email sent to:'
-                              toastContent='session.user.email' />} onClickfunction={undefined} disabled={undefined} saveButtonColor={undefined} saveButtonType={undefined}                        />
+                          buttonText='Forgot password?'
+                          dialogTitle=''
+                          dialogDesc=''
+                          content={<ForgotPasswordModal
+                            modalContentDisplay=''
+                            confirmationDisplay='' />}
+                          saveButton=''
+                          buttonDisplay='hidden'
+                          myOwnButtonDisplay='hidden'
+                          myOwnButton={<ConfirmationButton
+                            buttonText='Continue'
+                            toastTitle='Email sent to:'
+                            toastContent='session.user.email' />} onClickfunction={undefined} disabled={undefined} saveButtonColor={undefined} saveButtonType={undefined} />
                       </div>
                     </div>
                   </div>
@@ -220,8 +226,8 @@ export default function Login() {
               {view === 'sign-up' && (
                 <>
                   <button
-                    className={`${password === reEnterPassword ? 'mb-6' : ''} bg-blue9 hover:opacity-80 rounded px-4 py-2 text-white hover:cursor-pointer`}
-                    disabled={!email || !password || !reEnterPassword}
+                    className={`${password === reEnterPassword ? 'mb-6' : ''} ${!email || !password || !reEnterPassword || (password !== reEnterPassword) ? 'bg-slate9 text-white rounded px-4 py-2 cursor-not-allowed' : 'bg-blue9 hover:opacity-80 rounded px-4 py-2 text-white hover:cursor-pointer'}`}
+                    disabled={!email || !password || !reEnterPassword || (password !== reEnterPassword)}
                   >
                     Sign Up
                   </button>

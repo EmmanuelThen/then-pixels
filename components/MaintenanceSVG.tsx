@@ -4,7 +4,7 @@ type Props = {}
 
 const MaintenanceSVG = (props: Props) => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 3000 2000" viewBox="0 0 3000 2000" id="technical-seo-audit"><switch><g><path fill="#898989" d="M2402.588,1077.947c0.537,0.564,1.055,1.155,1.548,1.781
+        <svg xmlns="http://www.w3.org/2000/svg"  enable-background="new 0 0 3000 2000" viewBox="0 0 3000 2000" id="technical-seo-audit"><switch><g><path fill="#898989" d="M2402.588,1077.947c0.537,0.564,1.055,1.155,1.548,1.781
 						C2403.45,1079.194,2402.961,1078.59,2402.588,1077.947z"></path><polygon fill="#dcdcdc" points="2454.51 1571.795 2185.103 1415.716 2093.323 1467.347 2362.729 1623.426"></polygon><path fill="#fff" d="M2432.407,1574.624l-0.013-8.945l-193.274-97.177
 									c-33.817-19.524-61.141-66.852-61.031-105.71l1.782-635.293l-60.061,34.904l-1.782,635.293
 									c-0.11,38.858,27.214,86.186,61.031,105.71l187.609,108.2L2432.407,1574.624z"></path><path fill="#fff" d="M2434.327,866.697l-1.981,698.811l-5.32,3.223l-181.352-110.834
