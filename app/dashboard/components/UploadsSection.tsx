@@ -3,12 +3,13 @@ import ShinyText from '@/components/ShinyText'
 import PopoverButton from '@/components/PopoverButton'
 import DialogButton from '@/components/DialogButton'
 import InputForms from '@/components/InputForms'
+import Image from 'next/image'
 
 type Props = {}
 
 const UploadsSection = (props: Props) => {
-    const [uploadedFile, setUploadedFile] = useState(null);
-    const [previewUrl, setPreviewUrl] = useState(null);
+    const [uploadedFile, setUploadedFile] = useState<any>(null);
+    const [previewUrl, setPreviewUrl] = useState<any>(null);
 
     const handleFileChange = (e: any) => {
         const file = e.target.files[0];
@@ -74,7 +75,7 @@ const UploadsSection = (props: Props) => {
                         <div className="mt-10 bg-slate4 p-3 rounded-lg max-w-md w-full">
                             <div className="flex items-center">
                                 {previewUrl && (
-                                    <img
+                                    <Image
                                         src={previewUrl}
                                         alt="Uploaded Preview"
                                         className="w-16 h-16 object-contain mr-4"

@@ -40,7 +40,7 @@ const ListItem = ({ description, children, href }: Props) => {
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [userData, setUserData] = useState(null);
+    const [userData, setUserData] = useState<any>(null);
 
     useEffect(() => {
         const getUser = async () => {
