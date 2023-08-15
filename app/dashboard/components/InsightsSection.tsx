@@ -19,11 +19,11 @@ const InsightsSection = (props: Props) => {
     const [device, setDevice] = useState('');
     const [checked, setChecked] = useState([false, false]);
     const [isLoading, setIsLoading] = useState(false);
-    const [dataArray, setDataArray] = useState([]);
-    const [lcpPercentileWidth, setLcpPercentileWidth] = useState([]);
-    const [clsPercentileWidth, setClsPercentileWidth] = useState([]);
-    const [fidPercentileWidth, setFidPercentileWidth] = useState([]);
-    const [errors, setErrors] = useState(null);
+    const [dataArray, setDataArray] = useState<any>([]);
+    const [lcpPercentileWidth, setLcpPercentileWidth] = useState<any>([]);
+    const [clsPercentileWidth, setClsPercentileWidth] = useState<any>([]);
+    const [fidPercentileWidth, setFidPercentileWidth] = useState<any>([]);
+    const [errors, setErrors] = useState<any>(null);
     // To fix issue where if I have an api error state rendered and I clicked on the checkbox it renders the last successful api instead of the current error message, because we currently had an error
     // So I set isApiSuccess to false on the error part of the try and catch.
     const [isApiSuccess, setIsApiSuccess] = useState(false);
@@ -94,17 +94,17 @@ const InsightsSection = (props: Props) => {
             setIsApiSuccess(true);
             // To update the percentileWidths to always be the most current state which is the current search url state, before it was keeping the prev state, so if i search something then do another search, the state would remain the first search state.
             if (data.loadingExperience.metrics) {
-                setLcpPercentileWidth(prevLcpPercentileWidth => [
+                setLcpPercentileWidth((prevLcpPercentileWidth: any) => [
                     Math.round(data.loadingExperience.metrics['LARGEST_CONTENTFUL_PAINT_MS'].distributions[0].proportion * 100),
                     Math.round(data.loadingExperience.metrics['LARGEST_CONTENTFUL_PAINT_MS'].distributions[1].proportion * 100),
                     Math.round(data.loadingExperience.metrics['LARGEST_CONTENTFUL_PAINT_MS'].distributions[2].proportion * 100)
                 ]);
-                setClsPercentileWidth(prevClsPercentileWidth => [
+                setClsPercentileWidth((prevClsPercentileWidth: any) => [
                     Math.round(data.loadingExperience.metrics['CUMULATIVE_LAYOUT_SHIFT_SCORE'].distributions[0].proportion * 100),
                     Math.round(data.loadingExperience.metrics['CUMULATIVE_LAYOUT_SHIFT_SCORE'].distributions[1].proportion * 100),
                     Math.round(data.loadingExperience.metrics['CUMULATIVE_LAYOUT_SHIFT_SCORE'].distributions[2].proportion * 100)
                 ]);
-                setFidPercentileWidth(prevFidPercentileWidth => [
+                setFidPercentileWidth((prevFidPercentileWidth: any) => [
                     Math.round(data.loadingExperience.metrics['FIRST_INPUT_DELAY_MS'].distributions[0].proportion * 100),
                     Math.round(data.loadingExperience.metrics['FIRST_INPUT_DELAY_MS'].distributions[1].proportion * 100),
                     Math.round(data.loadingExperience.metrics['FIRST_INPUT_DELAY_MS'].distributions[2].proportion * 100)
@@ -166,7 +166,7 @@ const InsightsSection = (props: Props) => {
                                     label='Enter URL'
                                     defaultValue='https://www.url.com'
                                     buttonDisplay='hidden'
-                                    onChange={(e) => setPageUrl(e.target.value)}
+                                    onChange={(e: any) => setPageUrl(e.target.value)}
                                 />
                             </div>
                             <div className='flex justify-around mt-5'>
@@ -244,7 +244,7 @@ const InsightsSection = (props: Props) => {
                     </div>
                 ) : (isApiSuccess) ? (
                     <>
-                        {dataArray.map((data, i) => (
+                        {dataArray.map((data: any, i: any) => (
                             <div className='mt-5 flex justify-center items-center flex-col gap-2' key={i}>
                                 <div className='flex justify-between lg:items-start w-full'>
                                     <div>

@@ -5,9 +5,9 @@ import DialogButton from '@/components/DialogButton';
 import PopoverButton from '@/components/PopoverButton';
 
 const InboxSection = () => {
-    const [selectedMessageIndex, setSelectedMessageIndex] = useState(-1);
-    const [messageFullDisplay, setMessageFullDisplay] = useState('No message selected');
-    const [inboxMessage, setInboxMessage] = useState([
+    const [selectedMessageIndex, setSelectedMessageIndex] = useState<any>(-1);
+    const [messageFullDisplay, setMessageFullDisplay] = useState<any>('No message selected');
+    const [inboxMessage, setInboxMessage] = useState<any>([
         { message: 'Your order has been successflyy received. we will get back to you within 2-4 business days. thank you!' },
         { message: 'Inquiry regarding your recent request, please open it within 24 hrs tofdfdfdfdfdfdfdfdffdffdfdfdfdf' },
         { message: 'Congratulations! You are know a PixelCare Elite member, youre loaded with benefitsfdfdfdfdfdfdfdf' },
@@ -22,7 +22,7 @@ const InboxSection = () => {
         { message: 'Remember to provide specific details about the issue you are facing when contacting customer support. This will help them understand the problem better and provide a quicker resolution.' },
     ]);
     const [trashMessageFullDisplay, setTrashMessageFullDisplay] = useState('No message selected');
-    const [inboxTrash, setInboxTrash] = useState([]);
+    const [inboxTrash, setInboxTrash] = useState<any>([]);
     const [greenDotDisplay, setGreenDotDisplay] = useState('')
 
     // To view Inbox message in full display
@@ -39,7 +39,7 @@ const InboxSection = () => {
     };
 
     // To view trash message in full display
-    const handleMessagInTrashClick = (i) => {
+    const handleMessagInTrashClick = (i: any) => {
         const clickedMessageInTrash = inboxTrash[i].message;
         setTrashMessageFullDisplay(clickedMessageInTrash);
         setSelectedMessageIndex(i);
@@ -55,8 +55,8 @@ const InboxSection = () => {
         setInboxMessage(updatedInboxTrashMessage);
 
         // To remove from previous array (inbox)
-        setInboxTrash((prevTrash) => [...prevTrash, trashedMessage]);
-        setInboxMessage((prevMessages) => prevMessages.filter((_, index) => index !== i));
+        setInboxTrash((prevTrash: any) => [...prevTrash, trashedMessage]);
+        setInboxMessage((prevMessages: any) => prevMessages.filter((_: any, index: any) => index !== i));
 
         // Check if the deleted message is the last one
         if (i === inboxMessage.length - 1) {
@@ -174,7 +174,7 @@ const InboxSection = () => {
                                 <div id='back-ground' className="lg:flex w-full h-screen lg:p-2 lg:w-full lg:h-[75vh] shadow-blackA9 shadow-[0_8px_15px]" >
                                     <div className="lg:w-[35%] w-full overflow-y-scroll">
                                         {inboxMessage.length > 0 ? (
-                                            inboxMessage.map((message, i) => (
+                                            inboxMessage.map((message: any, i: any) => (
                                                 <div className='flex items-center w-[93vw] lg:w-[90%] ' key={i}>
                                                     <div className="p-2 w-full">
                                                         <div
@@ -252,46 +252,38 @@ const InboxSection = () => {
                                                     disabled={isButtonDisabled}
                                                     saveButton='Continue'
                                                     saveButtonColor='bg-red9'
-                                                    buttonText={
-                                                        <>
-                                                            {inboxMessage.length > 0 ? //Button will only show when there is a message in the trash inbox
-                                                                <div className='shadow-blackA9 shadow-[0_4px_7px] hover:cursor-pointer bg-red9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none' >
-                                                                    Delete
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 lg:w-5 h-4 lg:h-5">
-                                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                                                                    </svg>
-                                                                </div>
-                                                                :
-                                                                ''
-                                                            }
-                                                        </>
-                                                    }
+                                                    buttonText={<>
+                                                        {inboxMessage.length > 0 ? //Button will only show when there is a message in the trash inbox
+                                                            <div className='shadow-blackA9 shadow-[0_4px_7px] hover:cursor-pointer bg-red9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'>
+                                                                Delete
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 lg:w-5 h-4 lg:h-5">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                                </svg>
+                                                            </div>
+                                                            :
+                                                            ''}
+                                                    </>}
                                                     dialogTitle='Delete message'
-                                                    dialogDesc={`Are you sure you want to delete this message?`}
-                                                />
+                                                    dialogDesc={`Are you sure you want to delete this message?`} content={undefined} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined}                                                />
                                                 <DialogButton
                                                     onClickfunction={handleDeleteAllInboxButton}
                                                     disabled=''
                                                     saveButton='Continue'
                                                     saveButtonColor='bg-red9'
-                                                    buttonText={
-                                                        <>
-                                                            {inboxMessage.length > 0 ? //Button will only show when there is a message in the trash inbox
-                                                                <div className=' hover:cursor-pointer bg-blue9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none' >
-                                                                    Delete All
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 lg:w-5 lg:h-5">
-                                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                                                                    </svg>
+                                                    buttonText={<>
+                                                        {inboxMessage.length > 0 ? //Button will only show when there is a message in the trash inbox
+                                                            <div className=' hover:cursor-pointer bg-blue9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'>
+                                                                Delete All
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 lg:w-5 lg:h-5">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                                                                </svg>
 
-                                                                </div>
-                                                                :
-                                                                ''
-                                                            }
-                                                        </>
-                                                    }
+                                                            </div>
+                                                            :
+                                                            ''}
+                                                    </>}
                                                     dialogTitle='Delete message'
-                                                    dialogDesc={<p>Are you sure you want to delete all of your messages?<br></br> This can't be reversed.</p>}
-                                                />
+                                                    dialogDesc={<p>Are you sure you want to delete all of your messages?<br></br> This can't be reversed.</p>} content={undefined} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined}                                                />
                                             </div>
                                         </div>
                                         <div  className="sticky h-full p-2 mt-5 lg:mt-0">
@@ -313,7 +305,7 @@ const InboxSection = () => {
                                 <div id='back-ground' className="lg:flex lg:p-2 w-full h-screen lg:h-[75vh]">
                                     <div className="lg:w-[35%] w-full overflow-y-scroll">
                                         {inboxTrash.length > 0 ? (
-                                            inboxTrash.map((message, i) => (
+                                            inboxTrash.map((message: any, i: any) => (
                                                 <div className='flex items-center w-[98vw] lg:w-full' key={i}>
                                                     <div className="p-2 w-full">
                                                         <div
@@ -351,28 +343,24 @@ const InboxSection = () => {
                                                 onClickfunction={handleEmptyTrashClick}
                                                 saveButton='Continue'
                                                 saveButtonColor='bg-red9'
-                                                buttonText={
-                                                    <>
-                                                        {inboxTrash.length > 0 ? //Button will only show when there is a message in the trash inbox
-                                                            <div className='shadow-blackA9 shadow-[0_4px_7px] bg-red9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none' >
-                                                                Empty trash
-                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 lg:w-5 lg:h-5">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                                </svg>
-                                                            </div>
-                                                            :
-                                                            ''
-                                                        }
-                                                    </>
-                                                }
+                                                buttonText={<>
+                                                    {inboxTrash.length > 0 ? //Button will only show when there is a message in the trash inbox
+                                                        <div className='shadow-blackA9 shadow-[0_4px_7px] bg-red9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'>
+                                                            Empty trash
+                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 lg:w-5 lg:h-5">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                            </svg>
+                                                        </div>
+                                                        :
+                                                        ''}
+                                                </>}
                                                 dialogTitle='Empty trash'
                                                 dialogDesc={<p>Are you sure you want to delete all of your messages?<br></br> This can't be reversed.</p>}
                                                 content=''
                                                 buttonDisplay=''
                                                 myOwnButtonDisplay=''
                                                 myOwnButton=''
-                                                disabled=''
-                                            />
+                                                disabled='' saveButtonType={undefined}                                            />
                                         </div>
                                         <div className="sticky h-full p-2 mt-5 lg:mt-0">
                                             <div className={
