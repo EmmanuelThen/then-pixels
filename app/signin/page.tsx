@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
@@ -16,11 +15,12 @@ import LoadingState from '@/components/LoadingState'
 
 
 export default function Login() {
-  const [loading, setLoading] = useState(true)
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [reEnterPassword, setReEnterPassword] = useState('')
-  const [view, setView] = useState('sign-in')
+  const [loading, setLoading] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [reEnterPassword, setReEnterPassword] = useState('');
+  const [view, setView] = useState('sign-in');
+  const [notRegisteredMessageDisplay, setNotRegisteredMessageDisplay] = useState('hidden')
   const router = useRouter()
   const supabase = createClientComponentClient()
 
@@ -39,14 +39,42 @@ export default function Login() {
   const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
     setLoading(true);
     e.preventDefault();
-    await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-    setLoading(false);
-    router.push('/dashboard');
-    router.refresh();
+
+    try {
+      // Check if the user exists in your database using their unique identifier (e.g., email)
+      const { data, error: userError } = await supabase
+        .from('users')  // Replace 'users' with the name of your table
+        .select('*')
+        .eq('email', email);
+
+      if (userError) {
+        // Handle the error
+        console.error("User fetch error:", userError.message);
+        return;
+      }
+
+      if (!data || data.length === 0) {
+        // User is not registered, display a message
+        setNotRegisteredMessageDisplay('');
+        setTimeout(() => {
+          setNotRegisteredMessageDisplay('hidden');
+        }, 3000);
+        console.log('User is not registered');
+      } else {
+        // User exists, proceed to sign in
+        await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+        setLoading(false);
+        router.push('/dashboard');
+        router.refresh();
+      }
+    } catch (error) {
+      console.error('Error message:', error);
+    }
   }
+
 
   const handlePasswordReset = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -194,6 +222,9 @@ export default function Login() {
                       </div>
                     </div>
                   </div>
+                  <p className={`${notRegisteredMessageDisplay} scale-in-center flex justify-center text-red9`}>
+                    User is not registered
+                  </p>
                   <p className="text-sm text-center">
                     Don't have an account?
                     <button
@@ -226,7 +257,11 @@ export default function Login() {
               {view === 'sign-up' && (
                 <>
                   <button
-                    className={`${password === reEnterPassword ? 'mb-6' : ''} ${!email || !password || !reEnterPassword || (password !== reEnterPassword) ? 'bg-slate9 text-white rounded px-4 py-2 cursor-not-allowed' : 'bg-blue9 hover:opacity-80 rounded px-4 py-2 text-white hover:cursor-pointer'}`}
+                    className={`${password === reEnterPassword ? 'mb-6' : ''} 
+                    ${!email || !password || !reEnterPassword || (password !== reEnterPassword) ?
+                        'bg-slate9 text-white rounded px-4 py-2 cursor-not-allowed' :
+                        'bg-blue9 hover:opacity-80 rounded px-4 py-2 text-white hover:cursor-pointer'}`
+                    }
                     disabled={!email || !password || !reEnterPassword || (password !== reEnterPassword)}
                   >
                     Sign Up
@@ -236,7 +271,7 @@ export default function Login() {
                       ''
                     ) : (
                       <div className='flex justify-center mb-6'>
-                        <span className='text-red9'>
+                        <span className='scale-in-center text-red9'>
                           Passwords dont match
                         </span>
                       </div>

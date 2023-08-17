@@ -2,7 +2,6 @@
 import React from 'react';
 import Dashboard from './components/Dashboard';
 import { createServerSupabaseClient } from '@/app/supabase-server';
-import { cookies } from 'next/headers'
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
 import { useRouter } from 'next/navigation'
