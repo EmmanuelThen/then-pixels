@@ -95,7 +95,7 @@ const PixelCareSection = (props: Props) => {
                 customer ? (
                     <>
 
-                        <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10 animate-backgroundShine bg-[linear-gradient(115deg,#262626,45%,#e6e6e6,55%,#262626)] bg-[length:250%_100%] bg-transparent'>
+                        <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10'>
                             <h1 id='text_gradient' className='font-semibold mb-5'>{'Pixelcare {tier}'}</h1>
                             <article className='grid grid-cols-4 gap-5'>
                                 {/*  Card 1 */}
@@ -152,21 +152,22 @@ const PixelCareSection = (props: Props) => {
 
                         {/* Title for button press */}
                         <div>
-                            <ShinyText text={() => {
+                            {(() => {
                                 switch (value) {
                                     case 'theme':
-                                        return 'Theme/Template updates';
+                                        return <ShinyText text={'Theme/Template Updates'} />;
                                     case 'content':
-                                        return 'Content update';
+                                        return <ShinyText text={'Content Update'} />;
                                     case 'adv_content':
-                                        return 'Advanced Content Update';
+                                        return <ShinyText text={'Advanced Content Update'} />;
                                     case 'account_manager':
-                                        return 'Contact Account Manager';
+                                        return <ShinyText text={'Contact Account Manager'} />;
                                     default:
                                         return '';
                                 }
-                            }} />
+                            })()}
                         </div>
+
 
                     </>
                 ) :
