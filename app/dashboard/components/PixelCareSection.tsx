@@ -14,7 +14,8 @@ type Props = {}
 
 const PixelCareSection = (props: Props) => {
     const [customer, setCustomer] = useState<{ stripe_customer_id: any }[] | null>(null);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const [value, setValue] = useState('')
 
     useEffect(() => {
         const fetchCustomers = async () => {
@@ -41,7 +42,19 @@ const PixelCareSection = (props: Props) => {
 
     console.log(customer)
 
-
+    const handleThemeUpdate = () => {
+        setValue('theme');
+    }
+    const handleContentUpdate = () => {
+        setValue('content');
+    }
+    const handleAdvContentUpdate = () => {
+        setValue('adv_content');
+    }
+    const handleAccManager = () => {
+        setValue('account_manager');
+    }
+    // Card 5 and 6 still need functions
 
     // const supabase = createClientComponentClient();
 
@@ -81,71 +94,80 @@ const PixelCareSection = (props: Props) => {
                 :
                 customer ? (
                     <>
-                        <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10'>
-                            <h1 id='text_gradient' className='font-semibold mb-5'>Pixelcare</h1>
-                            <article className='grid grid-cols-4 gap-5'>
-                                {/*  Card 1 */}
-                                <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                    <h1 className='font-semibold'>Theme/template update</h1>
-                                </div>
-                                {/*  Card 2 */}
-                                <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                    <h1 className='font-semibold'>Content update</h1>
-                                </div>
-                                {/*  Card 3 */}
-                                <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                    <h1 className='font-semibold'>Technical support</h1>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10'>
-                            <h1 id='text_gradient' className='font-semibold mb-5'>Pixelcare +</h1>
-                            <article className='grid grid-cols-4 gap-5'>
-                                {/*  Card 1 */}
-                                <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                    <h1 className='font-semibold'>Theme/template update</h1>
-                                </div>
-                                {/*  Card 2 */}
-                                <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                    <h1 className='font-semibold'>Content update</h1>
-                                </div>
-                                {/*  Card 3 */}
-                                <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
-                                    <h1 className='font-semibold'>Technical support</h1>
-                                </div>
-                            </article>
-                        </div>
 
                         <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10 animate-backgroundShine bg-[linear-gradient(115deg,#262626,45%,#e6e6e6,55%,#262626)] bg-[length:250%_100%] bg-transparent'>
-                            <h1 id='text_gradient' className='font-semibold mb-5'>Pixelcare Elite</h1>
+                            <h1 id='text_gradient' className='font-semibold mb-5'>{'Pixelcare {tier}'}</h1>
                             <article className='grid grid-cols-4 gap-5'>
                                 {/*  Card 1 */}
-                                <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <button
+                                    value={value}
+                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    onClick={handleThemeUpdate}
+                                >
                                     <h1 className='font-semibold'>Theme/template update</h1>
-                                </div>
+                                </button>
                                 {/*  Card 2 */}
-                                <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <button
+                                    value={value}
+                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    onClick={handleContentUpdate}
+                                >
                                     <h1 className='font-semibold'>Content update</h1>
-                                </div>
+                                </button>
                                 {/*  Card 3 */}
-                                <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <button
+                                    value={value}
+                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    onClick={handleAdvContentUpdate}
+                                >
                                     <h1 className='font-semibold'>Advanced content update</h1>
-                                </div>
+                                </button>
                                 {/*  Card 4 */}
-                                <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <button
+                                    value={value}
+                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    onClick={handleAccManager}
+                                >
                                     <h1 className='font-semibold'>Contact account manager</h1>
-                                </div>
+                                </button>
                                 {/*  Card 5 */}
-                                <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <button
+                                    value={value}
+                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                // onClick={}
+                                >
                                     <h1 className='font-semibold'>feature</h1>
-                                </div>
+                                </button>
                                 {/*  Card 6 */}
-                                <div className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'>
+                                <button
+                                    value={value}
+                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                // onClick={}
+                                >
                                     <h1 className='font-semibold'>feature</h1>
-                                </div>
+                                </button>
+                                <div>{value}</div>
                             </article>
                         </div>
+
+                        {/* Title for button press */}
+                        <div>
+                            <ShinyText text={() => {
+                                switch (value) {
+                                    case 'theme':
+                                        return 'Theme/Template updates';
+                                    case 'content':
+                                        return 'Content update';
+                                    case 'adv_content':
+                                        return 'Advanced Content Update';
+                                    case 'account_manager':
+                                        return 'Contact Account Manager';
+                                    default:
+                                        return '';
+                                }
+                            }} />
+                        </div>
+
                     </>
                 ) :
                     (

@@ -36,45 +36,81 @@ export default function Login() {
     setView('check-email')
   }
 
+  // Come back to fix up sign in logic
   const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
     setLoading(true);
     e.preventDefault();
 
     try {
-      // Check if the user exists in your database using their unique identifier (e.g., email)
+      const {
+        data: { user }
+      } = await supabase.auth.getUser();
+
+      await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
       const { data, error: userError } = await supabase
-        .from('users')  // Replace 'users' with the name of your table
+        .from('users')  
         .select('*')
         .eq('email', email);
 
-      if (userError) {
-        // Handle the error
-        console.error("User fetch error:", userError.message);
-        return;
-      }
-
-      if (!data || data.length === 0) {
-        // User is not registered, display a message
+      if (!user) {
         setNotRegisteredMessageDisplay('');
         setTimeout(() => {
           setNotRegisteredMessageDisplay('hidden');
-        }, 3000);
+        }, 3000)
         console.log('User is not registered');
-      } else {
-        // User exists, proceed to sign in
-        await supabase.auth.signInWithPassword({
-          email,
-          password,
-        });
+
+      } else if (user.id) {
+        // await supabase.auth.signInWithPassword({
+        //   email,
+        //   password,
+        // });
         setLoading(false);
         router.push('/dashboard');
         router.refresh();
       }
     } catch (error) {
-      console.error('Error message:', error);
+      console.error('Error message:', error)
     }
   }
 
+  // const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   setLoading(true);
+  //   e.preventDefault();
+
+  //   try {
+  //     const { data, error: userError } = await supabase
+  //       .from('users')
+  //       .select('*')
+  //       .eq('email', email);
+
+  //     if (userError) {
+  //       console.error("User fetch error:", userError.message);
+  //       return;
+  //     }
+
+  //     if (!data || data.length === 0) {
+  //       setNotRegisteredMessageDisplay('');
+  //       setTimeout(() => {
+  //         setNotRegisteredMessageDisplay('hidden');
+  //       }, 3000);
+  //       console.log('User is not registered');
+  //     } else {
+  //       await supabase.auth.signInWithPassword({
+  //         email,
+  //         password,
+  //       });
+  //       setLoading(false);
+  //       router.push('/dashboard');
+  //       router.refresh();
+  //     }
+  //   } catch (error) {
+  //     console.error('Error message:', error);
+  //   }
+  // }
 
   const handlePasswordReset = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
