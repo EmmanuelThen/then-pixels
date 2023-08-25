@@ -8,6 +8,8 @@ import ArrowButton from '@/components/ArrowButton'
 import DialogButton from '@/components/DialogButton'
 import SubTiers from '@/components/SubTiers'
 import LoadingState from '@/components/LoadingState'
+import InputForms from '@/components/InputForms'
+import TextArea from '@/components/ui/TextArea/TextArea'
 
 
 type Props = {}
@@ -40,7 +42,7 @@ const PixelCareSection = (props: Props) => {
         fetchCustomers();
     }, []);
 
-    console.log(customer)
+    // console.log(customer)
 
     const handleThemeUpdate = () => {
         setValue('theme');
@@ -55,15 +57,6 @@ const PixelCareSection = (props: Props) => {
         setValue('account_manager');
     }
     // Card 5 and 6 still need functions
-
-    // const supabase = createClientComponentClient();
-
-
-    // let { data: customers, error } = await supabase
-    //     .from('customers')
-    //     .select('stripe_customer_id')
-
-
     return (
         <div>
             <div className="p-5 lg:p-0 lg:flex lg:items-center lg:justify-between lg:ml-2 ">
@@ -81,7 +74,7 @@ const PixelCareSection = (props: Props) => {
                 </div>
             </div>
             <h1 className='text-slate10 p-3'>
-                Use your PixelCare perks below
+                Select a perk below to begin
             </h1>
 
 
@@ -101,7 +94,7 @@ const PixelCareSection = (props: Props) => {
                                 {/*  Card 1 */}
                                 <button
                                     value={value}
-                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
                                     onClick={handleThemeUpdate}
                                 >
                                     <h1 className='font-semibold'>Theme/template update</h1>
@@ -109,7 +102,7 @@ const PixelCareSection = (props: Props) => {
                                 {/*  Card 2 */}
                                 <button
                                     value={value}
-                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
                                     onClick={handleContentUpdate}
                                 >
                                     <h1 className='font-semibold'>Content update</h1>
@@ -117,7 +110,7 @@ const PixelCareSection = (props: Props) => {
                                 {/*  Card 3 */}
                                 <button
                                     value={value}
-                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
                                     onClick={handleAdvContentUpdate}
                                 >
                                     <h1 className='font-semibold'>Advanced content update</h1>
@@ -125,28 +118,12 @@ const PixelCareSection = (props: Props) => {
                                 {/*  Card 4 */}
                                 <button
                                     value={value}
-                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
                                     onClick={handleAccManager}
                                 >
                                     <h1 className='font-semibold'>Contact account manager</h1>
                                 </button>
-                                {/*  Card 5 */}
-                                <button
-                                    value={value}
-                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
-                                // onClick={}
-                                >
-                                    <h1 className='font-semibold'>feature</h1>
-                                </button>
-                                {/*  Card 6 */}
-                                <button
-                                    value={value}
-                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-slate8 rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
-                                // onClick={}
-                                >
-                                    <h1 className='font-semibold'>feature</h1>
-                                </button>
-                                <div>{value}</div>
+                                
                             </article>
                         </div>
 
@@ -155,13 +132,85 @@ const PixelCareSection = (props: Props) => {
                             {(() => {
                                 switch (value) {
                                     case 'theme':
-                                        return <ShinyText text={'Theme/Template Updates'} />;
+                                        return (
+                                            <div>
+                                                <ShinyText text={'Theme/Template Updates'} />
+                                                <div className='flex items-center justify-center'>
+                                                    <div className='w-[50%]'>
+                                                        <InputForms
+                                                            label={'Subject'}
+                                                            valueMissingMessage={'Subject is missing'}
+                                                            typeMismatchMessage={undefined}
+                                                            buttonText={'Submit'}
+                                                            buttonDisplay={''}
+                                                            userInput={undefined}
+                                                            // onUserInput={''}
+                                                            extraInput={(<TextArea />)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
                                     case 'content':
-                                        return <ShinyText text={'Content Update'} />;
+                                        return (
+                                            <div>
+                                                <ShinyText text={'Content Update'} />
+                                                <div className='flex items-center justify-center'>
+                                                    <div className='w-[50%]'>
+                                                        <InputForms
+                                                            label={'Subject'}
+                                                            valueMissingMessage={'Subject is missing'}
+                                                            typeMismatchMessage={undefined}
+                                                            buttonText={'Submit'}
+                                                            buttonDisplay={''}
+                                                            userInput={undefined}
+                                                            // onUserInput={''}
+                                                            extraInput={(<TextArea />)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
                                     case 'adv_content':
-                                        return <ShinyText text={'Advanced Content Update'} />;
+                                        return (
+                                            <div>
+                                                <ShinyText text={'Advanced Content Update'} />
+                                                <div className='flex items-center justify-center'>
+                                                    <div className='w-[50%]'>
+                                                        <InputForms
+                                                            label={'Subject'}
+                                                            valueMissingMessage={'Subject is missing'}
+                                                            typeMismatchMessage={undefined}
+                                                            buttonText={'Submit'}
+                                                            buttonDisplay={''}
+                                                            userInput={undefined}
+                                                            // onUserInput={''}
+                                                            extraInput={(<TextArea />)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
                                     case 'account_manager':
-                                        return <ShinyText text={'Contact Account Manager'} />;
+                                        return (
+                                            <div>
+                                                <ShinyText text={'Contact Account Manager'} />
+                                                <div className='flex items-center justify-center'>
+                                                    <div className='w-[50%]'>
+                                                        <InputForms
+                                                            label={'Subject'}
+                                                            valueMissingMessage={'Subject is missing'}
+                                                            typeMismatchMessage={undefined}
+                                                            buttonText={'Submit'}
+                                                            buttonDisplay={''}
+                                                            userInput={undefined}
+                                                            // onUserInput={''}
+                                                            extraInput={(<TextArea />)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
                                     default:
                                         return '';
                                 }

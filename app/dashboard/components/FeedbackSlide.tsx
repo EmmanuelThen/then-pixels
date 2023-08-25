@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FeedbackAnswers from './FeedbackAnswers';
+import TextArea from '@/components/ui/TextArea/TextArea';
 
 type Props = {};
 
@@ -62,8 +63,7 @@ const FeedbackSlide = (props: Props) => {
                             </p>
                         </div>
 
-                        <textarea className='shadow-blackA9 shadow-[0_4px_7px] border border-blue9 border-1 w-full rounded-md bg-slate4' name="" id="" cols={30} rows={5}>
-                        </textarea>
+                        <TextArea />
                     </div>
                     :
                     <div className='flex flex-col'>

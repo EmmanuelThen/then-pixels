@@ -31,12 +31,12 @@ const Hero = (props: Props) => {
                             Contact
                         </button>*/}
                         <button className='shadow-lg rounded-lg bg-blue9 py-3 w-[153px] lg:w-[230px] px-8 hover:bg-[#3fcf8e]'>
-                            <Link className='font-semibold inline-flex items-center animate-backgroundShine bg-[linear-gradient(110deg,#939393,45%,#1e293b,55%,#939393)] bg-[length:250%_100%] bg-clip-text text-md lg:text-3xl text-transparent' href='signin'>
+                            <Link className=' inline-flex items-center  text-md lg:text-3xl text-white' href='signin'>
                                 Get started
                             </Link>
                         </button>
                         <button className='shadow-lg rounded-lg bg-red9 py-3 w-[153px] lg:w-[230px] px-8 hover:bg-[#3fcf8e]'>
-                            <Link className='font-semibold inline-flex items-center animate-backgroundShine bg-[linear-gradient(110deg,#939393,45%,#1e293b,55%,#939393)] bg-[length:250%_100%] bg-clip-text text-md lg:text-3xl text-transparent' href='signin'>
+                            <Link className=' inline-flex items-center  text-md lg:text-3xl text-white' href='signin'>
                                 Pricing
                             </Link>
                         </button>

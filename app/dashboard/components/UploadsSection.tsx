@@ -79,6 +79,8 @@ const UploadsSection = (props: Props) => {
                                         src={previewUrl}
                                         alt="Uploaded Preview"
                                         className="w-16 h-16 object-contain mr-4"
+                                        width={64}
+                                        height={64}
                                     />
                                 )}
                                 <div>
