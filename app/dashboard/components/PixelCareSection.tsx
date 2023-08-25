@@ -123,7 +123,7 @@ const PixelCareSection = (props: Props) => {
                                 >
                                     <h1 className='font-semibold'>Contact account manager</h1>
                                 </button>
-                                
+
                             </article>
                         </div>
 
@@ -236,12 +236,16 @@ const PixelCareSection = (props: Props) => {
                             <div className='flex justify-center'>
                                 <button type='button'>
                                     <DialogButton
-                                        buttonText={<p className='bg-blue9 hover:bg-[#3fcf8e] text-white  py-1 px-3 lg:px-8 lg:py-2 rounded '>
-                                            Purchase
-                                        </p>}
-                                        dialogTitle={<>
-                                            <div id='text_gradient'>PixelCare</div>
-                                        </>}
+                                        buttonText={
+                                            <p className='bg-blue9 hover:bg-[#3fcf8e] text-white  py-1 px-3 lg:px-8 lg:py-2 rounded '>
+                                                Purchase
+                                            </p>
+                                        }
+                                        dialogTitle={
+                                            <>
+                                                <div id='text_gradient'>PixelCare</div>
+                                            </>
+                                        }
                                         dialogDesc='Choose your tier'
                                         content={<SubTiers />}
                                         saveButton='Purchase'

@@ -5,7 +5,7 @@ import * as HoverCard from '@radix-ui/react-hover-card';
 
 const HoverCards = ({ cover, content }: any) => {
     return (
-        <HoverCard.Root>
+        <HoverCard.Root openDelay={100} closeDelay={100}>
             <HoverCard.Trigger asChild>
                 <a
                     className="flex items-center justify-center cursor-pointer rounded-full shadow-lg hover:bg-slate2 h-10 w-[80px] outline-none border border-1"

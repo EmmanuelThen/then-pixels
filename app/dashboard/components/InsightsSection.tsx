@@ -193,13 +193,17 @@ const InsightsSection = (props: Props) => {
                             </div>
 
                             <div className='flex justify-center  lg:items-center'>
-                                <button type='submit' onClick={getPageSpeedData} className='bg-blue9 text-white flex justify-center items-center font-semibold h-[35px] w-[300px]  mt-5  p-2 rounded shadow-md'>
+                                <button
+                                    type='submit'
+                                    onClick={getPageSpeedData}
+                                    className='bg-blue9 text-white flex justify-center items-center font-semibold h-[35px] w-full  mt-5  p-2 rounded shadow-md'
+                                >
                                     Get scores
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div className='flex justify-center w-[340px]'>
+                    <div className='flex '>
                         <div className='flex justify-center  mt-5 gap-5 w-full'>
                             <div className='flex items-center'>
                                 <div className='rounded-full h-3 w-[12px] bg-red-500 mr-2'></div>
@@ -259,8 +263,8 @@ const InsightsSection = (props: Props) => {
                                 </div>
                                 <div className='flex flex-col items-center gap-5 mt-5 text-center lg:flex-row justify-between w-full'>
                                     <h1 className='font-bold lg:font-semibold text-blue9 text-xl lg:text-4xl'>Scores:</h1>
-                                    <div className='flex flex-col items-center hover:bg-slate2 hover:rounded-lg p-5'>
-                                        <h1 className='text-sm lg:text-base font-semibold mb-5'>Performance</h1>
+                                    <div className='flex flex-col items-center hover:rounded-lg p-5'>
+                                        <h1 id='custom-text' className='text-sm lg:text-base font-semibold mb-5'>Performance</h1>
                                         <HoverCards
                                             cover={
                                                 <p className={`font-semibold text-lg lg:text-xl ${getScoreColor(data.lighthouseResult.categories.performance.score)}`}>
@@ -270,8 +274,8 @@ const InsightsSection = (props: Props) => {
                                             content='hi'
                                         />
                                     </div>
-                                    <div className='flex flex-col items-center hover:bg-slate2 hover:rounded-lg p-5'>
-                                        <h1 className='text-sm lg:text-base font-semibold mb-5'>SEO</h1>
+                                    <div className='flex flex-col items-center hover:rounded-lg p-5'>
+                                        <h1 id='custom-text' className='text-sm lg:text-base font-semibold mb-5'>SEO</h1>
                                         <HoverCards
                                             cover={
                                                 <p className={`font-semibold text-lg lg:text-xl ${getScoreColor(data.lighthouseResult.categories.seo.score)}`}>
@@ -281,8 +285,8 @@ const InsightsSection = (props: Props) => {
                                             content='hi'
                                         />
                                     </div>
-                                    <div className='flex flex-col items-center hover:bg-slate2 hover:rounded-lg p-5'>
-                                        <h1 className='text-sm lg:text-base font-semibold mb-5'>Best practices</h1>
+                                    <div className='flex flex-col items-center hover:rounded-lg p-5'>
+                                        <h1 id='custom-text' className='text-sm lg:text-base font-semibold mb-5'>Best practices</h1>
                                         <HoverCards
                                             cover={
                                                 <p className={`font-semibold text-lg lg:text-xl ${getScoreColor(data.lighthouseResult.categories['best-practices'].score)}`}>
@@ -291,8 +295,8 @@ const InsightsSection = (props: Props) => {
                                             }
                                         />
                                     </div>
-                                    <div className='flex flex-col items-center hover:bg-slate2 hover:rounded-lg p-5'>
-                                        <h1 className='text-sm lg:text-base font-semibold mb-5'>Accessibility</h1>
+                                    <div className='flex flex-col items-center hover:rounded-lg p-5'>
+                                        <h1 id='custom-text' className='text-sm lg:text-base font-semibold mb-5'>Accessibility</h1>
                                         <HoverCards
                                             cover={
                                                 <p className={`font-semibold text-lg lg:text-xl ${getScoreColor(data.lighthouseResult.categories.accessibility.score)}`}>
@@ -303,9 +307,8 @@ const InsightsSection = (props: Props) => {
                                     </div>
                                 </div>
                                 <div className='flex justify-end items-center gap-2 w-full'>
-                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                    <svg id='stroke-color' xmlns="http://www.w3.org/2000/svg"
                                         fill="none" viewBox="0 0 24 24" strokeWidth="1.2" stroke="currentColor" className="w-4 h-4">
-
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
                                     </svg>
                                     <p className='text-[10px] font-medium '>Captured at {timeAndDateFormatter(data.analysisUTCTimestamp)} EST</p>
@@ -317,7 +320,7 @@ const InsightsSection = (props: Props) => {
                                         <h1 className='flex justify-center font-bold lg:font-semibold text-blue9 text-xl lg:text-4xl py-10'>Core Web Vitals Assessment:</h1>
                                         <div className='flex flex-col items-center justify-between w-full mt-10'>
                                             <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full'>
-                                                <h1 className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
+                                                <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
                                                     Largest Contentful Paint (LCP)
                                                 </h1>
                                                 <div className='lg:w-[60%] flex flex-col items-center justify-center'>
@@ -337,7 +340,7 @@ const InsightsSection = (props: Props) => {
                                                     </div>
                                                 </div>
                                                 <div className='lg:w-[20%]'>
-                                                    <h1 className='font-bold lg:font-semibold text-slate9 text-sm lg:text-base'>Page load percentiles</h1>
+                                                    <h1 id='custom-text' className='font-bold lg:font-semibold text-slate9 text-sm lg:text-base'>Page load percentiles</h1>
                                                     <div className='flex flex-col'>
                                                         <div className='flex gap-4 '>
                                                             <div className='flex items-center gap-1'>
@@ -365,7 +368,7 @@ const InsightsSection = (props: Props) => {
                                             </div>
                                         </div>
                                         <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full mt-20'>
-                                            <h1 className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
+                                            <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
                                                 Cumulative Layout Shift Score (CLS)
                                             </h1>
                                             <div className='w-[60%] flex flex-col items-center justify-center'>
@@ -385,7 +388,7 @@ const InsightsSection = (props: Props) => {
                                                 </div>
                                             </div>
                                             <div className='lg:w-[20%]'>
-                                                <h1 className='font-bold lg:font-semibold text-slate9 text-sm lg:text-base'>Page load percentiles</h1>
+                                                <h1 id='custom-text' className='font-bold lg:font-semibold text-slate9 text-sm lg:text-base'>Page load percentiles</h1>
                                                 <div className='flex flex-col'>
                                                     <div className='flex gap-4 '>
                                                         <div className='flex items-center gap-1'>
@@ -412,7 +415,7 @@ const InsightsSection = (props: Props) => {
                                             </div>
                                         </div>
                                         <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full mt-20'>
-                                            <h1 className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
+                                            <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
                                                 First Input Delay (FID)
                                             </h1>
                                             <div className='w-[60%] flex flex-col items-center justify-center'>
@@ -432,7 +435,7 @@ const InsightsSection = (props: Props) => {
                                                 </div>
                                             </div>
                                             <div className='lg:w-[20%]'>
-                                                <h1 className='font-bold lg:font-semibold text-slate9 text-sm lg:text-base'>Page load percentiles</h1>
+                                                <h1 id='custom-text' className='font-bold lg:font-semibold text-slate9 text-sm lg:text-base'>Page load percentiles</h1>
                                                 <div className='flex flex-col'>
                                                     <div className='flex gap-4 '>
                                                         <div className='flex items-center gap-1'>
