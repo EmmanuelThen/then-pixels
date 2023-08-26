@@ -66,7 +66,7 @@ const AccountSection = (props: Props) => {
                 <Tabs.Content value="tab1">
                     <div className='flex flex-col gap-5 p-5 lg:p-10 {overflow-y-scroll}'>
                         {/** First Card */}
-                        <div id='back-ground' className='flex justify-between items-center rounded-lg shadow-blackA9 shadow-[0_4px_7px]'>
+                        <div id='back-ground' className='flex justify-between items-center rounded-md border-b-[0.8px] border-slate4'>
                             <div className='flex'>
                                 <div className=' p-5'>
                                     avatar
@@ -98,7 +98,7 @@ const AccountSection = (props: Props) => {
                             </div>
                         </div>
                         {/** Second Card */}
-                        <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5'>
+                        <div className='rounded-md border-b-[0.8px] border-slate4 text-xs lg:text-base p-5'>
                             <div className='flex justify-between mb-10'>
                                 <h1 className='text-blue9 font-semibold'>Personal Information</h1>
                                 <div className=''>
@@ -144,7 +144,7 @@ const AccountSection = (props: Props) => {
                             </div>
                         </div>
                         {/** Third Card */}
-                        <div id='back-ground' className='rounded-lg  shadow-blackA9 shadow-[0_4px_7px] p-5'>
+                        <div id='back-ground' className='rounded-md border-b-[0.8px] border-slate4 p-5'>
                             <div className='flex justify-between mb-10'>
                                 <h1 className='text-blue9 font-semibold text-xs lg:text-base'>Email Notifications</h1>
                                 {/** Toggle all button */}
@@ -214,7 +214,7 @@ const AccountSection = (props: Props) => {
                 <Tabs.Content value="tab2">
                     <div className='flex flex-col gap-5 p-5 lg:p-10'>
                         {/** Card One Billing */}
-                        <div id='back-ground' className='flex justify-between items-center rounded-lg shadow-blackA9 shadow-[0_4px_7px]'>
+                        <div id='back-ground' className='flex justify-between items-center rounded-md border-b-[0.8px] border-slate4'>
                             <div className='flex'>
                                 <div className='p-5'>
                                     <div>
@@ -269,7 +269,7 @@ const AccountSection = (props: Props) => {
                             </div>
                         </div>
                         {/** Card Two Billing*/}
-                        <div id='back-ground' className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] p-5'>
+                        <div id='back-ground' className='rounded-md border-b-[0.8px] border-slate4 p-5'>
                             <div className='flex justify-between mb-10'>
                                 <h1 className='text-blue9 font-semibold text-xs lg:text-base'>Membership Information</h1>
                                 <div className=''>
@@ -356,7 +356,7 @@ const AccountSection = (props: Props) => {
                             </div>
                         </div>
                         {/** Card Three Billing */}
-                        <div id='back-ground' className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base lg:p-5'>
+                        <div id='back-ground' className='rounded-md border-b-[0.8px] border-slate4 text-xs lg:text-base lg:p-5'>
                             <div className='flex justify-between p-5 bg-slate5 lg:bg-transparent lg:p-0 lg:mb-10'>
                                 <h1 className='text-blue9 font-semibold'>Billing History</h1>
                                 <DialogButton

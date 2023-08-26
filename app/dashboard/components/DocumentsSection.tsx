@@ -25,7 +25,7 @@ const DocumentsSection = (props: Props) => {
             </div>
             <div className='flex flex-col gap-5'>
                 {/** First Card */}
-                <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5'>
+                <div className='rounded-md border-b-[0.8px] border-slate4 text-xs lg:text-base p-5'>
                     <div className='flex justify-between mb-10'>
                         <h1 className='text-blue9 font-semibold'>Terms & Conditions</h1>
                         <div className=''>
@@ -73,7 +73,7 @@ const DocumentsSection = (props: Props) => {
                     </div>
                 </div>
                 {/** Second Card */}
-                <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5'>
+                <div className='rounded-md border-b-[0.8px] border-slate4 text-xs lg:text-base p-5'>
                     <div className='flex justify-between mb-10'>
                         <h1 className='text-blue9 font-semibold'>Development Contracts</h1>
                         <div className=''>
@@ -121,7 +121,7 @@ const DocumentsSection = (props: Props) => {
                     </div>
                 </div>
                 {/* Third Card */}
-                <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5'>
+                <div className='text-xs lg:text-base p-5'>
                     <h1 className='text-blue9 font-semibold'>Invoices</h1>
                     <BillingHistoryTable />
                 </div>

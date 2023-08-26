@@ -5,6 +5,7 @@ import DialogButton from '@/components/DialogButton'
 import InputForms from '@/components/InputForms'
 import Image from 'next/image'
 
+
 type Props = {}
 
 const UploadsSection = (props: Props) => {
@@ -41,7 +42,7 @@ const UploadsSection = (props: Props) => {
             </div>
             {/** First Card */}
             <form action=''>
-                <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5'>
+                <div className='rounded-md border-b-[0.8px] border-slate4 text-xs lg:text-base p-5'>
                     <div className='flex justify-between mb-10'>
                         <h1 className='text-blue9 font-semibold'>Upload Files</h1>
                     </div>
@@ -58,7 +59,7 @@ const UploadsSection = (props: Props) => {
                                         className="hidden"
                                         onChange={handleFileChange}
                                     />
-                                    <label htmlFor="fileUpload" className="shadow-blackA9 shadow-[0_4px_7px] px-4 py-2 bg-blue9 hover:opacity-80 text-white rounded cursor-pointer">
+                                    <label htmlFor="fileUpload" className="px-4 py-2 bg-blue9 hover:opacity-80 text-white rounded cursor-pointer">
                                         Choose File
                                     </label>
                                     <p className="mt-2 text-gray-600 text-sm">
@@ -97,7 +98,7 @@ const UploadsSection = (props: Props) => {
                             </div>
                         </div>
                     )}
-                    <button disabled={uploadedFile ? false : true} className='mt-10 shadow-blackA9 shadow-[0_4px_7px] px-[200px] py-2 bg-blue9 hover:opacity-80 text-white rounded cursor-pointer'>
+                    <button disabled={uploadedFile ? false : true} className='mt-10 px-[200px] py-2 bg-blue9 hover:opacity-80 text-white rounded cursor-pointer'>
                         Upload
                     </button>
                 </div>

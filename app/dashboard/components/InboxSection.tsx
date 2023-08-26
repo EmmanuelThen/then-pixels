@@ -152,8 +152,8 @@ const InboxSection = () => {
             <div>
                 <Tabs.Root defaultValue="tab1" orientation="vertical">
                     <div className="">
-                        <div className=" lg:ml-1 rounded-lg shadow-blackA9 shadow-[0_8px_15px] {lg:w-[1275px] 2xl:w-[1685px]} {4xl:w-[2209px]}">
-                            <Tabs.List className="shrink-0 flex border-b border-mauve6 w-full rounded-lg hover:cursor-pointer bg-white" aria-label="Manage your account">
+                        <div className="lg:ml-1 border border-slate4  rounded-lg">
+                            <Tabs.List className="shrink-0 flex border-b border-slate4 w-full rounded-lg hover:cursor-pointer bg-white" aria-label="">
                                 <Tabs.Trigger
                                     id='back-ground'
                                     className="uppercase tracking-[5px] w-[50%]  px-5 h-[45px] flex-1 flex items-center justify-center text-xs lg:text-[15px] leading-none text-gray-500 select-none first:rounded-tl-md last:rounded-tr-md hover:text-blue9 data-[state=active]:text-blue9 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative  outline-none hover:cursor-pointer"
@@ -171,7 +171,7 @@ const InboxSection = () => {
                             </Tabs.List>
                             {/** Inbox section */}
                             <Tabs.Content value="tab1">
-                                <div id='back-ground' className="lg:flex w-full h-screen lg:p-2 lg:w-full lg:h-[75vh] shadow-blackA9 shadow-[0_8px_15px]" >
+                                <div id='back-ground' className="rounded-lg lg:flex w-full h-screen lg:p-2 lg:w-full lg:h-[75vh] " >
                                     <div className="lg:w-[35%] w-full overflow-y-scroll">
                                         {inboxMessage.length > 0 ? (
                                             inboxMessage.map((message: any, i: any) => (
@@ -193,7 +193,7 @@ const InboxSection = () => {
                                                             <p className="truncate text-xs lg:text-sm ml-2">{message.message}</p>
                                                         </div>
                                                     </div>
-                                                    <div onClick={() => handleTrashCanClick(i)} className='rounded-full hover:bg-slate4 p-1 hover:cursor-pointer'>
+                                                    <div onClick={() => handleTrashCanClick(i)} className='transform transition-transform hover:scale-125 p-1 hover:cursor-pointer'>
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.2" stroke="hsl(358 75% 59%)" className="w-4 h-4">
                                                             <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
                                                         </svg>
@@ -215,13 +215,13 @@ const InboxSection = () => {
                                             <div className='hidden lg:flex'>
                                                 {inboxMessage.length > 0 ?
                                                     <div className='flex gap-2'>
-                                                        <div id='back-ground' onClick={handleLeftArrowClick} className='shadow-blackA9 shadow-[0_4px_7px] rounded-[4px] bg-slate2 hover:bg-slate4 hover:cursor-pointer'>
-                                                            <svg id='custom-text' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="w-6 h-6">
+                                                        <div id='back-ground' onClick={handleLeftArrowClick} className=' hover:cursor-pointer'>
+                                                            <svg id='custom-text' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="transform transition-transform hover:scale-125 w-6 h-6">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                                                             </svg>
                                                         </div>
-                                                        <div id='back-ground' onClick={handleRightArrowClick} className='shadow-blackA9 shadow-[0_4px_7px] rounded-[4px] bg-slate2 hover:bg-slate4 hover:cursor-pointer'>
-                                                            <svg id='custom-text' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="w-6 h-6">
+                                                        <div id='back-ground' onClick={handleRightArrowClick} className=' hover:cursor-pointer'>
+                                                            <svg id='custom-text' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" className="transform transition-transform hover:scale-125 w-6 h-6">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                                                             </svg>
                                                         </div>
@@ -236,7 +236,7 @@ const InboxSection = () => {
                                                     <button onClick={handleDeleteNotificationButtonClick}
                                                         disabled={isNotificationButtonDisabled}
                                                         type='button'
-                                                        className='shadow-blackA9 shadow-[0_4px_7px] bg-slate8 hover:bg-slate8/80 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'
+                                                        className=' bg-slate8 hover:bg-slate8/80 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'
                                                     >
                                                         Notifications
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="hsl(206 100% 50.0%)" className="w-4 lg:w-5 h-4 lg:h-5">
@@ -254,7 +254,7 @@ const InboxSection = () => {
                                                     saveButtonColor='bg-red9'
                                                     buttonText={<>
                                                         {inboxMessage.length > 0 ? //Button will only show when there is a message in the trash inbox
-                                                            <div className='shadow-blackA9 shadow-[0_4px_7px] hover:cursor-pointer bg-red9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'>
+                                                            <div className=' hover:cursor-pointer bg-red9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'>
                                                                 Delete
                                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 lg:w-5 h-4 lg:h-5">
                                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
@@ -302,7 +302,7 @@ const InboxSection = () => {
                             </Tabs.Content>
                             {/** Trash section */}
                             <Tabs.Content value="tab2" className="w-full">
-                                <div id='back-ground' className="lg:flex lg:p-2 w-full h-screen lg:h-[75vh]">
+                                <div id='back-ground' className="lg:flex lg:p-2 w-full h-screen lg:h-[75vh] rounded-lg">
                                     <div className="lg:w-[35%] w-full overflow-y-scroll">
                                         {inboxTrash.length > 0 ? (
                                             inboxTrash.map((message: any, i: any) => (
@@ -345,7 +345,7 @@ const InboxSection = () => {
                                                 saveButtonColor='bg-red9'
                                                 buttonText={<>
                                                     {inboxTrash.length > 0 ? //Button will only show when there is a message in the trash inbox
-                                                        <div className='shadow-blackA9 shadow-[0_4px_7px] bg-red9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'>
+                                                        <div className=' bg-red9 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'>
                                                             Empty trash
                                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 lg:w-5 lg:h-5">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

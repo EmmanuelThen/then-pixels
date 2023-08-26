@@ -9,6 +9,8 @@ import * as HoverCard from '@radix-ui/react-hover-card';
 import HoverCards from '@/components/HoverCards'
 import Link from 'next/link'
 import InsightsSVG from './InsightsSVG'
+import loader from '@/public/loader.svg'
+import LoaderRing from '@/components/LoaderRing'
 
 
 
@@ -140,7 +142,7 @@ const InsightsSection = (props: Props) => {
     //console.log(fidPercentileWidth);
 
     return (
-        <div className='overflow-x-hidden p-5'>
+        <div className='overflow-x-hidden'>
             <div className="p-5 lg:p-0 lg:flex lg:items-center lg:justify-between lg:ml-2 ">
                 <div className='text-center lg:text-left'>
                     <ShinyText text='Insights' />
@@ -155,8 +157,8 @@ const InsightsSection = (props: Props) => {
                     />
                 </div>
             </div>
-            {/** Big Card */}
-            <div className='flex justify-between shadow-blackA9 shadow-[0_8px_15px] p-5 rounded-lg '>
+            {/** Big Card */} 
+            <div className='flex justify-between rounded-md border-b-[0.8px] border-slate4 p-5'>
                 <div className='flex flex-col'>
                     <h1 className='text-blue9 font-semibold mb-5 lg:mb-10 text-sm lg:text-base'>Pagespeed Insights</h1>
                     <div className='flex flex-col lg:flex-row w-full'>
@@ -164,7 +166,7 @@ const InsightsSection = (props: Props) => {
                             <div className='flex justify-center mt-5 lg:mt-0'>
                                 <LabelDemo
                                     label='Enter URL'
-                                    defaultValue='https://www.url.com'
+                                    defaultValue='https://www.your-url.com'
                                     buttonDisplay='hidden'
                                     onChange={(e: any) => setPageUrl(e.target.value)}
                                 />
@@ -196,9 +198,9 @@ const InsightsSection = (props: Props) => {
                                 <button
                                     type='submit'
                                     onClick={getPageSpeedData}
-                                    className='bg-blue9 text-white flex justify-center items-center font-semibold h-[35px] w-full  mt-5  p-2 rounded shadow-md'
+                                    className='bg-blue9 text-white flex justify-center items-center font-semibold h-[35px] w-full mt-5 p-2 rounded'
                                 >
-                                    Get scores
+                                    {isLoading ? (<LoaderRing />): 'Get Scores'}
                                 </button>
                             </div>
                         </div>
@@ -228,7 +230,7 @@ const InsightsSection = (props: Props) => {
 
                 </div>
                 <div className='svg-container hidden md:block' id='svgIllustration'>
-                    <InsightsSVG />
+                    {/* <InsightsSVG /> */}
                 </div>
             </div>
             <div>

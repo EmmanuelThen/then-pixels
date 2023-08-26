@@ -12,6 +12,7 @@ import ConfirmationButton from '@/components/ConfirmationButton'
 import DialogButton from '@/components/DialogButton'
 import ShinyText from '@/components/ShinyText'
 import LoadingState from '@/components/LoadingState'
+import LoaderRing from '@/components/LoaderRing'
 
 
 export default function Login() {
@@ -236,7 +237,7 @@ export default function Login() {
                       "bg-blue9 hover:opacity-80 rounded px-4 py-2 text-white hover:cursor-pointer"}
                     disabled={!email || !password}
                   >
-                    {loading ? 'Sign In' : <p>Loading...</p>}
+                    {loading ? 'Sign In' : <LoaderRing />}
                   </button>
                   <div id='signup-terms' className=' flex justify-center mb-6'>
                     <div className='text-[10px] text-center '>
@@ -300,7 +301,7 @@ export default function Login() {
                     }
                     disabled={!email || !password || !reEnterPassword || (password !== reEnterPassword)}
                   >
-                    Sign Up
+                    {loading ? 'Sign Up' : <LoaderRing />}
                   </button>
                   <div>
                     {password === reEnterPassword ? (

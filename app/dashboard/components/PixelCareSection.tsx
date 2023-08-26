@@ -73,9 +73,7 @@ const PixelCareSection = (props: Props) => {
                     />
                 </div>
             </div>
-            <h1 className='text-slate10 p-3'>
-                Select a perk below to begin
-            </h1>
+
 
 
             {loading ?
@@ -88,8 +86,11 @@ const PixelCareSection = (props: Props) => {
                 customer ? (
                     <>
 
-                        <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10'>
-                            <h1 id='text_gradient' className='font-semibold mb-5'>{'Pixelcare {tier}'}</h1>
+                        <div className='rounded-md border-b-[0.8px] border-slate4 text-xs lg:text-base p-5 mb-10'>
+                            <h1 id='text_gradient' className='font-semibold'>{'Pixelcare {tier}'}</h1>
+                            <h1 className='text-slate10 mb-5'>
+                                Select a perk below to begin
+                            </h1>
                             <article className='grid grid-cols-4 gap-5'>
                                 {/*  Card 1 */}
                                 <button

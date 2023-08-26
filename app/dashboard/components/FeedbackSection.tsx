@@ -27,17 +27,15 @@ const FeedbackSection = (props: Props) => {
                     />
                 </div>
             </div>
-
-            <h1 className='text-slate10 p-3'>
-                We're thrilled to have you here! Please answer the following questions below, your feedback is greatly appreciated!
-            </h1>
-
             {/* First card */}
-            <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5 mb-10'>
+            <div className='rounded-md border-b-[0.8px] border-slate4 text-xs lg:text-base p-5 mb-10'>
                 <h1 className='text-blue9 font-semibold'>Overall Experience</h1>
+                <h1 className='text-slate10 mb-10'>
+                    We're thrilled to have you here! Please answer the following questions below, your feedback is greatly appreciated!
+                </h1>
                 <form action="" className='flex justify-between mt-5'>
                     <div>
-                        <h1 className='text-slate10'>
+                        <h1 id='custom-text' className='text-slate10'>
                             How was your overall experience?
                         </h1>
                         <div className='mt-5'>
@@ -45,7 +43,7 @@ const FeedbackSection = (props: Props) => {
                         </div>
                     </div>
                     <div>
-                        <h1 className='text-slate10'>
+                        <h1 id='custom-text' className='text-slate10'>
                             How likely are you to recommend ThenPixels?
                         </h1>
                         <div className='mt-5'>
@@ -53,7 +51,7 @@ const FeedbackSection = (props: Props) => {
                         </div>
                     </div>
                     <div>
-                        <h1 className='text-slate10'>
+                        <h1 id='custom-text' className='text-slate10'>
                             Would you consider us again for future projects?
                         </h1>
                         <div className='mt-5'>
@@ -61,7 +59,7 @@ const FeedbackSection = (props: Props) => {
                         </div>
                     </div>
                     <div>
-                        <h1 className='text-slate10'>
+                        <h1 id='custom-text' className='text-slate10'>
                             How was your overall experience?
                         </h1>
                         <div className='mt-5'>
@@ -73,9 +71,9 @@ const FeedbackSection = (props: Props) => {
             </div>
 
             {/* Second card */}
-            <div className='rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base p-5'>
+            <div className='rounded-md border-b-[0.8px] border-slate4 text-xs lg:text-base p-5'>
                 <h1 className='text-blue9 font-semibold'>Development Experience</h1>
-                <div  className='flex justify-between mt-5'>
+                <div className='flex justify-between mt-5'>
                     <FeedbackSlide />
                 </div>
             </div>
