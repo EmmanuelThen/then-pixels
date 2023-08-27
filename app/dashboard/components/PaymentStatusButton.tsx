@@ -9,7 +9,7 @@ const PaymentStatusButton = ({ paymentStatus }: PaymentStatusButtonProps) => {
     //To fix issue when 'paid' or 'pending buttons are clicked, the pay now button goes away due to me setting the state of the display css property
     if (paymentStatus === 'failed') {
         return (
-            < DialogButton
+            <DialogButton
                 onClickfunction=''
                 disabled=''
                 content=''
@@ -17,11 +17,16 @@ const PaymentStatusButton = ({ paymentStatus }: PaymentStatusButtonProps) => {
                 saveButtonColor='bg-blue9'
                 buttonText={<>
                     <button className='hover:cursor-pointer hover:bg-blue9/80 rounded-[4px] bg-blue9 text-white inline-flex items-center justify-center py-1 px-1 text-xs lg:text-base lg:px-3 font-light leading-none focus:outline-none'>
-                        <p className='text-[10px]'>Pay now</p>
+                        <p className='text-[10px] text-white'>Pay now</p>
                     </button>
                 </>}
                 dialogTitle='Edit Profile'
-                dialogDesc={`Edit your profile below.`} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined}            />
+                dialogDesc={`Edit your profile below.`}
+                buttonDisplay={''}
+                myOwnButtonDisplay={''}
+                myOwnButton={undefined}
+                saveButtonType={undefined}
+            />
         )
     }
     return null;

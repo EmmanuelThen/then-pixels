@@ -8,18 +8,71 @@ const InboxSection = () => {
     const [selectedMessageIndex, setSelectedMessageIndex] = useState<any>(-1);
     const [messageFullDisplay, setMessageFullDisplay] = useState<any>('No message selected');
     const [inboxMessage, setInboxMessage] = useState<any>([
-        { message: 'Your order has been successflyy received. we will get back to you within 2-4 business days. thank you!' },
-        { message: 'Inquiry regarding your recent request, please open it within 24 hrs tofdfdfdfdfdfdfdfdffdffdfdfdfdf' },
-        { message: 'Congratulations! You are know a PixelCare Elite member, youre loaded with benefitsfdfdfdfdfdfdfdf' },
-        { message: 'Welcome to ThenPixels! we are honored to have you, we look forward to a long future with us!' },
-        { message: 'Hello your site is now up and running and will need to be deployed to have further instructions on how to look' },
-        { message: 'Change your payment info because i wnant you to change it ypu need to change it right now please tank you very much' },
-        { message: 'This is random text that i am writing i order to test the messaging feture of my app called thenpixels thank you for cooperating' },
-        { message: 'Try clearing your browser cache and then attempt to use the trash can functionality againTry clearing your browser cache and then attempt to use the trash can functionality again' },
-        { message: 'If the issue persists, reach out to the customer support team of the application or platform you are using. They should be able to provide further assistance and troubleshoot the problem more specifically.' },
-        { message: 'Refresh the page or restart the application: Sometimes, the issue can be temporary, and a simple refresh or restart can resolve it.csdhsdgsjhdhjsgdjsh' },
-        { message: 'I apologize for the inconvenience. To troubleshoot the issue with the trash can functionality, here are a few steps you can take:sasaasas' },
-        { message: 'Remember to provide specific details about the issue you are facing when contacting customer support. This will help them understand the problem better and provide a quicker resolution.' },
+        {
+            message: `Welcome to ThenPixels! We're thrilled to have you join the ThenPixels family.`,
+            fullDisplayMessage: (
+                <div className='h-screen scale-in-center flex flex-col gap-2'>
+                    <h1 id='custom-text' className='text-center text-3xl font-bold '>
+                        Welcome To ThenPixels!
+                    </h1>
+                    <section className='border-b-[0.8px] border-slate4 rounded-md'>
+                        <p className='text-slate10 mb-5 text-center'>
+                            We're thrilled to have you join the ThenPixels family! 🚀 As you step into the world of limitless digital possibilities with us,
+                            we want to extend a warm welcome and guide you through the exciting journey of crafting your dream website. <br />
+                            {/* At ThenPixels, we're passionate about turning your vision into a stunning reality.
+                            Your ideas and aspirations drive us, and we're committed to building websites that uniquely reflect your brand and purpose. */}
+                        </p>
+                        <h1 id='custom-text' className='border-b-[0.8px] border-slate4 rounded-md text-center text-xl font-semibold mb-5'>
+                            Here's how we'll collaborate to create a website that stands out:
+                        </h1>
+                        <ul id='custom-text' className='flex flex-col gap-2 mb-5'>
+                            <li>
+                                <span className='font-bold text-blue9'>Discovery:</span> We'll start by understanding your business, goals, and design preferences.
+                                Your input is invaluable as we tailor every element to resonate with your target audience.
+                            </li>
+                            <li>
+                                <span className='font-bold text-blue9'>Design & Development:</span> Our team of skilled web developers and designers will work their magic to translate your ideas into an engaging,
+                                user-friendly website. Expect sleek designs, smooth functionality, and responsive layouts.
+                            </li>
+                            <li>
+                                <span className='font-bold text-blue9'>Customization:</span> Your website is an extension of your brand's identity. We'll customize every detail to align with your branding guidelines,
+                                ensuring a cohesive and professional online presence.
+                            </li>
+
+                            <li>
+                                <span className='font-bold text-blue9'>Collaboration:</span> Throughout the process, we'll keep you in the loop, seeking your feedback and insights at every stage.
+                                Your satisfaction is our top priority.
+                            </li>
+
+                            <li>
+                                <span className='font-bold text-blue9'>Launch & Beyond:</span> Once your website is polished to perfection, we'll assist you in launching it to the digital world.
+                                But our partnership doesn't end there – we're here for any updates, enhancements, or maintenance you need down the road.
+                            </li>
+                        </ul>
+                    </section>
+                    <footer className='flex flex-col gap-5'>
+                        <p className='text-slate10'>
+                            We're excited to embark on this creative journey with you. Your success is our motivation,
+                            and we're dedicated to making your online presence shine. <br />
+                            Feel free to reach out if you have any questions, ideas,
+                            or even if you just want to say hello. Let's make your website dreams come true! <br />
+                        </p>
+                        <p>
+                            Best regards, <br />
+                            The ThenPixels Team 🥳
+                        </p>
+                    </footer>
+                </div>
+            )
+        },
+        {
+            message: 'Get to know your personalized dashboard, full of features to make your process a breeze',
+            fullDisplayMessage: <p>yerrrr</p>
+        },
+        {
+            message: 'Your order has been successflyy received. we will get back to you within 2-4 business days. thank you!',
+            fullDisplayMessage: <p>yerrrr</p>
+        },
     ]);
     const [trashMessageFullDisplay, setTrashMessageFullDisplay] = useState('No message selected');
     const [inboxTrash, setInboxTrash] = useState<any>([]);
@@ -27,7 +80,7 @@ const InboxSection = () => {
 
     // To view Inbox message in full display
     const handleMessageClick = (i: any) => {
-        const clickedMessage = inboxMessage[i].message;
+        const clickedMessage = inboxMessage[i].fullDisplayMessage;
         setMessageFullDisplay(clickedMessage);
         //To make red border on messaged currently clicked
         setSelectedMessageIndex(i);
@@ -71,7 +124,7 @@ const InboxSection = () => {
     //When right arrow is clicked to show next message
     const handleRightArrowClick = () => {
         if (selectedMessageIndex < inboxMessage.length - 1) {
-            const nextMessage = inboxMessage[selectedMessageIndex + 1].message;
+            const nextMessage = inboxMessage[selectedMessageIndex + 1].fullDisplayMessage;
             setMessageFullDisplay(nextMessage);
             setSelectedMessageIndex(selectedMessageIndex + 1);
         }
@@ -79,7 +132,7 @@ const InboxSection = () => {
     //When left arrow is clicked to show prev message but can loop around after reaching the last message
     const handleLeftArrowClick = () => {
         const nextIndex = (selectedMessageIndex - 1 + inboxMessage.length) % inboxMessage.length;
-        const nextMessage = inboxMessage[nextIndex].message;
+        const nextMessage = inboxMessage[nextIndex].fullDisplayMessage;
         setMessageFullDisplay(nextMessage);
         setSelectedMessageIndex(nextIndex);
     };
@@ -264,7 +317,7 @@ const InboxSection = () => {
                                                             ''}
                                                     </>}
                                                     dialogTitle='Delete message'
-                                                    dialogDesc={`Are you sure you want to delete this message?`} content={undefined} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined}                                                />
+                                                    dialogDesc={`Are you sure you want to delete this message?`} content={undefined} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined} />
                                                 <DialogButton
                                                     onClickfunction={handleDeleteAllInboxButton}
                                                     disabled=''
@@ -283,16 +336,16 @@ const InboxSection = () => {
                                                             ''}
                                                     </>}
                                                     dialogTitle='Delete message'
-                                                    dialogDesc={<p>Are you sure you want to delete all of your messages?<br></br> This can't be reversed.</p>} content={undefined} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined}                                                />
+                                                    dialogDesc={<p>Are you sure you want to delete all of your messages?<br></br> This can't be reversed.</p>} content={undefined} buttonDisplay={''} myOwnButtonDisplay={''} myOwnButton={undefined} saveButtonType={undefined} />
                                             </div>
                                         </div>
-                                        <div  className="sticky h-full p-2 mt-5 lg:mt-0">
+                                        <div className="sticky h-full mt-5 lg:mt-0 overflow-y-scroll">
                                             <div className={
                                                 messageFullDisplay === 'No message selected' ?
                                                     `font-light flex justify-center items-center text-xs lg:text-base lg:h-[500px] uppercase tracking-[5px] text-slate8` :
                                                     `font-light`
-                                                }
-                                                
+                                            }
+
                                             >
                                                 {messageFullDisplay}
                                             </div>
@@ -360,7 +413,7 @@ const InboxSection = () => {
                                                 buttonDisplay=''
                                                 myOwnButtonDisplay=''
                                                 myOwnButton=''
-                                                disabled='' saveButtonType={undefined}                                            />
+                                                disabled='' saveButtonType={undefined} />
                                         </div>
                                         <div className="sticky h-full p-2 mt-5 lg:mt-0">
                                             <div className={

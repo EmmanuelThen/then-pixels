@@ -198,7 +198,7 @@ const InsightsSection = (props: Props) => {
                                 <button
                                     type='submit'
                                     onClick={getPageSpeedData}
-                                    className='bg-blue9 text-white flex justify-center items-center font-semibold h-[35px] w-full mt-5 p-2 rounded'
+                                    className='bg-blue9 hover:opacity-80 text-white flex justify-center items-center  h-[35px] w-full mt-5 p-2 rounded'
                                 >
                                     {isLoading ? (<LoaderRing />): 'Get Scores'}
                                 </button>
@@ -273,7 +273,11 @@ const InsightsSection = (props: Props) => {
                                                     {((data.lighthouseResult.categories.performance.score) * 100).toFixed(0)}
                                                 </p>
                                             }
-                                            content='hi'
+                                            content={
+                                                <h1>
+                                                    Refers to how quickly a website loads and responds to user interactions.
+                                                </h1>
+                                            }
                                         />
                                     </div>
                                     <div className='flex flex-col items-center hover:rounded-lg p-5'>
@@ -284,7 +288,11 @@ const InsightsSection = (props: Props) => {
                                                     {((data.lighthouseResult.categories.seo.score) * 100).toFixed(0)}
                                                 </p>
                                             }
-                                            content='hi'
+                                            content={
+                                                <h1>
+                                                    SEO involves optimizing your website to rank higher in search engine results pages.
+                                                </h1>
+                                            }
                                         />
                                     </div>
                                     <div className='flex flex-col items-center hover:rounded-lg p-5'>
@@ -295,6 +303,11 @@ const InsightsSection = (props: Props) => {
                                                     {((data.lighthouseResult.categories['best-practices'].score) * 100).toFixed(0)}
                                                 </p>
                                             }
+                                            content={
+                                                <h1>
+                                                    Following best practices ensures that your website is built and maintained using industry-standard techniques for security, maintainability, and performance. 
+                                                </h1>
+                                            }
                                         />
                                     </div>
                                     <div className='flex flex-col items-center hover:rounded-lg p-5'>
@@ -304,6 +317,11 @@ const InsightsSection = (props: Props) => {
                                                 <p className={`font-semibold text-lg lg:text-xl ${getScoreColor(data.lighthouseResult.categories.accessibility.score)}`}>
                                                     {((data.lighthouseResult.categories.accessibility.score) * 100).toFixed(0)}
                                                 </p>
+                                            }
+                                            content={
+                                                <h1>
+                                                    Accessibility focuses on making your website usable by people with disabilities.
+                                                </h1>
                                             }
                                         />
                                     </div>

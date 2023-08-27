@@ -5,7 +5,6 @@ import PaymentStatusButton from './PaymentStatusButton';
 
 const BillingHistoryTable = () => {
     const [paymentButtonDisplay, setPaymentButtonDisplay] = useState('');
-
     const [billingHistory, setBillingHistory] = useState(() => {
         const storedHistory = localStorage.getItem('billingHistory');
         return storedHistory ? JSON.parse(storedHistory) : [];

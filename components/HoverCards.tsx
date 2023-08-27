@@ -7,14 +7,12 @@ const HoverCards = ({ cover, content }: any) => {
     return (
         <HoverCard.Root openDelay={100} closeDelay={100}>
             <HoverCard.Trigger asChild>
-                <a
+                <div
                     className="flex items-center justify-center cursor-pointer rounded-full shadow-lg hover:bg-slate2 h-10 w-[80px] outline-none border border-1"
-                    href="https://twitter.com/radix_ui"
-                    target="_blank"
                     rel="noreferrer noopener"
                 >
                     {cover}
-                </a>
+                </div>
             </HoverCard.Trigger>
             <HoverCard.Portal>
                 <HoverCard.Content

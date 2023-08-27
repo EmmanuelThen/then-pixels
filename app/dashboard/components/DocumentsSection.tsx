@@ -122,7 +122,7 @@ const DocumentsSection = (props: Props) => {
                 </div>
                 {/* Third Card */}
                 <div className='text-xs lg:text-base p-5'>
-                    <h1 className='text-blue9 font-semibold'>Invoices</h1>
+                    <h1 className='text-blue9 font-semibold mb-5'>Invoices</h1>
                     <BillingHistoryTable />
                 </div>
             </div>
