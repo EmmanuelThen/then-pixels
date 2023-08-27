@@ -67,6 +67,10 @@ label {
   color: var(--text-rgb);
 }
 
+li {
+  font-weight: 100;
+}
+
 
 
 

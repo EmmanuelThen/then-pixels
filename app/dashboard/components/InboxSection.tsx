@@ -3,6 +3,7 @@ import * as Tabs from '@radix-ui/react-tabs';
 import ShinyText from '@/components/ShinyText';
 import DialogButton from '@/components/DialogButton';
 import PopoverButton from '@/components/PopoverButton';
+import Link from 'next/link';
 
 const InboxSection = () => {
     const [selectedMessageIndex, setSelectedMessageIndex] = useState<any>(-1);
@@ -11,7 +12,7 @@ const InboxSection = () => {
         {
             message: `Welcome to ThenPixels! We're thrilled to have you join the ThenPixels family.`,
             fullDisplayMessage: (
-                <div className='h-screen scale-in-center flex flex-col gap-2'>
+                <div className=' scale-in-center flex flex-col gap-2'>
                     <h1 id='custom-text' className='text-center text-3xl font-bold '>
                         Welcome To ThenPixels!
                     </h1>
@@ -67,11 +68,67 @@ const InboxSection = () => {
         },
         {
             message: 'Get to know your personalized dashboard, full of features to make your process a breeze',
-            fullDisplayMessage: <p>yerrrr</p>
-        },
-        {
-            message: 'Your order has been successflyy received. we will get back to you within 2-4 business days. thank you!',
-            fullDisplayMessage: <p>yerrrr</p>
+            fullDisplayMessage: (
+                <div className=' scale-in-center flex flex-col gap-2'>
+                    <h1 id='custom-text' className='text-center text-3xl font-bold '>
+                        Get to know your dashboard
+                    </h1>
+                    <section className='border-b-[0.8px] border-slate4 rounded-md'>
+                        <p className='text-slate10 mb-5 text-center'>
+
+                        </p>
+                        <h1 id='custom-text' className='border-b-[0.8px] border-slate4 rounded-md text-center text-xl font-semibold mb-5'>
+                            Here's a quick guide to getting familiar with your dashboard:
+                        </h1>
+                        <ul id='custom-text' className='flex flex-col gap-5 mb-5'>
+                            <li>
+                                <span className='font-bold text-blue9 capitalize'>Dashboard overview:</span> The dashboard is your command center.
+                                From here, you can access all the tools and features you need to track your website progress, check order history,
+                                track analytics, request updates etc. <span className='text-red9'>**</span>
+                            </li>
+                            <li>
+                                <span className='font-bold text-blue9 capitalize'>Documents & invoices:</span> All of your documents/contracts
+                                and invoices all in one place.
+                            </li>
+                            <li>
+                                <span className='font-bold text-blue9 capitalize'>File Sharing:</span> Need to share any files with us?
+                                You can do so in the File Sharing section of your dashboard.
+                            </li>
+
+                            <li>
+                                <span className='font-bold text-blue9 capitalize'>Feedback:</span> Your feedback is optional but it is always appreciated,
+                                feel free to rate us in the Feedback section and let us know how your web development experience was!
+                            </li>
+
+                            <li>
+                                <span id='text_gradient' className='font-bold capitalize'>Insights, pixelCare, & support tickets:</span> Only our PixelCare members
+                                have access to the <strong>Insights</strong>, <strong>PixelCare</strong>, and <strong>Support Tickets</strong> section of the dashboard. Where you can see your websites insights, request content updates,
+                                manage your PixelCare settings, contact your account manager and so much more! <br />
+                                <Link href='/pricing' className='text-blue9 hover-opacity-80 hover:underline'>
+                                    Learn more
+                                </Link>
+                            </li>
+                            <li>
+                                <span className='font-bold text-blue9 capitalize'>Account:</span> Manage everything in your account here
+                                such as notifications, billing details etc.
+                            </li>
+                        </ul>
+                    </section>
+                    <footer className='flex flex-col gap-2'>
+                        <p className='text-slate10'>
+                            We're excited to have you on board at ThenPixels! <br />
+                            Enjoy your dashboard & Happy exploring!
+                        </p>
+                        <p>
+                            Best regards, <br />
+                            The ThenPixels Team 🥳
+                        </p>
+                        <p className='font-[100] text-slate10'>
+                            <span className='text-red9'>**</span> Certain features are available to PixelCare members only.
+                        </p>
+                    </footer>
+                </div>
+            )
         },
     ]);
     const [trashMessageFullDisplay, setTrashMessageFullDisplay] = useState('No message selected');
@@ -93,7 +150,7 @@ const InboxSection = () => {
 
     // To view trash message in full display
     const handleMessagInTrashClick = (i: any) => {
-        const clickedMessageInTrash = inboxTrash[i].message;
+        const clickedMessageInTrash = inboxTrash[i].fullDisplayMessage;
         setTrashMessageFullDisplay(clickedMessageInTrash);
         setSelectedMessageIndex(i);
     }
@@ -116,7 +173,7 @@ const InboxSection = () => {
             setMessageFullDisplay('No message selected');
         } else {
             // Set the Full display message to the message right under the deleted message since it's deleted now.
-            const clickedMessage = inboxMessage[i + 1].message;
+            const clickedMessage = inboxMessage[i + 1].fullDisplayMessage;
             setMessageFullDisplay(clickedMessage);
         }
     };
@@ -164,10 +221,10 @@ const InboxSection = () => {
             setMessageFullDisplay('');
         } else if (currentIndex === updatedInboxMessage.length) {
             setSelectedMessageIndex(0);
-            setMessageFullDisplay(updatedInboxMessage[0].message);
+            setMessageFullDisplay(updatedInboxMessage[0].fullDisplayMessage);
         } else {
             setSelectedMessageIndex(currentIndex);
-            setMessageFullDisplay(updatedInboxMessage[currentIndex].message);
+            setMessageFullDisplay(updatedInboxMessage[currentIndex].fullDisplayMessage);
         }
     };
 
@@ -415,7 +472,7 @@ const InboxSection = () => {
                                                 myOwnButton=''
                                                 disabled='' saveButtonType={undefined} />
                                         </div>
-                                        <div className="sticky h-full p-2 mt-5 lg:mt-0">
+                                        <div className="sticky h-full p-2 mt-5 lg:mt-0 overflow-y-scroll">
                                             <div className={
                                                 trashMessageFullDisplay === 'No message selected' ?
                                                     `font-light flex justify-center items-center text-xs lg:text-base lg:h-[500px] uppercase tracking-[5px] text-slate8` :

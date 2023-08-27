@@ -157,7 +157,7 @@ const InsightsSection = (props: Props) => {
                     />
                 </div>
             </div>
-            {/** Big Card */} 
+            {/** Big Card */}
             <div className='flex justify-between rounded-md border-b-[0.8px] border-slate4 p-5'>
                 <div className='flex flex-col'>
                     <h1 className='text-blue9 font-semibold mb-5 lg:mb-10 text-sm lg:text-base'>Pagespeed Insights</h1>
@@ -200,7 +200,7 @@ const InsightsSection = (props: Props) => {
                                     onClick={getPageSpeedData}
                                     className='bg-blue9 hover:opacity-80 text-white flex justify-center items-center  h-[35px] w-full mt-5 p-2 rounded'
                                 >
-                                    {isLoading ? (<LoaderRing />): 'Get Scores'}
+                                    {isLoading ? (<LoaderRing />) : 'Get Scores'}
                                 </button>
                             </div>
                         </div>
@@ -305,7 +305,7 @@ const InsightsSection = (props: Props) => {
                                             }
                                             content={
                                                 <h1>
-                                                    Following best practices ensures that your website is built and maintained using industry-standard techniques for security, maintainability, and performance. 
+                                                    Following best practices ensures that your website is built and maintained using industry-standard techniques for security, maintainability, and performance.
                                                 </h1>
                                             }
                                         />
@@ -336,9 +336,9 @@ const InsightsSection = (props: Props) => {
                                 {/** Core web vitals assesment section */}
                                 {/** For edge case where if the site doesnt have enough speed data it will still show scores */}
                                 {(isApiSuccess && isEnoughDataOnSite && lcpPercentileWidth.length === 3) ? (
-                                    <div className='w-full'>
+                                    <div className='w-full p-5'>
                                         <h1 className='flex justify-center font-bold lg:font-semibold text-blue9 text-xl lg:text-4xl py-10'>Core Web Vitals Assessment:</h1>
-                                        <div className='flex flex-col items-center justify-between w-full mt-10'>
+                                        <div className='flex flex-col items-center justify-between w-full mt-10 shadow-blackA9 shadow-[0_4px_7px] rounded-md p-5'>
                                             <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full'>
                                                 <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
                                                     Largest Contentful Paint (LCP)
@@ -367,27 +367,27 @@ const InsightsSection = (props: Props) => {
                                                                 <p className='text-green-500 text-sm'>Good</p>
                                                                 <p className='text-slate8 text-xs'>-less than 2.5s</p>
                                                             </div>
-                                                            {Math.round(data.loadingExperience.metrics['LARGEST_CONTENTFUL_PAINT_MS'].distributions[0].proportion * 100)}%
+                                                            <span id='custom-text'>{Math.round(data.loadingExperience.metrics['LARGEST_CONTENTFUL_PAINT_MS'].distributions[0].proportion * 100)}%</span>
                                                         </div>
                                                         <div className='flex gap-4 '>
                                                             <div className='flex items-center gap-1'>
                                                                 <p className='text-yellow-500 text-sm'>Needs improvement</p>
                                                                 <p className='text-slate8 text-xs'>-2.5s - 4s</p>
                                                             </div>
-                                                            {Math.round(data.loadingExperience.metrics['LARGEST_CONTENTFUL_PAINT_MS'].distributions[1].proportion * 100)}%
+                                                            <span id='custom-text'>{Math.round(data.loadingExperience.metrics['LARGEST_CONTENTFUL_PAINT_MS'].distributions[1].proportion * 100)}%</span>
                                                         </div>
                                                         <div className='flex gap-4 '>
                                                             <div className='flex items-center gap-1'>
                                                                 <p className='text-red-500 text-sm'>Poor</p>
                                                                 <p className='text-slate8 text-xs'>-greater than 4s</p>
                                                             </div>
-                                                            {Math.round(data.loadingExperience.metrics['LARGEST_CONTENTFUL_PAINT_MS'].distributions[2].proportion * 100)}%
+                                                            <span id='custom-text'>{Math.round(data.loadingExperience.metrics['LARGEST_CONTENTFUL_PAINT_MS'].distributions[2].proportion * 100)}%</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full mt-20'>
+                                        <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full mt-20 shadow-blackA9 shadow-[0_4px_7px] rounded-md p-5'>
                                             <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
                                                 Cumulative Layout Shift Score (CLS)
                                             </h1>
@@ -415,26 +415,32 @@ const InsightsSection = (props: Props) => {
                                                             <p className='text-green-500 text-sm'>Good</p>
                                                             <p className='text-slate8 text-xs'>-less than 2.5s</p>
                                                         </div>
-                                                        {Math.round(data.loadingExperience.metrics['CUMULATIVE_LAYOUT_SHIFT_SCORE'].distributions[0].proportion * 100)}%
+                                                        <span id='custom-text'>
+                                                            {Math.round(data.loadingExperience.metrics['CUMULATIVE_LAYOUT_SHIFT_SCORE'].distributions[0].proportion * 100)}%
+                                                        </span>
                                                     </div>
                                                     <div className='flex gap-4 '>
                                                         <div className='flex items-center gap-1'>
                                                             <p className='text-yellow-500 text-sm'>Needs improvement</p>
                                                             <p className='text-slate8 text-xs'>-2.5s - 4s</p>
                                                         </div>
-                                                        {Math.round(data.loadingExperience.metrics['CUMULATIVE_LAYOUT_SHIFT_SCORE'].distributions[1].proportion * 100)}%
+                                                        <span id='custom-text'>
+                                                            {Math.round(data.loadingExperience.metrics['CUMULATIVE_LAYOUT_SHIFT_SCORE'].distributions[1].proportion * 100)}%
+                                                        </span>
                                                     </div>
                                                     <div className='flex gap-4 '>
                                                         <div className='flex items-center gap-1 '>
                                                             <p className='text-red-500 text-sm'>Poor</p>
                                                             <p className='text-slate8 text-xs'>-greater than 4s</p>
                                                         </div>
-                                                        {Math.round(data.loadingExperience.metrics['CUMULATIVE_LAYOUT_SHIFT_SCORE'].distributions[2].proportion * 100)}%
+                                                        <span id='custom-text'>
+                                                            {Math.round(data.loadingExperience.metrics['CUMULATIVE_LAYOUT_SHIFT_SCORE'].distributions[2].proportion * 100)}%
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full mt-20'>
+                                        <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full mt-20 shadow-blackA9 shadow-[0_4px_7px] rounded-md p-5'>
                                             <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
                                                 First Input Delay (FID)
                                             </h1>
@@ -462,21 +468,27 @@ const InsightsSection = (props: Props) => {
                                                             <p className='text-green-500 text-sm'>Good</p>
                                                             <p className='text-slate8 text-xs'>-less than 2.5s</p>
                                                         </div>
-                                                        {Math.round(data.loadingExperience.metrics['FIRST_INPUT_DELAY_MS'].distributions[0].proportion * 100)}%
+                                                        <span id='custom-text'>
+                                                            {Math.round(data.loadingExperience.metrics['FIRST_INPUT_DELAY_MS'].distributions[0].proportion * 100)}%
+                                                        </span>
                                                     </div>
                                                     <div className='flex gap-4 '>
                                                         <div className='flex items-center gap-1'>
                                                             <p className='text-yellow-500 text-sm'>Needs improvement</p>
                                                             <p className='text-slate8 text-xs'>-2.5s - 4s</p>
                                                         </div>
-                                                        {Math.round(data.loadingExperience.metrics['FIRST_INPUT_DELAY_MS'].distributions[1].proportion * 100)}%
+                                                        <span id='custom-text'>
+                                                            {Math.round(data.loadingExperience.metrics['FIRST_INPUT_DELAY_MS'].distributions[1].proportion * 100)}%
+                                                        </span>
                                                     </div>
                                                     <div className='flex gap-4 '>
                                                         <div className='flex items-center gap-1'>
                                                             <p className='text-red-500 text-sm'>Poor</p>
                                                             <p className='text-slate8 text-xs'>-greater than 4s</p>
                                                         </div>
-                                                        {Math.round(data.loadingExperience.metrics['FIRST_INPUT_DELAY_MS'].distributions[2].proportion * 100)}%
+                                                        <span id='custom-text'>
+                                                            {Math.round(data.loadingExperience.metrics['FIRST_INPUT_DELAY_MS'].distributions[2].proportion * 100)}%
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>
