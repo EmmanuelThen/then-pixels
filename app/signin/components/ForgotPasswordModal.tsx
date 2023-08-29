@@ -59,8 +59,7 @@ const ForgotPasswordModal = ({ }: Props) => {
                         buttonText=''
                         buttonDisplay='hidden'
                         userInput={userInput}
-                        onUserInput={handleUserInput}
-                    />
+                        onUserInput={handleUserInput} label={undefined} extraInput={undefined}                    />
 
                 </div>
                 <div className='flex justify-center w-full'>
