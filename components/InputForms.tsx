@@ -8,7 +8,7 @@ interface InputFormInterface {
     buttonText: any
     buttonDisplay: string
     userInput: any
-    onUserInput: (value: any) => void
+    onUserInput: any
     label: any
     extraInput: any
 }

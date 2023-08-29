@@ -12,7 +12,7 @@ const InboxSection = () => {
         {
             message: `Welcome to ThenPixels! We're thrilled to have you join the ThenPixels family.`,
             fullDisplayMessage: (
-                <div className=' scale-in-center flex flex-col gap-2'>
+                <div className='h-screen scale-in-center flex flex-col gap-2'>
                     <h1 id='custom-text' className='text-center text-3xl font-bold '>
                         Welcome To ThenPixels!
                     </h1>
@@ -69,7 +69,7 @@ const InboxSection = () => {
         {
             message: 'Get to know your personalized dashboard, full of features to make your process a breeze',
             fullDisplayMessage: (
-                <div className=' scale-in-center flex flex-col gap-2'>
+                <div className='h-screen scale-in-center flex flex-col gap-2'>
                     <h1 id='custom-text' className='text-center text-3xl font-bold '>
                         Get to know your dashboard
                     </h1>
@@ -123,7 +123,7 @@ const InboxSection = () => {
                             Best regards, <br />
                             The ThenPixels Team 🥳
                         </p>
-                        <p className='font-[100] text-slate10'>
+                        <p className='font-[100] text-slate10 text-[10px]'>
                             <span className='text-red9'>**</span> Certain features are available to PixelCare members only.
                         </p>
                     </footer>

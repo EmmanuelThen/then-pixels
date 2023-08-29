@@ -48,7 +48,7 @@ export default async function PricingPage() {
               Experience the seamless integration, customizable features, and comprehensive support that our tools provide, revolutionizing the way you work.
               Discover a new level of productivity and unlock your true potential with our helpful software tools.
             </p>
-            <ArrowButton buttonText='Learn more' href='/softwaredevelopment' />
+            <ArrowButton buttonText='Coming soon' href='/softwaredevelopment' />
           </LandingPageSection>
           <LandingPageSection topTitle='Maintenance' shinyText='Keep your website running smoothly with PixelCare*, our reliable maintenance service.' side={<MaintenanceSVG />} bgColor=''>
             <p className='mb-10'>

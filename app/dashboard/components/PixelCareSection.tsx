@@ -145,7 +145,7 @@ const PixelCareSection = (props: Props) => {
                                                             buttonText={'Submit'}
                                                             buttonDisplay={''}
                                                             userInput={undefined}
-                                                            // onUserInput={''}
+                                                            onUserInput={''}
                                                             extraInput={(<TextArea />)}
                                                         />
                                                     </div>
@@ -165,7 +165,7 @@ const PixelCareSection = (props: Props) => {
                                                             buttonText={'Submit'}
                                                             buttonDisplay={''}
                                                             userInput={undefined}
-                                                            // onUserInput={''}
+                                                            onUserInput={''}
                                                             extraInput={(<TextArea />)}
                                                         />
                                                     </div>
@@ -185,7 +185,7 @@ const PixelCareSection = (props: Props) => {
                                                             buttonText={'Submit'}
                                                             buttonDisplay={''}
                                                             userInput={undefined}
-                                                            // onUserInput={''}
+                                                            onUserInput={''}
                                                             extraInput={(<TextArea />)}
                                                         />
                                                     </div>
@@ -205,7 +205,7 @@ const PixelCareSection = (props: Props) => {
                                                             buttonText={'Submit'}
                                                             buttonDisplay={''}
                                                             userInput={undefined}
-                                                            // onUserInput={''}
+                                                            onUserInput={''}
                                                             extraInput={(<TextArea />)}
                                                         />
                                                     </div>

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import { CaretDownIcon, Cross1Icon, HamburgerMenuIcon, ChevronRightIcon, EnterIcon } from '@radix-ui/react-icons';
+import { CaretDownIcon, Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 import MobileNav from './MobileNav';
 import ArrowButton from './ArrowButton';
@@ -230,16 +230,24 @@ const Navbar = () => {
 
                 <div className='flex items-center justify-between gap-3'>
                     {userData ?
-                        <div className='hidden lg:block'>
-                            <form action="/auth/signout" method="post">
-                                <button type='submit' className='text-sm text-white bg-red9 hover:bg-red8 rounded-full px-2 py-[3px] flex items-center w-fit' >
-                                    Log out
-                                </button>
-                            </form>
-                        </div> :
-                        <ArrowButton buttonText='Pricing' href='/pricing' />
+                        (
+                            <div className='hidden lg:block'>
+                                <form action="/auth/signout" method="post">
+                                    <button type='submit' className='text-sm text-white bg-red9 hover:opacity-80 rounded-full px-2 py-[3px] flex items-center w-fit' >
+                                        Log out
+                                    </button>
+                                </form>
+                            </div>
+                        ) :
+                        <ArrowButton
+                            buttonText='Pricing'
+                            href='/pricing'
+                        />
                     }
-                    <ArrowButton buttonText={userData ? 'Dashboard' : 'Sign in'} href={userData ? '/dashboard' : '/signin'} />
+                    <ArrowButton
+                        buttonText={userData ? 'Dashboard' : 'Sign in'}
+                        href={userData ? '/dashboard' : '/signin'}
+                    />
                 </div>
             </NavigationMenu.Root>
         </>

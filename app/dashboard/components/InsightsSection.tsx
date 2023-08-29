@@ -338,7 +338,7 @@ const InsightsSection = (props: Props) => {
                                 {(isApiSuccess && isEnoughDataOnSite && lcpPercentileWidth.length === 3) ? (
                                     <div className='w-full p-5'>
                                         <h1 className='flex justify-center font-bold lg:font-semibold text-blue9 text-xl lg:text-4xl py-10'>Core Web Vitals Assessment:</h1>
-                                        <div className='flex flex-col items-center justify-between w-full mt-10 shadow-blackA9 shadow-[0_4px_7px] rounded-md p-5'>
+                                        <div className='flex flex-col items-center justify-between w-full mt-10 shadow-blackA9 shadow-[0_4px_7px] rounded-md p-5 '>
                                             <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full'>
                                                 <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
                                                     Largest Contentful Paint (LCP)
@@ -387,7 +387,7 @@ const InsightsSection = (props: Props) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full mt-20 shadow-blackA9 shadow-[0_4px_7px] rounded-md p-5'>
+                                        <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full mt-20 shadow-blackA9 shadow-[0_4px_7px] rounded-md p-5 '>
                                             <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
                                                 Cumulative Layout Shift Score (CLS)
                                             </h1>
@@ -440,7 +440,7 @@ const InsightsSection = (props: Props) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full mt-20 shadow-blackA9 shadow-[0_4px_7px] rounded-md p-5'>
+                                        <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full mt-20 shadow-blackA9 shadow-[0_4px_7px] rounded-md p-5 '>
                                             <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
                                                 First Input Delay (FID)
                                             </h1>
@@ -516,7 +516,7 @@ const InsightsSection = (props: Props) => {
                     </div>
                 )}
             </div>
-            <div className='hidden {flex} flex-col gap-5 lg:gap-0 lg:justify-between lg:flex-row flex-wrap p-5'>
+            <div className='flex flex-col gap-5 lg:gap-0 lg:justify-between lg:flex-row flex-wrap p-5'>
                 {/** Card 1 */}
                 <div className='flex items-center gap-10 border border-1 p-3 rounded-lg shadow-md lg:hover:shadow-xl w-[100%] lg:w-[20%]'>
                     <div className='border border-1 rounded-lg p-2'>
