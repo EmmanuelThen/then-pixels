@@ -10,7 +10,7 @@ const meta = {
   cardImage: '/og.png',
   robots: 'follow, index',
   favicon: '/favicon.ico',
-  url: 'https://subscription-starter.vercel.app',
+  url: 'https://thenpixels.com',
   type: 'website'
 };
 
@@ -38,7 +38,7 @@ export const metadata = {
     cardImage: meta.cardImage
   }
 };
-
+export const dynamic = 'force-dynamic'
 export default function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
