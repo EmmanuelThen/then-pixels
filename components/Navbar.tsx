@@ -23,7 +23,7 @@ const ListItem = ({ description, children, href }: Props) => {
         <>
             <li>
                 <NavigationMenu.Link asChild>
-                    <Link target='_blank' href={`${href}`} className='focus:shadow-[0_0_0_2px] focus:shadow-blue7 hover:bg-mauve3 block select-none rounded-[6px] p-3 text-sm leading-none no-underline outline-none transition-colors'>
+                    <Link target='_blank' href={`${href}`} className='focus:shadow-[0_0_0_2px] focus:shadow-blue7 hover:bg-red9 block select-none rounded-[6px] p-3 text-sm leading-none no-underline outline-none transition-colors'>
                         <h1 id='custom-text' className='font-medium mb-1 leading-[1.2] '>
                             {children}
                         </h1>
@@ -97,7 +97,7 @@ const Navbar = () => {
                     <span className='font-semibold text-blue9'>Then</span>
                     <span className='font-semibold text-red9'>Pixels</span>
                 </div>
-                <NavigationMenu.List className="center  m-0 flex gap-20 list-none  p-1 ">
+                <NavigationMenu.List className="center m-0 flex gap-20 list-none p-1">
                     <NavigationMenu.Item>
                         <NavigationMenu.Link
                             id='nav-link'
@@ -116,7 +116,7 @@ const Navbar = () => {
                                 aria-hidden
                             />
                         </NavigationMenu.Trigger>
-                        <NavigationMenu.Content id='nav-dropdown-bg' className="data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto bg-white z-[999]">
+                        <NavigationMenu.Content id='nav-dropdown-bg' className="border rounded-lg data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto z-[999]">
                             <ul className="one relative m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[500px] sm:grid-cols-[0.75fr_1fr]">
                                 <ListItem description='Every business needs an online presence, make it count' href='/about'>
                                     <div className='flex items-center gap-1'>
@@ -162,7 +162,7 @@ const Navbar = () => {
                                 aria-hidden
                             />
                         </NavigationMenu.Trigger>
-                        <NavigationMenu.Content id='nav-dropdown-bg' className="absolute top-0 left-0 w-full sm:w-auto bg-slate1">
+                        <NavigationMenu.Content id='nav-dropdown-bg' className="absolute top-0 left-0 w-full sm:w-auto border rounded-lg">
                             <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
                                 <ListItem description='Barbershop' href='https://lictonsorial.com'>
                                     <div className='flex items-center gap-1'>
@@ -225,7 +225,7 @@ const Navbar = () => {
                     </NavigationMenu.Indicator>
                 </NavigationMenu.List>
                 <div className="perspective-[2000px] absolute top-full left-0 flex w-full justify-center">
-                    <NavigationMenu.Viewport className="data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)] w-full origin-[top_center] overflow-hidden rounded-[6px] bg-white transition-[width,_height] duration-300 sm:w-[var(--radix-navigation-menu-viewport-width)]" />
+                    <NavigationMenu.Viewport className="data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)] w-full origin-[top_center] overflow-hidden rounded-[6px] transition-[width,_height] duration-300 sm:w-[var(--radix-navigation-menu-viewport-width)]" />
                 </div>
 
                 <div className='flex items-center justify-between gap-3'>

@@ -38,7 +38,9 @@ export const metadata = {
     cardImage: meta.cardImage
   }
 };
+//! Fix for error when pushing to production nad kept getting DynamicServerError: cookies
 export const dynamic = 'force-dynamic'
+
 export default function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
