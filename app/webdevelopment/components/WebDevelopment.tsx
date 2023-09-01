@@ -11,6 +11,7 @@ const WebDevelopment = (props: Props) => {
     const hiddenElementsRef = useRef<NodeListOf<HTMLElement> | null>(null);
     const observerRef = useRef<IntersectionObserver | null>(null);
 
+
     useEffect(() => {
         observerRef.current = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -53,7 +54,7 @@ const WebDevelopment = (props: Props) => {
                 <article className={`flex w-full`}>
                     <div className='w-[50%]'>
                         <h3 className='hiddenElement font-semibold text-lg text-red9 mb-5 p-5'>Static Website</h3>
-                        <p className='hiddenElement p-5 leading-8'>
+                        <p className='hiddenElement p-5 leading-8 font-light'>
                             A static website is a type of website that consists of web pages with fixed content that remains
 
                             the same for all visitors. Unlike dynamic websites that generate content on-the-fly, static websites
@@ -67,47 +68,47 @@ const WebDevelopment = (props: Props) => {
                     </div>
 
                     <div className='flex flex-col gap-5 w-[50%] p-5'>
-                        <div className='border rounded'>
-                            <h1 className='text-blue9'>Advantages:</h1>
+                        <div className=' rounded-lg p-3 bg-blue9'>
+                            <h1 className='font-semibold text-white text-2xl'>Advantages:</h1>
                             <ul>
-                                <li>
-                                    <span className='font-semibold'>Simplicity:</span> Static websites are easy to create and deploy.
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Simplicity:</span> Static websites are easy to create and deploy.
                                 </li>
-                                <li>
-                                    <span className='font-semibold'>Fast Loading:</span> Since there's no need to generate content dynamically, pages load quickly.
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Fast Loading:</span> Since there's no need to generate content dynamically, pages load quickly.
                                 </li>
-                                <li>
-                                    <span className='font-semibold'>Security:</span> With fewer moving parts, the attack surface for security breaches is smaller.
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Security:</span> With fewer moving parts, the attack surface for security breaches is smaller.
                                 </li>
                             </ul>
                         </div>
 
-                        <div className='border rounded'>
-                            <h1 className='text-red9'>Disadvantages:</h1>
+                        <div className=' rounded-lg p-3 bg-red9'>
+                            <h1 className='font-semibold text-white text-2xl'>Disadvantages:</h1>
                             <ul>
-                                <li>
-                                    <span className='font-semibold'>Limited Interactivity:</span> Static websites are not well-suited for complex interactions.
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Limited Interactivity:</span> Static websites are not well-suited for complex interactions.
                                 </li>
-                                <li>
-                                    <span className='font-semibold'>Maintenance:</span> Updates require manual editing of HTML/CSS files.
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Maintenance:</span> Updates require manual editing of HTML/CSS files.
                                 </li>
-                                <li>
-                                    <span className='font-semibold'>Scalability:</span> Managing large amounts of content can become challenging.
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Scalability:</span> Managing large amounts of content can become challenging.
                                 </li>
                             </ul>
                         </div>
 
-                        <div className='border rounded'>
-                            <h1 className='text-green9'>Use cases:</h1>
+                        <div className=' rounded-lg p-3 bg-green9'>
+                            <h1 className='font-semibold text-white text-2xl'>Use cases:</h1>
                             <ul>
-                                <li>
-                                    <span className='font-semibold'>Informational Sites:</span> Share information, company details, or event details.
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Informational Sites:</span> Share information, company details, or event details.
                                 </li>
-                                <li>
-                                    <span className='font-semibold'>Landing Pages:</span> Create focused pages for marketing campaigns or product launches.
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Landing Pages:</span> Create focused pages for marketing campaigns or product launches.
                                 </li>
-                                <li>
-                                    <span className='font-semibold'>Portfolio Websites:</span> Display your work or projects to potential clients or employers.
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Portfolio Websites:</span> Display your work or projects to potential clients or employers.
                                 </li>
                             </ul>
                         </div>
@@ -119,7 +120,7 @@ const WebDevelopment = (props: Props) => {
                 <article className={`flex w-full`}>
                     <div className='w-[50%]'>
                         <h3 className='hiddenElement font-semibold text-lg text-red9 mb-5 p-5'>Single Page Application (SPA)</h3>
-                        <p className='hiddenElement p-5 leading-8'>
+                        <p className='hiddenElement p-5 leading-8 font-light'>
                             A Single Page Application (SPA) is a modern web application design that provides a seamless and dynamic user experience
 
                             by loading all necessary resources and content on a single web page. SPAs use JavaScript frameworks like React, Angular, or Vue
@@ -132,8 +133,51 @@ const WebDevelopment = (props: Props) => {
                         </p>
                     </div>
 
-                    <div className='w-[50%]'>
+                    <div className='flex flex-col gap-5 w-[50%] p-5'>
+                        <div className=' rounded-lg p-3 bg-blue9'>
+                            <h1 className='font-semibold text-white text-2xl'>Advantages:</h1>
+                            <ul>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Simplicity:</span> Static websites are easy to create and deploy.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Fast Loading:</span> Since there's no need to generate content dynamically, pages load quickly.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Security:</span> With fewer moving parts, the attack surface for security breaches is smaller.
+                                </li>
+                            </ul>
+                        </div>
 
+                        <div className=' rounded-lg p-3 bg-red9'>
+                            <h1 className='font-semibold text-white text-2xl'>Disadvantages:</h1>
+                            <ul>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Limited Interactivity:</span> Static websites are not well-suited for complex interactions.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Maintenance:</span> Updates require manual editing of HTML/CSS files.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Scalability:</span> Managing large amounts of content can become challenging.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className=' rounded-lg p-3 bg-green9'>
+                            <h1 className='font-semibold text-white text-2xl'>Use cases:</h1>
+                            <ul>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Informational Sites:</span> Share information, company details, or event details.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Landing Pages:</span> Create focused pages for marketing campaigns or product launches.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Portfolio Websites:</span> Display your work or projects to potential clients or employers.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -142,7 +186,7 @@ const WebDevelopment = (props: Props) => {
                 <article className={`flex w-full`}>
                     <div className='w-[50%]'>
                         <h3 className='hiddenElement font-semibold text-lg text-red9 mb-5 p-5'>E-commerce</h3>
-                        <p className='hiddenElement p-5 leading-8'>
+                        <p className='hiddenElement p-5 leading-8 font-light'>
                             An e-commerce website is an online platform that enables businesses to showcase and sell products or services to customers
 
                             over the internet. These websites often feature product catalogs, detailed descriptions, pricing information, and a secure checkout process.
@@ -153,8 +197,51 @@ const WebDevelopment = (props: Props) => {
                         </p>
                     </div>
 
-                    <div className='w-[50%]'>
+                    <div className='flex flex-col gap-5 w-[50%] p-5'>
+                        <div className=' rounded-lg p-3 bg-blue9'>
+                            <h1 className='font-semibold text-white text-2xl'>Advantages:</h1>
+                            <ul>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Simplicity:</span> Static websites are easy to create and deploy.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Fast Loading:</span> Since there's no need to generate content dynamically, pages load quickly.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Security:</span> With fewer moving parts, the attack surface for security breaches is smaller.
+                                </li>
+                            </ul>
+                        </div>
 
+                        <div className=' rounded-lg p-3 bg-red9'>
+                            <h1 className='font-semibold text-white text-2xl'>Disadvantages:</h1>
+                            <ul>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Limited Interactivity:</span> Static websites are not well-suited for complex interactions.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Maintenance:</span> Updates require manual editing of HTML/CSS files.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Scalability:</span> Managing large amounts of content can become challenging.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className=' rounded-lg p-3 bg-green9'>
+                            <h1 className='font-semibold text-white text-2xl'>Use cases:</h1>
+                            <ul>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Informational Sites:</span> Share information, company details, or event details.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Landing Pages:</span> Create focused pages for marketing campaigns or product launches.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Portfolio Websites:</span> Display your work or projects to potential clients or employers.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </article>
             </div>

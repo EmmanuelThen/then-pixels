@@ -1,6 +1,6 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin';
-import { blackA, mauve, indigo, purple, red, slate, green, violet, blue, yellow } from '@radix-ui/colors';
+import { blackA, mauve, indigo, purple, red, slate, green, violet, blue, yellow, sky } from '@radix-ui/colors';
 
 /** @type {import('tailwindcss').Config} */
 export const darkMode = ['class', '[data-theme="dark"]'];
@@ -24,7 +24,8 @@ export const theme = {
       ...green,
       ...violet,
       ...blue,
-      ...yellow
+      ...yellow,
+      ...sky
     },
     keyframes: {
       enterFromRight: {
