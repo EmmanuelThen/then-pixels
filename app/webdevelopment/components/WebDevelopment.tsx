@@ -4,12 +4,15 @@ import ShinyText from '@/components/ShinyText'
 import DevSvg from './DevSvg'
 import observer from '@/utils/intersection-observer'
 import LandingPageSection from '@/components/LandingPageSection'
+import ArrowButton from '@/components/ArrowButton'
 
 type Props = {}
 
 const WebDevelopment = (props: Props) => {
     const hiddenElementsRef = useRef<NodeListOf<HTMLElement> | null>(null);
+    const hiddenSideElementsRef = useRef<NodeListOf<HTMLElement> | null>(null);
     const observerRef = useRef<IntersectionObserver | null>(null);
+    const sideElementObserverRef = useRef<IntersectionObserver | null>(null);
 
 
     useEffect(() => {
@@ -18,15 +21,30 @@ const WebDevelopment = (props: Props) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show');
                 } else {
-                    entry.target.classList.remove('show');
+                    entry.target.classList.remove('show');   
                 }
             });
         });
 
+        sideElementObserverRef.current = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slideInFromSide');
+                } else {
+                    entry.target.classList.remove('slideInFromSide'); 
+                }
+            });
+        });
+
+
         hiddenElementsRef.current = document.querySelectorAll('.hiddenElement');
+        hiddenSideElementsRef.current = document.querySelectorAll('.hiddenSideElement');
 
         if (hiddenElementsRef.current && observerRef.current) {
             hiddenElementsRef.current.forEach((e) => observerRef.current!.observe(e));
+        }
+        if (hiddenSideElementsRef.current && sideElementObserverRef.current) {
+            hiddenSideElementsRef.current.forEach((e) => sideElementObserverRef.current!.observe(e));
         }
 
         // Clean-up function
@@ -38,7 +56,7 @@ const WebDevelopment = (props: Props) => {
     }, []);
 
     return (
-        <div>
+        <div className='text-sm lg:text-base'>
             <div className='slide-in-left flex flex-col items-center justify-center'>
                 <div className='focus-in-contract-bck mt-5'>
                     <ShinyText text={
@@ -52,8 +70,9 @@ const WebDevelopment = (props: Props) => {
             {/* Static */}
             <div className='border'>
                 <article className={`flex w-full`}>
+                    {/* Descritption */}
                     <div className='w-[50%]'>
-                        <h3 className='hiddenElement font-semibold text-lg text-red9 mb-5 p-5'>Static Website</h3>
+                        <h3 className='hiddenElement font-semibold text-lg text-red9 md:mb-10 lg:mb-5 p-5'>Static Website</h3>
                         <p className='hiddenElement p-5 leading-8 font-light'>
                             A static website is a type of website that consists of web pages with fixed content that remains
 
@@ -65,12 +84,17 @@ const WebDevelopment = (props: Props) => {
 
                             quickly, and are ideal for displaying information that doesn't need frequent updates.
                         </p>
+                        <div className='p-5'>
+                            <ArrowButton buttonText={'Get Started'} href={''} />
+                        </div>
                     </div>
 
-                    <div className='flex flex-col gap-5 w-[50%] p-5'>
-                        <div className=' rounded-lg p-3 bg-blue9'>
-                            <h1 className='font-semibold text-white text-2xl'>Advantages:</h1>
-                            <ul>
+                    {/* Parent Div for cards */}
+                    <div className=' flex flex-col gap-5 w-[50%] p-5'>
+                        {/* Card 1 */}
+                        <div className='hiddenSideElement rounded-lg p-3 bg-blue9 shadow-blackA9 shadow-[0px_4px_7px]'>
+                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Advantages:</h1>
+                            <ul className='flex flex-col gap-3'>
                                 <li className='text-white'>
                                     <span className='font-medium text-sky12'>Simplicity:</span> Static websites are easy to create and deploy.
                                 </li>
@@ -82,10 +106,10 @@ const WebDevelopment = (props: Props) => {
                                 </li>
                             </ul>
                         </div>
-
-                        <div className=' rounded-lg p-3 bg-red9'>
-                            <h1 className='font-semibold text-white text-2xl'>Disadvantages:</h1>
-                            <ul>
+                        {/* Card 2 */}
+                        <div className='hiddenSideElement rounded-lg p-3 bg-red9 shadow-blackA9 shadow-[0px_4px_7px]'>
+                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Disadvantages:</h1>
+                            <ul className='flex flex-col gap-3'>
                                 <li className='text-white'>
                                     <span className='font-medium text-sky12'>Limited Interactivity:</span> Static websites are not well-suited for complex interactions.
                                 </li>
@@ -97,10 +121,10 @@ const WebDevelopment = (props: Props) => {
                                 </li>
                             </ul>
                         </div>
-
-                        <div className=' rounded-lg p-3 bg-green9'>
-                            <h1 className='font-semibold text-white text-2xl'>Use cases:</h1>
-                            <ul>
+                        {/* Card 3 */}
+                        <div className='hiddenSideElement rounded-lg p-3 bg-green9 shadow-blackA9 shadow-[0px_4px_7px]'>
+                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Use cases:</h1>
+                            <ul className='flex flex-col gap-3'>
                                 <li className='text-white'>
                                     <span className='font-medium text-sky12'>Informational Sites:</span> Share information, company details, or event details.
                                 </li>
@@ -118,8 +142,9 @@ const WebDevelopment = (props: Props) => {
             {/* SPA */}
             <div className=''>
                 <article className={`flex w-full`}>
+                    {/* Description */}
                     <div className='w-[50%]'>
-                        <h3 className='hiddenElement font-semibold text-lg text-red9 mb-5 p-5'>Single Page Application (SPA)</h3>
+                        <h3 className='hiddenElement font-semibold text-lg text-red9 md:mb-10 lg:mb-5 p-5'>Single Page Application (SPA)</h3>
                         <p className='hiddenElement p-5 leading-8 font-light'>
                             A Single Page Application (SPA) is a modern web application design that provides a seamless and dynamic user experience
 
@@ -131,50 +156,54 @@ const WebDevelopment = (props: Props) => {
 
                             different sections of the application.
                         </p>
+                        <div className='p-5'>
+                            <ArrowButton buttonText={'Get Started'} href={''} />
+                        </div>
                     </div>
-
+                    {/* Parent Div for cards */}
                     <div className='flex flex-col gap-5 w-[50%] p-5'>
-                        <div className=' rounded-lg p-3 bg-blue9'>
-                            <h1 className='font-semibold text-white text-2xl'>Advantages:</h1>
-                            <ul>
+                        {/* Card 1 */}
+                        <div className='hiddenSideElement rounded-lg p-3 bg-blue9 shadow-blackA9 shadow-[0px_4px_7px]'>
+                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Advantages:</h1>
+                            <ul className='flex flex-col gap-3'>
                                 <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Simplicity:</span> Static websites are easy to create and deploy.
+                                    <span className='font-medium text-sky12'>Seamless User Experience:</span> SPAs provide fluid interactions without full page reloads.
                                 </li>
                                 <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Fast Loading:</span> Since there's no need to generate content dynamically, pages load quickly.
+                                    <span className='font-medium text-sky12'>Dynamic Content:</span> Content updates without disrupting the user's flow.
                                 </li>
                                 <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Security:</span> With fewer moving parts, the attack surface for security breaches is smaller.
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className=' rounded-lg p-3 bg-red9'>
-                            <h1 className='font-semibold text-white text-2xl'>Disadvantages:</h1>
-                            <ul>
-                                <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Limited Interactivity:</span> Static websites are not well-suited for complex interactions.
-                                </li>
-                                <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Maintenance:</span> Updates require manual editing of HTML/CSS files.
-                                </li>
-                                <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Scalability:</span> Managing large amounts of content can become challenging.
+                                    <span className='font-medium text-sky12'>Enhanced Performance:</span> Only necessary data is fetched, improving speed.
                                 </li>
                             </ul>
                         </div>
-
-                        <div className=' rounded-lg p-3 bg-green9'>
-                            <h1 className='font-semibold text-white text-2xl'>Use cases:</h1>
-                            <ul>
+                        {/* Card 2 */}
+                        <div className='hiddenSideElement rounded-lg p-3 bg-red9 shadow-blackA9 shadow-[0px_4px_7px]'>
+                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Disadvantages:</h1>
+                            <ul className='flex flex-col gap-3'>
                                 <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Informational Sites:</span> Share information, company details, or event details.
+                                    <span className='font-medium text-sky12'> SEO Challenges:</span> Initial rendering can be problematic for search engine indexing.
                                 </li>
                                 <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Landing Pages:</span> Create focused pages for marketing campaigns or product launches.
+                                    <span className='font-medium text-sky12'>Initial Load Time:</span> Large JavaScript bundles can slow down the first load.
                                 </li>
                                 <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Portfolio Websites:</span> Display your work or projects to potential clients or employers.
+                                    <span className='font-medium text-sky12'>Complexity:</span> Developing SPAs requires expertise in JavaScript frameworks.
+                                </li>
+                            </ul>
+                        </div>
+                        {/* Card 3 */}
+                        <div className='hiddenSideElement rounded-lg p-3 bg-green9 shadow-blackA9 shadow-[0px_4px_7px]'>
+                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Use cases:</h1>
+                            <ul className='flex flex-col gap-3'>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Web Applications:</span> Suitable for interactive web apps like project management tools.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Social Media Platforms:</span> Enable real-time updates and notifications.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Streaming Services:</span> Allow users to play media without interruptions.
                                 </li>
                             </ul>
                         </div>
@@ -184,8 +213,9 @@ const WebDevelopment = (props: Props) => {
             {/* E-commerce */}
             <div className=''>
                 <article className={`flex w-full`}>
+                    {/* Description */}
                     <div className='w-[50%]'>
-                        <h3 className='hiddenElement font-semibold text-lg text-red9 mb-5 p-5'>E-commerce</h3>
+                        <h3 className='hiddenElement font-semibold text-lg text-red9 md:mb-10 lg:mb-5 p-5'>E-commerce</h3>
                         <p className='hiddenElement p-5 leading-8 font-light'>
                             An e-commerce website is an online platform that enables businesses to showcase and sell products or services to customers
 
@@ -195,50 +225,54 @@ const WebDevelopment = (props: Props) => {
 
                             They integrate payment gateways to facilitate transactions and provide a convenient shopping experience for users.
                         </p>
+                        <div className='p-5'>
+                            <ArrowButton buttonText={'Get Started'} href={''} />
+                        </div>
                     </div>
-
+                    {/* Parent Div for cards */}
                     <div className='flex flex-col gap-5 w-[50%] p-5'>
-                        <div className=' rounded-lg p-3 bg-blue9'>
-                            <h1 className='font-semibold text-white text-2xl'>Advantages:</h1>
-                            <ul>
+                        {/* Card 1 */}
+                        <div className='hiddenSideElement rounded-lg p-3 bg-blue9 shadow-blackA9 shadow-[0px_4px_7px]'>
+                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Advantages:</h1>
+                            <ul className='flex flex-col gap-3'>
                                 <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Simplicity:</span> Static websites are easy to create and deploy.
+                                    <span className='font-medium text-sky12'>Global Reach:</span> Reach customers beyond physical store boundaries.
                                 </li>
                                 <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Fast Loading:</span> Since there's no need to generate content dynamically, pages load quickly.
+                                    <span className='font-medium text-sky12'>Convenience:</span> Shoppers can browse and purchase from the comfort of their homes.
                                 </li>
                                 <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Security:</span> With fewer moving parts, the attack surface for security breaches is smaller.
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className=' rounded-lg p-3 bg-red9'>
-                            <h1 className='font-semibold text-white text-2xl'>Disadvantages:</h1>
-                            <ul>
-                                <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Limited Interactivity:</span> Static websites are not well-suited for complex interactions.
-                                </li>
-                                <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Maintenance:</span> Updates require manual editing of HTML/CSS files.
-                                </li>
-                                <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Scalability:</span> Managing large amounts of content can become challenging.
+                                    <span className='font-medium text-sky12'>Analytics:</span> Gather insights about customer behavior and preferences.
                                 </li>
                             </ul>
                         </div>
-
-                        <div className=' rounded-lg p-3 bg-green9'>
-                            <h1 className='font-semibold text-white text-2xl'>Use cases:</h1>
-                            <ul>
+                        {/* Card 2 */}
+                        <div className='hiddenSideElement rounded-lg p-3 bg-red9 shadow-blackA9 shadow-[0px_4px_7px]'>
+                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Challeneges:</h1>
+                            <ul className='flex flex-col gap-3'>
                                 <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Informational Sites:</span> Share information, company details, or event details.
+                                    <span className='font-medium text-sky12'>Security:</span> Safeguard customer data and payment information.
                                 </li>
                                 <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Landing Pages:</span> Create focused pages for marketing campaigns or product launches.
+                                    <span className='font-medium text-sky12'>Competition:</span> The online market is highly competitive, requiring unique selling points.
                                 </li>
                                 <li className='text-white'>
-                                    <span className='font-medium text-sky12'>Portfolio Websites:</span> Display your work or projects to potential clients or employers.
+                                    <span className='font-medium text-sky12'>Customer Trust:</span> Build trust through reliable shipping, returns, and customer support.
+                                </li>
+                            </ul>
+                        </div>
+                        {/* Card 3 */}
+                        <div className='hiddenSideElement rounded-lg p-3 bg-green9 shadow-blackA9 shadow-[0px_4px_7px]'>
+                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Key features:</h1>
+                            <ul className='flex flex-col gap-3'>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Product Catalog:</span> Organize products with categories, descriptions, and images.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Shopping Cart:</span> Allow users to add items for purchase before checkout.
+                                </li>
+                                <li className='text-white'>
+                                    <span className='font-medium text-sky12'>Payment Gateway:</span> Securely handle online transactions and payment methods.
                                 </li>
                             </ul>
                         </div>
