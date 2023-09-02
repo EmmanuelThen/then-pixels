@@ -1,30 +1,51 @@
+import Image from 'next/image'
 import React from 'react'
 
-type Props = {}
+type Props = {
+    productName: string
+    description: string
+    price: any
+    imageSrc: any
+}
 
-const ProductCard = (props: Props) => {
+const ProductCard = ({ productName, description, price, imageSrc }: Props) => {
     return (
-        // <div className='w-[50%] h-[400px] bg-blue9 rounded-lg'>
-        //     <div className='flex justify-center'>
-        //         <h1 className='z-[100] w-fit border mt-5'>
-        //             AI Summarizer
-        //         </h1>
-        //     </div>
-        //     <div className='arrowz rounded-lg'></div>
-        // </div>
-        <div className='relative border w-full h-[200px] rounded p-5'>
-
-            {/* product info and buy  */}
-            <div className='absolute left-[99%] border shadow-blackA9 shadow-[0_4px_7px] bg-white rounded p-5'>
-                <h3 className='text-red9'>
-                    AI Summarizer
+        <div className='rounded shadow-blackA9 shadow-[0px_4px_7px] h-fit p-5'>
+            {/* Image */}
+            <div className='border border-red-500'>
+                <Image
+                    className='w-full'
+                    src={imageSrc}
+                    width={100}
+                    height={100}
+                    alt=''
+                />
+            </div>
+            {/* Description */}
+            <div className='p-5'>
+                <h3 className='text-red9 font-semibold'>
+                    {productName}
                 </h3>
-                <h3 className='text-red9'>
-                    AI Summarizer
-                </h3>
-                <h3 className='text-red9'>
-                    AI Summarizer
-                </h3>
+                <p className='font-light'>
+                    {description}
+                </p>
+            </div>
+            {/* Purchase button & price */}
+            <div className='flex justify-between'>
+                <div id='custom-text' className='relative text-[32px]'>
+                    <sup className='font-extrabold'>
+                        $
+                    </sup>
+                    <span className='text-[45px] font-extrabold'>
+                        {price}
+                    </span>
+                    <sup className='font-extrabold'>
+                        .99
+                    </sup>
+                </div>
+                <button className='h-[35px] bg-blue9 text-white px-2 rounded hover:opacity-80'>
+                    Purchase
+                </button>
             </div>
         </div>
     )
