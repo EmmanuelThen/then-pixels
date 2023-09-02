@@ -52,6 +52,9 @@ const WebDevelopment = (props: Props) => {
             if (hiddenElementsRef.current && observerRef.current) {
                 hiddenElementsRef.current.forEach((e) => observerRef.current!.unobserve(e));
             }
+            if (hiddenSideElementsRef.current && sideElementObserverRef.current) {
+                hiddenSideElementsRef.current.forEach((e) => sideElementObserverRef.current!.unobserve(e));
+            }
         };
     }, []);
 
@@ -68,7 +71,7 @@ const WebDevelopment = (props: Props) => {
                 <DevSvg />
             </div>
             {/* Static */}
-            <div className='border'>
+            <div className=''>
                 <article className={`flex w-full`}>
                     {/* Descritption */}
                     <div className='w-[50%]'>
@@ -108,7 +111,7 @@ const WebDevelopment = (props: Props) => {
                         </div>
                         {/* Card 2 */}
                         <div className='hiddenSideElement rounded-lg p-3 bg-red9 shadow-blackA9 shadow-[0px_4px_7px]'>
-                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Disadvantages:</h1>
+                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Drawbacks:</h1>
                             <ul className='flex flex-col gap-3'>
                                 <li className='text-white'>
                                     <span className='font-medium text-sky12'>Limited Interactivity:</span> Static websites are not well-suited for complex interactions.
@@ -179,7 +182,7 @@ const WebDevelopment = (props: Props) => {
                         </div>
                         {/* Card 2 */}
                         <div className='hiddenSideElement rounded-lg p-3 bg-red9 shadow-blackA9 shadow-[0px_4px_7px]'>
-                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Disadvantages:</h1>
+                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Drawbacks:</h1>
                             <ul className='flex flex-col gap-3'>
                                 <li className='text-white'>
                                     <span className='font-medium text-sky12'> SEO Challenges:</span> Initial rendering can be problematic for search engine indexing.
@@ -248,7 +251,7 @@ const WebDevelopment = (props: Props) => {
                         </div>
                         {/* Card 2 */}
                         <div className='hiddenSideElement rounded-lg p-3 bg-red9 shadow-blackA9 shadow-[0px_4px_7px]'>
-                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Challeneges:</h1>
+                            <h1 className='font-semibold text-white text-lg lg:text-2xl'>Drawbacks:</h1>
                             <ul className='flex flex-col gap-3'>
                                 <li className='text-white'>
                                     <span className='font-medium text-sky12'>Security:</span> Safeguard customer data and payment information.
