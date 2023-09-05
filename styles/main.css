@@ -43,7 +43,7 @@ body {
   background: var(--background-rgb);
 }
 
-#stroke-color {
+#stroke-color, .stroke-color {
   stroke: var(--text-rgb);
 }
 

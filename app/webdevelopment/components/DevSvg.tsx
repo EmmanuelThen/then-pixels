@@ -2,9 +2,19 @@ import React from 'react'
 
 type Props = {}
 
+// mobile viewbox
+const isMobile = window.innerWidth <= 768; 
+const mobileViewBox = '0 0 3000 2100'
+const desktopViewBox = '0 0 3000 3000'
+
 const DevSvg = (props: Props) => {
     return (
-        <svg className=' w-[800px] h-[800px]' xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 3000 2500" viewBox="0 0 3000 3000" id="web-development">
+        <svg
+            className='md:w-[800px] md:h-[800px]'
+            xmlns="http://www.w3.org/2000/svg"
+            enableBackground="new 0 0 3000 2500"
+            viewBox={isMobile ? mobileViewBox : desktopViewBox}
+        >
             <rect width="2918.6" height="2432.2" x="40.7" y="33.9" fill="none"></rect>
             <g opacity=".24">
                 <path
@@ -804,7 +814,7 @@ const DevSvg = (props: Props) => {
                 fill="#fefefe"
                 d="M1361,893.2l-133.7,519.6c-3.2,12.3,5.5,24.5,18.1,25.5l237.8,20c10.9,0.9,20.8-6.3,23.2-17L1628.5,904    c1.2-5.2-2.7-10.2-8-10.4l-248.7-8.6C1366.8,884.8,1362.2,888.2,1361,893.2z">
             </path>
-            <path 
+            <path
                 fill="#e2e2e2"
                 d="M1065 922.5l-227.3-8.1c-2.5-.1-4.1-2.1-3.4-4.5l.2-.7c.6-2.4 3.2-4.2 5.7-4.1l227.3 8.1c2.5.1 4.1 2.1 3.4 4.5l-.2.7C1070 920.7 1067.5 922.6 1065 922.5zM1058.3 946.3l-267.8-9.6c-2.7-.1-4.4-2.3-3.7-4.8l0 0c.7-2.6 3.4-4.6 6.2-4.5l267.8 9.6c2.7.1 4.4 2.3 3.7 4.8v0C1063.8 944.4 1061.1 946.4 1058.3 946.3zM1052.1 970.1l-267.8-9.6c-2.7-.1-4.4-2.3-3.7-4.8l0 0c.7-2.6 3.4-4.6 6.2-4.5l267.8 9.6c2.7.1 4.4 2.3 3.7 4.8l0 0C1057.6 968.2 1054.8 970.2 1052.1 970.1zM1045.9 993.9l-267.8-9.6c-2.7-.1-4.4-2.3-3.7-4.8l0 0c.7-2.6 3.4-4.6 6.2-4.5l267.8 9.6c2.7.1 4.4 2.3 3.7 4.8l0 0C1051.4 992 1048.6 994 1045.9 993.9zM977.1 1015.5l-205.8-7.4c-2.4-.1-3.9-2-3.3-4.3l.3-1.1c.6-2.3 3-4 5.4-4l205.8 7.4c2.4.1 3.9 2 3.3 4.3l-.3 1.1C982 1013.8 979.5 1015.6 977.1 1015.5z"></path><g
                     opacity=".71"><path
