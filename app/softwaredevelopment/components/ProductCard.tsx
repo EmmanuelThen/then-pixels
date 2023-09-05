@@ -22,8 +22,8 @@ const ProductCard = ({ productName, description, price, imageSrc }: Props) => {
                 />
             </div>
             {/* Description */}
-            <div className='p-5'>
-                <h3 className='text-red9 font-semibold'>
+            <div className='p-5 mb-5'>
+                <h3 className='text-blue9 font-semibold'>
                     {productName}
                 </h3>
                 <p className='font-light'>

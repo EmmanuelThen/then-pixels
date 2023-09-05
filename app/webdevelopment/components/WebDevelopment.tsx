@@ -5,6 +5,7 @@ import DevSvg from './DevSvg'
 import observer from '@/utils/intersection-observer'
 import LandingPageSection from '@/components/LandingPageSection'
 import ArrowButton from '@/components/ArrowButton'
+import BoldPricing from '@/components/BoldPricing'
 
 type Props = {}
 
@@ -21,7 +22,7 @@ const WebDevelopment = (props: Props) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show');
                 } else {
-                    entry.target.classList.remove('show');   
+                    entry.target.classList.remove('show');
                 }
             });
         });
@@ -31,7 +32,7 @@ const WebDevelopment = (props: Props) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('slideInFromSide');
                 } else {
-                    entry.target.classList.remove('slideInFromSide'); 
+                    entry.target.classList.remove('slideInFromSide');
                 }
             });
         });
@@ -59,7 +60,7 @@ const WebDevelopment = (props: Props) => {
     }, []);
 
     return (
-        <div className='text-sm lg:text-base'>
+        <div className='flex flex-col gap-[100px] text-sm lg:text-base'>
             <div className='slide-in-left flex flex-col items-center justify-center'>
                 <div className='focus-in-contract-bck mt-5'>
                     <ShinyText text={
@@ -88,7 +89,18 @@ const WebDevelopment = (props: Props) => {
                             quickly, and are ideal for displaying information that doesn't need frequent updates.
                         </p>
                         <div className='p-5'>
-                            <ArrowButton buttonText={'Get Started'} href={''} />
+                            <p className='hiddenElement font-semibold mb-5'>
+                            <span className='text-red9'>**</span>
+                                Starting at: 
+                            </p>
+                            <div className='hiddenElement'>
+                                <BoldPricing
+                                    price='999'
+                                />
+                            </div>
+                        </div>
+                        <div className='p-5'>
+                            <ArrowButton buttonText={'Get started'} href={'/consultation'} />
                         </div>
                     </div>
 
@@ -160,7 +172,18 @@ const WebDevelopment = (props: Props) => {
                             different sections of the application.
                         </p>
                         <div className='p-5'>
-                            <ArrowButton buttonText={'Get Started'} href={''} />
+                            <p className='hiddenElement font-semibold mb-5'>
+                            <span className='text-red9'>**</span>
+                                Starting at: 
+                            </p>
+                            <div className='hiddenElement'>
+                                <BoldPricing
+                                    price='4,999'
+                                />
+                            </div>
+                        </div>
+                        <div className='p-5'>
+                            <ArrowButton buttonText={'Get started'} href={'/consultation'} />
                         </div>
                     </div>
                     {/* Parent Div for cards */}
@@ -229,7 +252,18 @@ const WebDevelopment = (props: Props) => {
                             They integrate payment gateways to facilitate transactions and provide a convenient shopping experience for users.
                         </p>
                         <div className='p-5'>
-                            <ArrowButton buttonText={'Get Started'} href={''} />
+                            <p className='hiddenElement font-semibold mb-5'>
+                            <span className='text-red9'>**</span>
+                                Starting at: 
+                            </p>
+                            <div className='hiddenElement'>
+                                <BoldPricing
+                                    price='9,999'
+                                />
+                            </div>
+                        </div>
+                        <div className='p-5'>
+                            <ArrowButton buttonText={'Get started'} href={'/consultation'} />
                         </div>
                     </div>
                     {/* Parent Div for cards */}

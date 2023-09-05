@@ -1008,8 +1008,8 @@ li {
 }
 
 .text-focus-in {
-	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
-	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
+	-webkit-animation: text-focus-in 1.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
+	        animation: text-focus-in 1.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
 }
 
 
@@ -1018,6 +1018,21 @@ li {
     -webkit-filter: blur(12px);
             filter: blur(12px);
     opacity: 0;
+  }
+  25% {
+    -webkit-filter: blur(8px);
+            filter: blur(8px);
+    opacity: 0.25;
+  }
+  50% {
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+    opacity: 0.50;
+  }
+  75% {
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+    opacity: 0.75;
   }
   100% {
     -webkit-filter: blur(0px);
@@ -1034,17 +1049,17 @@ li {
   25% {
     -webkit-filter: blur(8px);
             filter: blur(8px);
-    opacity: 0;
+    opacity: 0.25;
   }
   50% {
     -webkit-filter: blur(4px);
             filter: blur(4px);
-    opacity: 0;
+    opacity: 0.50;
   }
   75% {
     -webkit-filter: blur(2px);
             filter: blur(2px);
-    opacity: 0;
+    opacity: 0.75;
   }
   100% {
     -webkit-filter: blur(0px);

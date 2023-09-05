@@ -19,12 +19,12 @@ const SoftwareDevelopment = (props: Props) => {
                 <HeroSvg />
             </section>
             {/* Title */}
-            <h1 className='text-center text-4xl text-red9'>
+            <h1 className='text-center text-4xl text-blue9'>
                 Welcome to our Software Solutions Shop
             </h1>
             {/* Description */}
             <section className='p-5'>
-                <p className='text-slate10 font-light text-center text-lg'>
+                <p className='text-slate10 font-light text-center text-lg leading-8'>
                     These software solutions are designed to streamline and simplify everyday tasks for you,
 
                     making your life more efficient and productive. Whether it's automating repetitive processes,
