@@ -5,7 +5,7 @@ type Props = {}
 
 const page = (props: Props) => {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
         <Consultation />
     </div>
   )

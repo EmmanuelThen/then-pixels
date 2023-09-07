@@ -63,29 +63,25 @@ const SoftwareDevelopment = (props: Props) => {
                     productName={'URL Shortener'}
                     imageSrc={<UrlSvg />}
                     description={
-                        `An AI summarizer is a tool that uses artificial intelligence to automatically
+                        `Our URL Shortener software is a powerful and user-friendly tool designed to simplify 
 
-                        condense lengthy text or documents into concise, easy-to-read summaries,
-    
-                        helping users quickly grasp the essential information and main points without
-    
-                        having to go through the entire content.`
+                        long and unwieldy web addresses. It allows users to create short, memorable URLs that 
+
+                        redirect to their original destinations.`
                     }
-                    price={`19`}
+                    price={`4`}
                 />
                 <ProductCard
-                    productName={'Rental Property Calculator'}
+                    productName={'Investment Property Calculator'}
                     imageSrc={<CalculatorSvg />}
                     description={
-                        `An AI summarizer is a tool that uses artificial intelligence to automatically
+                        `Our Investment Property Calculator is a sophisticated financial tool for real estate investors 
 
-                        condense lengthy text or documents into concise, easy-to-read summaries,
-    
-                        helping users quickly grasp the essential information and main points without
-    
-                        having to go through the entire content.`
+                        and property professionals. It empowers users to assess the potential profitability of real estate 
+
+                        investments by calculating key metrics such as ROI, cash flow projections, and cap rates.`
                     }
-                    price={`19`}
+                    price={`99`}
                 />
             </section>
         </div>
