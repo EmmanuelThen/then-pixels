@@ -9,12 +9,12 @@ type Props = {}
 const Showcase = (props: Props) => {
     return (
         <>
-            <div className='text-sm lg:text-base p-20 w-full'>
+            <div className='text-sm lg:text-base p-10 lg:p-20 w-full'>
                 <section className='flex'>
-                    <div className='focus-in-contract-bck  '>
+                    <div className='focus-in-contract-bck '>
                         <ShinyText text={
-                            <div className='md:text-[90px]'>
-                                Where <span className='text-blue9'>vision <br /></span> becomes <span className='text-red9'>reality, <br /></span> welcome to our showcase.
+                            <div className='md:text-[61.9px] lg:text-[90px]'>
+                                Where <span className='text-blue9'>vision <br /></span> becomes <span className='text-red9'>reality,</span> welcome to our showcase.
                             </div>
                         }
                         />
@@ -180,22 +180,26 @@ const Showcase = (props: Props) => {
                 </section>
             </div>
             {/* Showcase Boxes */}
-            <div className='grid grid-cols-3 gap-10 p-10'>
+            <div className='grid md:grid-cols-3 gap-10 p-10'>
                 <ShowcaseBox
                     href={''}
                     imageSrc={'https://tailwindui.com/img/logos/158x48/tuple-logo-gray-400.svg'}
+                    companyName={'Tuple'}
                 />
                 <ShowcaseBox
                     href={''}
                     imageSrc={'https://tailwindui.com/img/logos/158x48/reform-logo-gray-400.svg'}
+                    companyName={'Reform'}
                 />
                 <ShowcaseBox
                     href={''}
                     imageSrc={'https://tailwindui.com/img/logos/158x48/statamic-logo-gray-400.svg'}
+                    companyName={'Statamic'}
                 />
                 <ShowcaseBox
                     href={''}
                     imageSrc={'https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-400.svg'}
+                    companyName={'Savvycal'}
                 />
             </div>
         </>

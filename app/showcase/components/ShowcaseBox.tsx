@@ -5,9 +5,10 @@ import Link from 'next/link'
 type Props = {
     href: string
     imageSrc: string
+    companyName: any
 }
 
-const ShowcaseBox = ({ href, imageSrc }: Props) => {
+const ShowcaseBox = ({ href, imageSrc, companyName }: Props) => {
     return (
         <section className=''>
             <div className='bg-slate2 rounded shadow-blackA9 shadow-[0px_4px_7px] transform transition-transform hover:scale-110'>
@@ -25,7 +26,7 @@ const ShowcaseBox = ({ href, imageSrc }: Props) => {
                         id=''
                         href={href}
                     >
-                        Lets go
+                        {companyName}
                     </Link>
                     <svg
                         width="18"

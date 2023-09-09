@@ -31,7 +31,9 @@ const MobileNav = ({ nav1, nav2, nav3, nav4, nav5, nav6, nav7, navnavnav }: Prop
                                 aria-label="Customise options"
                                 // onClick={() => setDisplay('hidden')}
                             >
-                                <Cross1Icon />
+                                <span id='stroke-color'>
+                                    <Cross1Icon />
+                                </span>
                             </button>
                         </div>
                     </div>
