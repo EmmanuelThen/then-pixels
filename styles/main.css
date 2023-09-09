@@ -43,7 +43,8 @@ body {
   background: var(--background-rgb);
 }
 
-#stroke-color, .stroke-color {
+#stroke-color,
+.stroke-color {
   stroke: var(--text-rgb);
 }
 
@@ -63,14 +64,13 @@ h5,
 h6,
 p,
 td,
-label,
-li {
+label {
   color: var(--text-rgb);
 }
 
-li {
+/* li {
   font-weight: 100;
-}
+} */
 
 
 
@@ -538,6 +538,81 @@ li {
   }
 }
 
+.slide-in-out {
+  -webkit-animation: slide-in-out 8s infinite both;
+  animation: slide-in-out 8s infinite both;
+}
+
+.slide-in-out-faster {
+  -webkit-animation: slide-in-out 5s infinite both;
+  animation: slide-in-out 5s infinite both;
+}
+
+@-webkit-keyframes slide-in-out {
+  0% {
+    -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+
+  50% {
+    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+    transform: translateX(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-out {
+  0% {
+    -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+
+  50% {
+    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+    transform: translateX(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+}
+
+
 .fade-in {
   -webkit-animation: fade-in 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both infinite;
   animation: fade-in 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both infinite;
@@ -548,15 +623,19 @@ li {
   0% {
     opacity: 0;
   }
+
   25% {
     opacity: 0.25;
   }
+
   50% {
     opacity: 0.50;
   }
+
   75% {
     opacity: 0.75;
   }
+
   100% {
     opacity: 1;
   }
@@ -566,15 +645,19 @@ li {
   0% {
     opacity: 0;
   }
+
   25% {
     opacity: 0.25;
   }
+
   50% {
     opacity: 0.50;
   }
+
   75% {
     opacity: 0.75;
   }
+
   100% {
     opacity: 1;
   }
@@ -1008,62 +1091,71 @@ li {
 }
 
 .text-focus-in {
-	-webkit-animation: text-focus-in 1.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
-	        animation: text-focus-in 1.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
+  -webkit-animation: text-focus-in 1.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
+  animation: text-focus-in 1.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
 }
 
 
- @-webkit-keyframes text-focus-in {
+@-webkit-keyframes text-focus-in {
   0% {
     -webkit-filter: blur(12px);
-            filter: blur(12px);
+    filter: blur(12px);
     opacity: 0;
   }
+
   25% {
     -webkit-filter: blur(8px);
-            filter: blur(8px);
+    filter: blur(8px);
     opacity: 0.25;
   }
+
   50% {
     -webkit-filter: blur(4px);
-            filter: blur(4px);
+    filter: blur(4px);
     opacity: 0.50;
   }
+
   75% {
     -webkit-filter: blur(2px);
-            filter: blur(2px);
+    filter: blur(2px);
     opacity: 0.75;
   }
+
   100% {
     -webkit-filter: blur(0px);
-            filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
+
 @keyframes text-focus-in {
   0% {
     -webkit-filter: blur(12px);
-            filter: blur(12px);
+    filter: blur(12px);
     opacity: 0;
   }
+
   25% {
     -webkit-filter: blur(8px);
-            filter: blur(8px);
+    filter: blur(8px);
     opacity: 0.25;
   }
+
   50% {
     -webkit-filter: blur(4px);
-            filter: blur(4px);
+    filter: blur(4px);
     opacity: 0.50;
   }
+
   75% {
     -webkit-filter: blur(2px);
-            filter: blur(2px);
+    filter: blur(2px);
     opacity: 0.75;
   }
+
   100% {
     -webkit-filter: blur(0px);
-            filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
@@ -1074,5 +1166,3 @@ li {
   background: white;
   clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
 }
-
-

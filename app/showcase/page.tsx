@@ -1,14 +1,14 @@
 import React from 'react'
-import WebDevelopment from './components/WebDevelopment'
+import Showcase from './components/Showcase'
 
 type Props = {}
 
 const page = (props: Props) => {
-    return (
+  return (
         <>
-            <WebDevelopment />
+            <Showcase />
         </>
-    )
+  )
 }
 
 export default page
