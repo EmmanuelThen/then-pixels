@@ -29,7 +29,7 @@ const MobileNav = ({ nav1, nav2, nav3, nav4, nav5, nav6, nav7, navnavnav }: Prop
                             <button
                                 className=" rounded-full w-[35px] h-[35px] inline-flex items-center justify-center  shadow-[0_2px_10px] shadow-blackA7 outline-none hover:bg-slate2"
                                 aria-label="Customise options"
-                                // onClick={() => setDisplay('hidden')}
+                            // onClick={() => setDisplay('hidden')}
                             >
                                 <span id='stroke-color'>
                                     <Cross1Icon />
@@ -39,31 +39,45 @@ const MobileNav = ({ nav1, nav2, nav3, nav4, nav5, nav6, nav7, navnavnav }: Prop
                     </div>
                     <div className='flex flex-col justify-between h-full'>
                         <div>
-                            <Link className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3 my-8 ' href='/'>
+                            <Link
+                                className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3 my-8 '
+                                href='/'>
                                 <div className='text-slate10 font-medium'>{nav1}</div>
                                 <ChevronRightIcon />
                             </Link>
-                            <Link className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3 my-8 ' href='/dashboard'>
+                            <Link
+                                className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3 my-8 '
+                                href='/dashboard'>
                                 <div className='text-slate10 font-medium'>{nav2}</div>
                                 <ChevronRightIcon />
                             </Link>
-                            <Link className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3 my-8 ' href='/showcase'>
+                            <Link
+                                className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3 my-8 '
+                                href='/about'>
                                 <div className='text-slate10 font-medium'>{nav3}</div>
                                 <ChevronRightIcon />
                             </Link>
-                            <Link className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3 my-8 ' href='/contact'>
+                            <Link
+                                className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3 my-8 '
+                                href='/showcase'>
                                 <div className='text-slate10 font-medium'>{nav4}</div>
                                 <ChevronRightIcon />
                             </Link>
-                            <Link className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3 my-8' href='/contact'>
+                            <Link
+                                className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3 my-8'
+                                href='/contact'>
                                 <div className='text-slate10 font-medium'>{nav5}</div>
                                 <ChevronRightIcon />
                             </Link>
-                            <Link className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3 my-8 ' href='/signin'>
+                            <Link
+                                className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3 my-8 '
+                                href='/signin'>
                                 <div className='text-slate10 font-medium'>{nav6}</div>
                                 <ChevronRightIcon />
                             </Link>
-                            <Link className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3  my-8' href='/contact'>
+                            <Link
+                                className='flex justify-between items-center hover:bg-slate2 font-light border-dashed border-b-[1px] p-3  my-8'
+                                href='/contact'>
                                 <div className='text-slate10 font-medium'>{nav7}</div>
                                 <EnterIcon />
                             </Link>

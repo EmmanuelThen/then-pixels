@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 type Props = {
     href: string
-    imageSrc: string
+    imageSrc: any
     companyName: any
 }
 
@@ -13,12 +13,7 @@ const ShowcaseBox = ({ href, imageSrc, companyName }: Props) => {
         <section className=''>
             <div className='bg-slate2 rounded shadow-blackA9 shadow-[0px_4px_7px] transform transition-transform hover:scale-110'>
                 <div className='flex justify-center items-center p-20'>
-                    <Image
-                        src={imageSrc}
-                        alt={''}
-                        width={300}
-                        height={300}
-                    />
+                    {imageSrc}
                 </div>
                 <div className='flex justify-between items-center p-2 cursor-pointer bg-blue9 arrow hover:opacity-80 rounded-b'>
                     <Link
