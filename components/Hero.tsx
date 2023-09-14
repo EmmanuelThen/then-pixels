@@ -30,12 +30,12 @@ const Hero = (props: Props) => {
                         <button type='button' className='outline outline-1 outline-red9 rounded-md p-2 shadow-[#262626]/40 shadow-[0px_8px_15px]'>
                             Contact
                         </button>*/}
-                        <button className='shadow-lg rounded-lg bg-blue9 py-3 w-[153px] lg:w-[230px] hover:opacity-80'>
+                        <button className='shadow-lg rounded-lg bg-blue9 py-3 w-[153px] lg:w-[230px] transition duration-150 ease-in-out hover:opacity-80'>
                             <Link className=' inline-flex items-center  text-md lg:text-xl text-white' href='/signin'>
                                 Get started
                             </Link>
                         </button>
-                        <button className='shadow-lg rounded-lg bg-red9 py-3 w-[153px] lg:w-[230px] hover:opacity-80'>
+                        <button className='shadow-lg rounded-lg bg-red9 py-3 w-[153px] lg:w-[230px] transition duration-150 ease-in-out hover:opacity-80'>
                             <Link className=' inline-flex items-center  text-md lg:text-xl text-white' href='/pricing'>
                                 Pricing
                             </Link>

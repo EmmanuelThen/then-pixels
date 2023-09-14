@@ -233,7 +233,7 @@ const Navbar = () => {
                         (
                             <div className='hidden lg:block'>
                                 <form action="/auth/signout" method="post">
-                                    <button type='submit' className='text-sm text-white bg-red9 hover:opacity-80 rounded-full px-2 py-[3px] flex items-center w-fit' >
+                                    <button type='submit' className='text-sm text-white bg-red9 transition duration-150 ease-in-out hover:opacity-80 rounded-full px-2 py-[3px] flex items-center w-fit' >
                                         Log out
                                     </button>
                                 </form>

@@ -9,7 +9,7 @@ type Props = {
 const ArrowButton = ({ buttonText, href }: Props) => {
     return (
         <button type='button'>
-            <Link href={`${href}`} className='arrow bg-slate4 hover:bg-slate8 rounded-full px-2 py-[3px] flex items-center w-fit opacity-60 hover:opacity-100'>
+            <Link href={`${href}`} className='arrow bg-slate4 transition duration-150 ease-in-out hover:bg-slate8 rounded-full px-2 py-[3px] flex items-center w-fit opacity-60 hover:opacity-100'>
                 <div className='text-sm font-medium'>{buttonText}</div>
                 <span>
                     <svg

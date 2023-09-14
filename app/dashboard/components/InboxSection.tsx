@@ -346,7 +346,7 @@ const InboxSection = () => {
                                                     <button onClick={handleDeleteNotificationButtonClick}
                                                         disabled={isNotificationButtonDisabled}
                                                         type='button'
-                                                        className=' bg-slate8 hover:bg-slate8/80 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'
+                                                        className=' bg-slate8 transition duration-150 ease-in-out hover:opacity-80 text-white inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-1 px-2 text-xs lg:text-base lg:py-0 lg:px-[15px] lg:h-[35px] font-light leading-none focus:outline-none'
                                                     >
                                                         Notifications
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="hsl(206 100% 50.0%)" className="w-4 lg:w-5 h-4 lg:h-5">

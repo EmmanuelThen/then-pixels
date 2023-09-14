@@ -88,20 +88,11 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="flex items-start col-span-1  lg:col-span-6 lg:justify-end">
-          <div className="flex items-center h-10 space-x-6">
-            <a
-              aria-label="Github Repository"
-              href="https://github.com/vercel/nextjs-subscription-payments"
-            >
-              <GitHub />
-            </a>
-          </div>
-        </div>
+        
       </div>
       <div className="flex flex-col items-center justify-between py-12 space-y-4 md:flex-row">
         <div>
-          <span id='custom-text'>
+          <span id='custom-text' className='text-sm'>
             &copy; {new Date().getFullYear()} ThenPixels LLC All rights reserved.
           </span>
         </div>
@@ -115,7 +106,7 @@ export default function Footer() {
             />
           </a>
         </div> */}
-        <div className="flex items-center">
+        <div className="flex gap-2 items-center">
           <Link href='https://x.com/thenpixels' aria-label='thenpixels x link'>
             <TwitterLogo />
           </Link>

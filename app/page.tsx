@@ -12,6 +12,7 @@ import {
   getSubscription,
   getActiveProductsWithPrices
 } from '@/app/supabase-server';
+import Footer from '@/components/ui/Footer/Footer';
 
 export default async function PricingPage() {
   const [session, products, subscription] = await Promise.all([
@@ -63,6 +64,9 @@ export default async function PricingPage() {
           <GridAnimation />
         </section> */}
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

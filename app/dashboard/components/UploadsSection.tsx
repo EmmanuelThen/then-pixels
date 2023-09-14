@@ -59,7 +59,7 @@ const UploadsSection = (props: Props) => {
                                         className="hidden"
                                         onChange={handleFileChange}
                                     />
-                                    <label htmlFor="fileUpload" className="px-4 py-2 bg-blue9 hover:opacity-80 text-white rounded cursor-pointer">
+                                    <label htmlFor="fileUpload" className="px-4 py-2 bg-blue9 transition duration-150 ease-in-out hover:opacity-80 text-white rounded cursor-pointer">
                                         Choose File
                                     </label>
                                     <p className="mt-2 text-gray-600 text-sm">
@@ -98,7 +98,7 @@ const UploadsSection = (props: Props) => {
                             </div>
                         </div>
                     )}
-                    <button disabled={uploadedFile ? false : true} className='mt-10 px-[200px] py-2 bg-blue9 hover:opacity-80 text-white rounded cursor-pointer'>
+                    <button disabled={uploadedFile ? false : true} className='mt-10 px-[200px] py-2 bg-blue9 transition duration-150 ease-in-out hover:opacity-80 text-white rounded cursor-pointer'>
                         Upload
                     </button>
                 </div>

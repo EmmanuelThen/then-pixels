@@ -38,7 +38,7 @@ const DialogButton = ({
     return (
         <Dialog.Root>
             <Dialog.Trigger asChild>
-                <button disabled={disabled} className="{shadow-blackA9 shadow-[0_4px_7px]} text-blue9 lg:hover:opacity-80 inline-flex  items-center justify-center font-medium leading-none {shadow-[0_2px_10px]} focus:outline-none rounded">
+                <button disabled={disabled} className="{shadow-blackA9 shadow-[0_4px_7px]} text-blue9 transition duration-150 ease-in-out lg:hover:opacity-80 inline-flex  items-center justify-center font-medium leading-none {shadow-[0_2px_10px]} focus:outline-none rounded">
                     {buttonText}
                 </button>
             </Dialog.Trigger>
