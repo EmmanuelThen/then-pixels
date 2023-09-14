@@ -13,7 +13,7 @@ type Props = {}
 
 const Consultation = (props: Props) => {
     return (
-        <div className='md:fixed md:overflow-y-hidden'>
+        <div className=' md:overflow-y-hidden'>
             <div className='flex flex-col items-center justify-center p-5 md:p-10'>
                 <div>
                     <ShinyText

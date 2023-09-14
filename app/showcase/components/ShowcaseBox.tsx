@@ -17,7 +17,7 @@ const ShowcaseBox = ({ href, imageSrc, companyName }: Props) => {
                 </div>
                 <div className='flex justify-between items-center p-2 cursor-pointer bg-blue9 arrow hover:opacity-80 rounded-b'>
                     <Link
-                        className=' text-white'
+                        className='ml-2 text-white'
                         id=''
                         href={href}
                     >

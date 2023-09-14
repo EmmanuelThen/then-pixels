@@ -11,16 +11,17 @@ const Showcase = (props: Props) => {
     return (
         <>
             <div className='text-sm lg:text-base p-10 lg:p-20 w-full'>
-                <section className='flex'>
-                    <div className='focus-in-contract-bck text-center lg:text-left'>
+                <section className='lg:flex'>
+                    <div className='flex justify-center focus-in-contract-bck text-center lg:text-left'>
                         <ShinyText text={
-                            <div className='text-[45px] md:text-[61.9px] lg:text-[90px]'>
-                                Where <span className='text-blue9'>vision <br /></span> becomes <span className='text-red9'>reality,</span> welcome to our showcase.
+                            <div className='text-[45px] md:text-[61.9px] lg:text-[80px]'>
+                                Where <span className='text-blue9'>vision <br /></span> becomes <span className='text-red9'>reality,</span> <br /> welcome to our <br />showcase.
                             </div>
                         }
                         />
                     </div>
-                    <div className='hidden lg:flex flex-col gap-20  w-full'>
+                    {/* fix up width percentage to stretch out further but without disrupting hero title */}
+                    <div className='hidden lg:flex flex-col gap-20 lg:w-[30%]'>
                         <div className='flex justify-between w-full'>
                             <CompanyLogo
                                 svg={
@@ -197,7 +198,7 @@ const Showcase = (props: Props) => {
                             svg={'Company logo here'}
                         />
                     }
-                    companyName={'Tuple'}
+                    companyName={'Company name'}
                 />
                 <ShowcaseBox
                     href={''}
@@ -206,7 +207,7 @@ const Showcase = (props: Props) => {
                             svg={'Company logo here'}
                         />
                     }
-                    companyName={'Reform'}
+                    companyName={'Company name'}
                 />
                 <ShowcaseBox
                     href={''}
@@ -215,7 +216,7 @@ const Showcase = (props: Props) => {
                             svg={'Company logo here'}
                         />
                     }
-                    companyName={'Statamic'}
+                    companyName={'Company name'}
                 />
                 <ShowcaseBox
                     href={''}
@@ -224,7 +225,7 @@ const Showcase = (props: Props) => {
                             svg={'Company logo here'}
                         />
                     }
-                    companyName={'Savvycal'}
+                    companyName={'Company name'}
                 />
             </div>
         </>

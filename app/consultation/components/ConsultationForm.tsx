@@ -336,7 +336,7 @@ const ConsultationForm = ({ valueMissingMessage, typeMismatchMessage, buttonText
                 <button
                     type='submit'
                     disabled={true}
-                    className={` w-full box-border text-white hover:opacity-80 inline-flex h-[35px] items-center justify-center rounded-[4px] bg-blue9 px-[15px] font-medium leading-none mt-[10px] cursor-pointer`}
+                    className={`mb-2.5 w-full box-border text-white hover:opacity-80 inline-flex h-[35px] items-center justify-center rounded-[4px] bg-blue9 px-[15px] font-medium leading-none mt-[10px] cursor-pointer`}
                 >
                     {buttonText}
                 </button>
