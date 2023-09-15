@@ -46,7 +46,8 @@ const FeedbackSlide = (props: Props) => {
         setCurrentQuestion((prevQuestion) => prevQuestion + 1);
     };
 
-    const handlePreviousQuestion = () => {
+    const handlePreviousQuestion = (e: any) => {
+        e.preventDefault();
         setCurrentQuestion((prevQuestion) => prevQuestion - 1);
     };
     return (
@@ -90,7 +91,7 @@ const FeedbackSlide = (props: Props) => {
                         // disabled={currentQuestion === 0}
                         className={currentQuestion === 0 || currentQuestion === questions.length - 1 ?
                             'hidden' :
-                            'mt-10 shadow-blackA9 shadow-[0_4px_7px] px-4 py-2 bg-blue9 hover:opacity-80 text-white rounded cursor-pointer'
+                            'mt-10 shadow-blackA9 shadow-[0_4px_7px] px-4 py-2 bg-blue9 transition duration-150 ease-in-out hover:opacity-80 text-white rounded cursor-pointer'
                         }
                     >
                         {currentQuestion === questions.length - 1 ?
@@ -106,7 +107,7 @@ const FeedbackSlide = (props: Props) => {
                         onClick={handleNextQuestion}
                         disabled={currentQuestion === questions.length - 1 ? true : false}
                         type={currentQuestion === questions.length + 1 ? 'submit' : 'button'}
-                        className='mt-10 shadow-blackA9 shadow-[0_4px_7px] px-4 py-2 bg-blue9 hover:opacity-80 text-white rounded cursor-pointer'
+                        className='mt-10 shadow-blackA9 shadow-[0_4px_7px] px-4 py-2 bg-blue9 transition duration-150 ease-in-out hover:opacity-80 text-white rounded cursor-pointer'
                     >
                         {currentQuestion === questions.length - 1 ?
                             <div>

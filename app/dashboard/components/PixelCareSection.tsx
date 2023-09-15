@@ -95,7 +95,7 @@ const PixelCareSection = (props: Props) => {
                                 {/*  Card 1 */}
                                 <button
                                     value={value}
-                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    className='hover:opacity-80 duration-150 ease-in-out transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
                                     onClick={handleThemeUpdate}
                                 >
                                     <h1 className='font-semibold'>Theme/template update</h1>
@@ -103,7 +103,7 @@ const PixelCareSection = (props: Props) => {
                                 {/*  Card 2 */}
                                 <button
                                     value={value}
-                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    className='hover:opacity-80 duration-150 ease-in-out transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
                                     onClick={handleContentUpdate}
                                 >
                                     <h1 className='font-semibold'>Content update</h1>
@@ -111,7 +111,7 @@ const PixelCareSection = (props: Props) => {
                                 {/*  Card 3 */}
                                 <button
                                     value={value}
-                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    className='hover:opacity-80 duration-150 ease-in-out transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
                                     onClick={handleAdvContentUpdate}
                                 >
                                     <h1 className='font-semibold'>Advanced content update</h1>
@@ -119,7 +119,7 @@ const PixelCareSection = (props: Props) => {
                                 {/*  Card 4 */}
                                 <button
                                     value={value}
-                                    className='hover:opacity-80 transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    className='hover:opacity-80 duration-150 ease-in-out transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
                                     onClick={handleAccManager}
                                 >
                                     <h1 className='font-semibold'>Contact account manager</h1>

@@ -24,7 +24,7 @@ const RadioGroupButtons = ({
         >
             <div className="flex items-center">
                 <RadioGroup.Item
-                    className="hover:cursor-pointer bg-white w-[25px] h-[25px] rounded-full shadow-[0_2px_10px] shadow-blackA7  focus:shadow-[0_0_0_2px] focus:shadow-black outline-none cursor-default"
+                    className="hover:cursor-pointer bg-white  w-[25px] h-[25px] rounded-full shadow-[0_2px_10px] shadow-blackA7  focus:shadow-[0_0_0_2px] focus:shadow-black outline-none cursor-default"
                     value="5"
                     id="r1"
                     

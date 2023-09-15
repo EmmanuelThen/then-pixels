@@ -10,7 +10,7 @@ const Checkedbox = ({ label, onClick, checked, onCheckedChange, id, htmlFor }: a
             onClick={onClick}
         >
             <Checkbox.Root
-                className="shadow-blackA7 hover:bg-blue3 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-[4px] bg-white shadow-md outline outline-1 outline-slate6"
+                className="shadow-blackA7 transition duration-150 ease-in-out hover:bg-blue3 flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-[4px] bg-white shadow-md outline outline-1 outline-slate6"
                 checked={checked}
                 onCheckedChange={onCheckedChange}
                 id={id}

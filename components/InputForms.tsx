@@ -62,7 +62,7 @@ const InputForms = ({
 
             <Form.Submit asChild>
                 <div className='flex justify-center'>
-                    <button className={`${buttonDisplay} box-border w-[50%] text-white shadow-blackA7 hover:bg-blue9/80 inline-flex h-[35px] items-center justify-center rounded-[4px] bg-blue9 px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none mt-[10px]`}>
+                    <button className={`${buttonDisplay} box-border w-[50%] text-white shadow-blackA7 transition duration-150 ease-in-out hover:opacity-80 inline-flex h-[35px] items-center justify-center rounded-[4px] bg-blue9 px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none mt-[10px]`}>
                         {buttonText}
                     </button>
                 </div>

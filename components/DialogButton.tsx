@@ -56,7 +56,7 @@ const DialogButton = ({
                     </div>
                     <div className="lg:mt-[35px] flex items-center  justify-end">
                         <Dialog.Close asChild className={`${buttonDisplay}`}>
-                            <button type={saveButtonType} disabled={disabled} onClick={onClickfunction} className={`${saveButtonColor} text-white hover:${saveButtonColor}/80 inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-2 px-2 text-xs lg:text-base lg:py-0 lg:px-[10px] lg:h-[35px] font-medium leading-none focus:outline-none`}>
+                            <button type={saveButtonType} disabled={disabled} onClick={onClickfunction} className={`${saveButtonColor} transition duration-150 ease-in-out text-white hover:${saveButtonColor}/80 inline-flex items-center justify-center rounded-[4px] gap-1 lg:gap-2 py-2 px-2 text-xs lg:text-base lg:py-0 lg:px-[10px] lg:h-[35px] font-medium leading-none focus:outline-none`}>
                                 {saveButton}
                             </button>
                         </Dialog.Close>

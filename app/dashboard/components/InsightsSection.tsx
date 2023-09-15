@@ -31,9 +31,6 @@ const InsightsSection = (props: Props) => {
     const [isApiSuccess, setIsApiSuccess] = useState(false);
     const [isEnoughDataOnSite, setIsEnoughDataOnSite] = useState(true);
 
-
-
-
     const handleToggle = (i: any) => {
         const updatedChecked = [...checked];
         updatedChecked[i] = !updatedChecked[i];
@@ -71,7 +68,6 @@ const InsightsSection = (props: Props) => {
             return 'text-red-500';
         }
     }
-
 
     // api call to pagespeed
     const apiKey = process.env.NEXT_PUBLIC_GOOGLE_PAGESPEED_API_KEY;
@@ -198,7 +194,7 @@ const InsightsSection = (props: Props) => {
                                 <button
                                     type='submit'
                                     onClick={getPageSpeedData}
-                                    className='bg-blue9 hover:opacity-80 text-white flex justify-center items-center  h-[35px] w-full mt-5 p-2 rounded'
+                                    className='bg-blue9 transition duration-150 ease-in-out hover:opacity-80 text-white flex justify-center items-center  h-[35px] w-full mt-5 p-2 rounded'
                                 >
                                     {isLoading ? (<LoaderRing />) : 'Get Scores'}
                                 </button>
@@ -255,16 +251,16 @@ const InsightsSection = (props: Props) => {
                                 <div className='flex justify-between lg:items-start w-full'>
                                     <div>
                                         <h1 className='font-bold lg:font-semibold text-blue9 text-sm lg:text-base'>Showing results for:</h1>
-                                        <p className='font-medium text-slate10 text-sm lg:text-3xl'>
+                                        <p className='font-light text-slate10 text-sm lg:text-2xl'>
                                             {data.id}
                                         </p>
                                     </div>
-                                    <Link className='text-sm lg:text-base text-blue9 hover:underline' href='https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/?utm_source=lighthouse&utm_medium=lr' target='_blank'>
+                                    <Link className='text-sm lg:text-base text-blue9 transition duration-150 ease-in-out hover:opacity-80' href='https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/?utm_source=lighthouse&utm_medium=lr' target='_blank'>
                                         How is this data calculated?
                                     </Link>
                                 </div>
                                 <div className='flex flex-col items-center gap-5 mt-5 text-center lg:flex-row justify-between w-full'>
-                                    <h1 className='font-bold lg:font-semibold text-blue9 text-xl lg:text-4xl'>Scores:</h1>
+                                    <h1 className='font-bold lg:font-light text-blue9 text-xl lg:text-4xl'>Scores:</h1>
                                     <div className='flex flex-col items-center hover:rounded-lg p-5'>
                                         <h1 id='custom-text' className='text-sm lg:text-base font-semibold mb-5'>Performance</h1>
                                         <HoverCards
@@ -337,10 +333,10 @@ const InsightsSection = (props: Props) => {
                                 {/** For edge case where if the site doesnt have enough speed data it will still show scores */}
                                 {(isApiSuccess && isEnoughDataOnSite && lcpPercentileWidth.length === 3) ? (
                                     <div className='w-full p-5'>
-                                        <h1 className='flex justify-center font-bold lg:font-semibold text-blue9 text-xl lg:text-4xl py-10'>Core Web Vitals Assessment:</h1>
+                                        <h1 className='flex justify-center font-bold lg:font-light text-blue9 text-xl lg:text-4xl py-10'>Core Web Vitals Assessment:</h1>
                                         <div className='flex flex-col items-center justify-between w-full mt-10 shadow-blackA9 shadow-[0_4px_7px] rounded-md p-5 '>
                                             <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full'>
-                                                <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
+                                                <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-light text-lg lg:text-xl'>
                                                     Largest Contentful Paint (LCP)
                                                 </h1>
                                                 <div className='lg:w-[60%] flex flex-col items-center justify-center'>
@@ -388,7 +384,7 @@ const InsightsSection = (props: Props) => {
                                             </div>
                                         </div>
                                         <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full mt-20 shadow-blackA9 shadow-[0_4px_7px] rounded-md p-5 '>
-                                            <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
+                                            <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-light text-lg lg:text-xl'>
                                                 Cumulative Layout Shift Score (CLS)
                                             </h1>
                                             <div className='w-[60%] flex flex-col items-center justify-center'>
@@ -441,7 +437,7 @@ const InsightsSection = (props: Props) => {
                                             </div>
                                         </div>
                                         <div className='flex flex-col gap-10 lg:flex-row justify-between items-center w-full mt-20 shadow-blackA9 shadow-[0_4px_7px] rounded-md p-5 '>
-                                            <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-semibold text-lg lg:text-xl'>
+                                            <h1 id='custom-text' className='lg:w-[20%] font-bold lg:font-light text-lg lg:text-xl'>
                                                 First Input Delay (FID)
                                             </h1>
                                             <div className='w-[60%] flex flex-col items-center justify-center'>
@@ -516,7 +512,7 @@ const InsightsSection = (props: Props) => {
                     </div>
                 )}
             </div>
-            <div className='flex flex-col gap-5 lg:gap-0 lg:justify-between lg:flex-row flex-wrap p-5'>
+            <div className='hidden {flex} flex-col gap-5 lg:gap-0 lg:justify-between lg:flex-row flex-wrap p-5'>
                 {/** Card 1 */}
                 <div className='flex items-center gap-10 border border-1 p-3 rounded-lg shadow-md lg:hover:shadow-xl w-[100%] lg:w-[20%]'>
                     <div className='border border-1 rounded-lg p-2'>

@@ -20,20 +20,18 @@ type Props = {
 
 const ListItem = ({ description, children, href }: Props) => {
     return (
-        <>
-            <li>
-                <NavigationMenu.Link asChild>
-                    <Link target='_blank' href={`${href}`} className='focus:shadow-[0_0_0_2px] focus:shadow-blue7 hover:bg-slate10 block select-none rounded-[6px] p-3 text-sm leading-none no-underline outline-none transition-colors'>
-                        <h1 id='custom-text' className='font-medium mb-1 leading-[1.2] '>
-                            {children}
-                        </h1>
-                        <p className='text-slate8 text-sm leading-[1.4]'>
-                            {description}
-                        </p>
-                    </Link>
-                </NavigationMenu.Link>
-            </li>
-        </>
+        <li>
+            <NavigationMenu.Link asChild>
+                <Link target='_blank' href={`${href}`} className='hover:cursor-pointer focus:shadow-[0_0_0_2px] focus:shadow-blue7 duration-150 ease-in-out hover:opacity-70 block select-none rounded-[6px] p-3 text-sm leading-none no-underline outline-none transition'>
+                    <h1 id='custom-text' className='font-medium mb-1 leading-[1.2] '>
+                        {children}
+                    </h1>
+                    <p className='text-slate10 text-sm leading-[1.4]'>
+                        {description}
+                    </p>
+                </Link>
+            </NavigationMenu.Link>
+        </li>
     )
 }
 
@@ -69,8 +67,9 @@ const Navbar = () => {
                     </div>
                     <div className='cursor-pointer '>{/** z-100 was here before */}
                         <button
+                            id='stroke-color'
                             className=" rounded-full w-[35px] h-[35px] inline-flex items-center justify-center  shadow-[0_2px_10px] shadow-blackA7 outline-none hover:bg-slate2"
-                            aria-label="Customise options"
+                            aria-label="Navbar button"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         >
                             {isMobileMenuOpen ? <Cross1Icon /> : <HamburgerMenuIcon />}
@@ -101,14 +100,14 @@ const Navbar = () => {
                     <NavigationMenu.Item>
                         <NavigationMenu.Link
                             id='nav-link'
-                            className=" hover:bg-slate2 focus:shadow-blue7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-sm font-medium leading-none outline-none focus:shadow-[0_0_0_2px]"
+                            className="transition duration-150 ease-in-out hover:bg-slate2 focus:shadow-blue7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-sm font-medium leading-none outline-none focus:shadow-[0_0_0_2px]"
                             href='/'
                         >
                             <p>Home</p>
                         </NavigationMenu.Link>
                     </NavigationMenu.Item>
                     <NavigationMenu.Item>
-                        <NavigationMenu.Trigger id='nav-link' className=" hover:bg-slate2 focus:shadow-blue7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-sm font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
+                        <NavigationMenu.Trigger id='nav-link' className="transition duration-150 ease-in-out hover:bg-slate2 focus:shadow-blue7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-sm font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
                             <p>What we offer</p>{' '}
                             <CaretDownIcon
                                 id='custom-text'
@@ -116,7 +115,7 @@ const Navbar = () => {
                                 aria-hidden
                             />
                         </NavigationMenu.Trigger>
-                        <NavigationMenu.Content id='nav-dropdown-bg' className="border rounded-lg data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto z-[999]">
+                        <NavigationMenu.Content id='nav-dropdown-bg' className=" rounded-lg data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto z-[999]">
                             <ul className="one relative m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[500px] sm:grid-cols-[0.75fr_1fr]">
                                 <ListItem description='Every business needs an online presence, make it count' href='/webdevelopment'>
                                     <div className='flex items-center gap-1'>
@@ -154,7 +153,7 @@ const Navbar = () => {
                         </NavigationMenu.Content>
                     </NavigationMenu.Item>
                     <NavigationMenu.Item>
-                        <NavigationMenu.Trigger id='nav-link' className=" hover:bg-slate2 focus:shadow-blue7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-sm font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
+                        <NavigationMenu.Trigger id='nav-link' className="transition duration-150 ease-in-out hover:bg-slate2 focus:shadow-blue7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-sm font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
                             <p>Showcase</p>{' '}
                             <CaretDownIcon
                                 id='custom-text'
@@ -162,7 +161,7 @@ const Navbar = () => {
                                 aria-hidden
                             />
                         </NavigationMenu.Trigger>
-                        <NavigationMenu.Content id='nav-dropdown-bg' className="absolute top-0 left-0 w-full sm:w-auto border rounded-lg">
+                        <NavigationMenu.Content id='nav-dropdown-bg' className="absolute top-0 left-0 w-full sm:w-auto rounded-lg">
                             <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
                                 <ListItem description='Barbershop' href='https://lictonsorial.com'>
                                     <div className='flex items-center gap-1'>
@@ -204,8 +203,14 @@ const Navbar = () => {
                                         </svg>
                                     </div>
                                 </ListItem>
-                                <ListItem description='' href='/showcase'>
-                                    <ArrowButton buttonText={'Full showcase'} href='/showcase' />
+                                <ListItem description='Lets go' href='/showcase'>
+                                    <div className='flex items-center gap-1'>
+                                        Full showcase
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill='transparent' viewBox="0 0 24 24" stroke-width="1.5" stroke="hsl(206 100% 50.0%)">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
+                                        </svg>
+
+                                    </div>
                                 </ListItem>
                             </ul>
                         </NavigationMenu.Content>
@@ -213,7 +218,7 @@ const Navbar = () => {
                     <NavigationMenu.Item>
                         <NavigationMenu.Link
                             id='nav-link'
-                            className=" hover:bg-slate2 focus:shadow-blue7 block select-none rounded-[4px] px-3 py-2 text-sm font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
+                            className="transition duration-150 ease-in-out hover:bg-slate2 focus:shadow-blue7 block select-none rounded-[4px] px-3 py-2 text-sm font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
                             href="/contact"
                         >
                             <p>Contact</p>

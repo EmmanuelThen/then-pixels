@@ -8,7 +8,7 @@ const HoverCards = ({ cover, content }: any) => {
         <HoverCard.Root openDelay={100} closeDelay={100}>
             <HoverCard.Trigger asChild>
                 <div
-                    className="flex items-center justify-center cursor-pointer rounded-full shadow-lg hover:bg-slate2 h-10 w-[80px] outline-none border border-1"
+                    className="flex items-center justify-center cursor-pointer rounded-full shadow-lg transition duration-150 ease-in-out hover:opacity-70 h-10 w-[80px] outline-none border border-1"
                     rel="noreferrer noopener"
                 >
                     {cover}
@@ -16,7 +16,7 @@ const HoverCards = ({ cover, content }: any) => {
             </HoverCard.Trigger>
             <HoverCard.Portal>
                 <HoverCard.Content
-                    className="data-[side=bottom]:animate-slideUpAndFade data-[side=right]:animate-slideLeftAndFade data-[side=left]:animate-slideRightAndFade data-[side=top]:animate-slideDownAndFade w-[300px] rounded-md bg-white p-5 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] data-[state=open]:transition-all"
+                    className="transition duration-150 ease-in-out data-[side=bottom]:animate-slideUpAndFade data-[side=right]:animate-slideLeftAndFade data-[side=left]:animate-slideRightAndFade data-[side=top]:animate-slideDownAndFade w-[300px] rounded-md bg-white p-5 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] data-[state=open]:transition-all"
                     sideOffset={5}
                 >
                     <div className="flex flex-col gap-[7px]">

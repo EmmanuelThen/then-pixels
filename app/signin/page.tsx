@@ -168,11 +168,11 @@ export default function Login() {
               className="p-10 md:px-20 py-12 rounded  shadow-blackA9 shadow-[0px_4px_7px] flex-1 flex flex-col w-full justify-center gap-2 text-foreground"
               onSubmit={view === 'sign-in' ? handleSignIn : handleSignUp}
             >
-              <label className="text-md font-semibold text-blue9" htmlFor="email">
+              <label className="text-md font-medium text-blue9" htmlFor="email">
                 Email
               </label>
               <input
-                className="bg-slate4 shadow-blackA9 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9  mb-6"
+                className="transition duration-150 ease-in-out bg-slate4 shadow-blackA9 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9  mb-6"
                 type='email'
                 id='email'
                 name="email"
@@ -182,14 +182,14 @@ export default function Login() {
                 pattern='[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}'
                 required
               />
-              <label className="text-md font-semibold text-blue9" htmlFor="password">
+              <label className="text-md font-medium text-blue9" htmlFor="password">
                 Password
               </label>
               {view === 'sign-up' ?
                 (
                   <>
                     <input
-                      className="bg-slate4 shadow-blackA9 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9  "
+                      className="transition duration-150 ease-in-out bg-slate4 shadow-blackA9 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9  "
                       type="password"
                       name="password"
                       onChange={(e) => setPassword(e.target.value)}
@@ -204,11 +204,11 @@ export default function Login() {
                       <p>At least 1 special character</p>
                       <p>At least 1 lowercase letter and 1 uppercase letter</p>
                     </div>
-                    <label id='custom-text' className="text-md" htmlFor="password">
+                    <label className="text-md text-blue9 font-medium" htmlFor="password">
                       Re-enter Password
                     </label>
                     <input
-                      className="bg-slate4 shadow-blackA9 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9  mb-6"
+                      className="transition duration-150 ease-in-out bg-slate4 shadow-blackA9 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9  mb-6"
                       type="password"
                       name="password"
                       onChange={(e) => setReEnterPassword(e.target.value)}
@@ -221,7 +221,7 @@ export default function Login() {
                 ) :
                 (
                   <input
-                    className="bg-slate4 shadow-blackA9 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9 mb-6"
+                    className="transition duration-150 ease-in-out bg-slate4 shadow-blackA9 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9 mb-6"
                     type="password"
                     name="password"
                     onChange={(e) => setPassword(e.target.value)}
@@ -345,7 +345,7 @@ export default function Login() {
                     className={`${password === reEnterPassword ? 'mb-6' : ''} 
                     ${!email || !password || !reEnterPassword || (password !== reEnterPassword) ?
                         'bg-slate9 text-white rounded px-4 py-2 cursor-not-allowed' :
-                        'bg-blue9 hover:opacity-80 rounded px-4 py-2 text-white hover:cursor-pointer'}`
+                        'bg-blue9 hover:opacity-80 rounded px-4 py-2 text-white hover:cursor-pointer transition duration-150 ease-in-out'}`
                     }
                     disabled={!email || !password || !reEnterPassword || (password !== reEnterPassword)}
                   >
@@ -365,7 +365,7 @@ export default function Login() {
                   <p className="text-sm text-center">
                     Already have an account?
                     <button
-                      className="ml-1 hover:underline text-blue9 hover:opacity-80"
+                      className="ml-1 text-blue9 transition duration-150 ease-in-out hover:opacity-80"
                       onClick={() => setView('sign-in')}
                     >
                       Sign in now
