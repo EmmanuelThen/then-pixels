@@ -22,7 +22,8 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [reEnterPassword, setReEnterPassword] = useState('');
   const [view, setView] = useState('sign-in');
-  const [notRegisteredMessageDisplay, setNotRegisteredMessageDisplay] = useState('hidden')
+  const [notRegisteredMessageDisplay, setNotRegisteredMessageDisplay] = useState('hidden');
+  const [orderId, setOrderId] = useState('');
   const router = useRouter()
   const supabase = createClientComponentClient()
 
@@ -216,6 +217,19 @@ export default function Login() {
                       pattern='/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=]).{8,}$/'
                       required
                       placeholder="••••••••"
+                    />
+                    <label className="text-md text-blue9 font-medium" htmlFor="order-id">
+                      ORDER-ID
+                    </label>
+                    <input
+                      className="transition duration-150 ease-in-out bg-slate4 shadow-blackA9 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9  mb-6"
+                      type="text"
+                      name="order-id"
+                      onChange={(e) => setOrderId(e.target.value)}
+                      value={orderId}
+                      pattern='/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=]).{8,}$/'
+                      required
+                      placeholder="TPX-123456789"
                     />
                   </>
                 ) :
