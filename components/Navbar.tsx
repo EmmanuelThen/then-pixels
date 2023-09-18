@@ -68,7 +68,7 @@ const Navbar = () => {
                     <div className='cursor-pointer '>{/** z-100 was here before */}
                         <button
                             id='stroke-color'
-                            className=" rounded-full w-[35px] h-[35px] inline-flex items-center justify-center  shadow-[0_2px_10px] shadow-blackA7 outline-none hover:bg-slate2"
+                            className=" rounded-full w-[35px] h-[35px] inline-flex items-center justify-center  shadow-[0_2px_10px] shadow-blackA7 outline-none transition duration-150 ease-in-out hover:opacity-80"
                             aria-label="Navbar button"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         >
@@ -99,16 +99,15 @@ const Navbar = () => {
                 <NavigationMenu.List className="center m-0 flex gap-20 list-none p-1">
                     <NavigationMenu.Item>
                         <NavigationMenu.Link
-                            id='nav-link'
-                            className="transition duration-150 ease-in-out hover:bg-slate2 focus:shadow-blue7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-sm font-medium leading-none outline-none focus:shadow-[0_0_0_2px]"
+                            className="transition duration-150 ease-in-out focus:shadow-blue7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-sm font-medium leading-none outline-none focus:shadow-[0_0_0_2px]"
                             href='/'
                         >
-                            <p>Home</p>
+                            <p className='transition duration-150 ease-in-out hover:opacity-80'>Home</p>
                         </NavigationMenu.Link>
                     </NavigationMenu.Item>
                     <NavigationMenu.Item>
-                        <NavigationMenu.Trigger id='nav-link' className="transition duration-150 ease-in-out hover:bg-slate2 focus:shadow-blue7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-sm font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
-                            <p>What we offer</p>{' '}
+                        <NavigationMenu.Trigger  className="transition duration-150 ease-in-out  focus:shadow-blue7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-sm font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
+                            <p className='transition duration-150 ease-in-out hover:opacity-80'>What we offer</p>{' '}
                             <CaretDownIcon
                                 id='custom-text'
                                 className="relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
@@ -153,8 +152,8 @@ const Navbar = () => {
                         </NavigationMenu.Content>
                     </NavigationMenu.Item>
                     <NavigationMenu.Item>
-                        <NavigationMenu.Trigger id='nav-link' className="transition duration-150 ease-in-out hover:bg-slate2 focus:shadow-blue7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-sm font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
-                            <p>Showcase</p>{' '}
+                        <NavigationMenu.Trigger className="transition duration-150 ease-in-out focus:shadow-blue7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-sm font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
+                            <p className='transition duration-150 ease-in-out hover:opacity-80'>Showcase</p>{' '}
                             <CaretDownIcon
                                 id='custom-text'
                                 className=" relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
@@ -217,11 +216,10 @@ const Navbar = () => {
                     </NavigationMenu.Item>
                     <NavigationMenu.Item>
                         <NavigationMenu.Link
-                            id='nav-link'
-                            className="transition duration-150 ease-in-out hover:bg-slate2 focus:shadow-blue7 block select-none rounded-[4px] px-3 py-2 text-sm font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
+                            className="transition duration-150 ease-in-out focus:shadow-blue7 block select-none rounded-[4px] px-3 py-2 text-sm font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
                             href="/contact"
                         >
-                            <p>Contact</p>
+                            <p className='transition duration-150 ease-in-out hover:opacity-80'>Contact</p>
                         </NavigationMenu.Link>
                     </NavigationMenu.Item>
 

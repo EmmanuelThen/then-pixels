@@ -58,13 +58,20 @@ export default async function PricingPage() {
             </p>
             <ArrowButton buttonText='Learn more' href='/pixelcare' />
           </LandingPageSection>
+          <LandingPageSection topTitle='Dashboard' shinyText='Get to know your dashboard, your personal command center.' side={<MaintenanceSVG />} bgColor=''>
+            <p className='mb-10'>
+              Experience the power of custom solutions as you manage your web projects with ease. Our platform empowers you to collaborate,
+              track progress, and bring your unique vision to life. Explore a new era of web development, tailored just for you.
+            </p>
+            <ArrowButton buttonText='Get started' href='/pixelcare' />
+          </LandingPageSection>
         </section>
         {/* <section className='mt-[390px] lg:mt-[530px]'>
           <OptimizationSection />
           <GridAnimation />
         </section> */}
       </main>
-      <footer>
+      <footer className='mt-20'>
         <Footer />
       </footer>
     </>

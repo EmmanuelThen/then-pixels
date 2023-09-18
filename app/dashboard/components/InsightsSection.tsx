@@ -194,7 +194,7 @@ const InsightsSection = (props: Props) => {
                                 <button
                                     type='submit'
                                     onClick={getPageSpeedData}
-                                    className='bg-blue9 transition duration-150 ease-in-out hover:opacity-80 text-white flex justify-center items-center  h-[35px] w-full mt-5 p-2 rounded'
+                                    className={`${isLoading ? 'bg-slate10 cursor-not-allowed' : 'bg-blue9'} bg-blue9 transition duration-150 ease-in-out hover:opacity-80 text-white flex justify-center items-center  h-[35px] w-full mt-5 p-2 rounded`}
                                 >
                                     {isLoading ? (<LoaderRing />) : 'Get Scores'}
                                 </button>

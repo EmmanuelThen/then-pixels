@@ -14,9 +14,9 @@ type Props = {}
 const MobileFullDashboard = (props: Props) => {
     return (
         <div className='' id='mobile-grid-section'>
-            <div className=' overflow-hidden'>
+            {/* <div className=' overflow-hidden'>
                 <DashMobileNavbar />
-            </div>
+            </div> */}
             <Tabs.Root defaultValue="tab1" orientation="vertical">
                 <Tabs.List aria-label="tabs example" className='flex justify-between p-5 mt-5'>
                     <Tabs.Trigger
@@ -56,9 +56,9 @@ const MobileFullDashboard = (props: Props) => {
                             <DashAccordion
                                 title1='production tracker'
                                 title2='PixelCare'
-                                title3='order history'
-                                title4='contracts & docs'
-                                title5='Messages'
+                                title3='documents & invoices'
+                                title4='file sharing'
+                                title5='feedback'
                                 title6='performance'
                             />
                             <div>
