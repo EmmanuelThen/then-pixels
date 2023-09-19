@@ -97,6 +97,7 @@ const DashNavbar = () => {
                         title4='contracts & docs'
                         title5='PixelCare'
                         title6='performance'
+                        title7={undefined}
                     />
                     <div>
                         <h1 className='flex justify-center'><ShinyText text='Any Questions?' /></h1>
