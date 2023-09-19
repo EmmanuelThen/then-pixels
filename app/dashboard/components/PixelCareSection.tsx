@@ -59,8 +59,8 @@ const PixelCareSection = (props: Props) => {
     // Card 5 and 6 still need functions
     return (
         <div>
-            <div className="p-5 lg:p-0 lg:flex lg:items-center lg:justify-between lg:ml-2 ">
-                <div className='hidden lg:block text-center lg:text-left'>
+            <div className="hidden p-5 lg:p-0 lg:flex lg:items-center lg:justify-between lg:ml-2 ">
+                <div className='text-center lg:text-left'>
                     <ShinyText text="PixelCare" />
                 </div>
                 <div className='hidden lg:block notificationBell relative'>
@@ -87,42 +87,42 @@ const PixelCareSection = (props: Props) => {
                     <>
 
                         <div className='rounded-md border-b-[0.8px] border-slate4 text-xs lg:text-base p-5 mb-10'>
-                            <h1 id='text_gradient' className='font-semibold'>{'Pixelcare {tier}'}</h1>
+                            <h1 className='font-semibold text-blue9'>{'Pixelcare {tier}'}</h1>
                             <h1 className='text-slate10 mb-5'>
                                 Select a perk below to begin
                             </h1>
-                            <article className='grid grid-cols-4 gap-2 lg:gap-5'>
+                            <article className='grid lg:grid-cols-4 gap-2 lg:gap-5'>
                                 {/*  Card 1 */}
                                 <button
                                     value={value}
-                                    className='hover:opacity-80 duration-150 ease-in-out transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    className='hover:opacity-80 duration-150 ease-in-out transform transition-transform hover:scale-110 cursor-pointer p-2 lg:p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
                                     onClick={handleThemeUpdate}
                                 >
-                                    <h1 className='font-semibold'>Theme/template update</h1>
+                                    <span className='font-semibold'>Theme/template update</span>
                                 </button>
                                 {/*  Card 2 */}
                                 <button
                                     value={value}
-                                    className='hover:opacity-80 duration-150 ease-in-out transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    className='hover:opacity-80 duration-150 ease-in-out transform transition-transform hover:scale-110 cursor-pointer p-2 lg:p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
                                     onClick={handleContentUpdate}
                                 >
-                                    <h1 className='font-semibold'>Content update</h1>
+                                    <span className='font-semibold'>Content update</span>
                                 </button>
                                 {/*  Card 3 */}
                                 <button
                                     value={value}
-                                    className='hover:opacity-80 duration-150 ease-in-out transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    className='hover:opacity-80 duration-150 ease-in-out transform transition-transform hover:scale-110 cursor-pointer p-2 lg:p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
                                     onClick={handleAdvContentUpdate}
                                 >
-                                    <h1 className='font-semibold'>Advanced content update</h1>
+                                    <span className='font-semibold'>Advanced content update</span>
                                 </button>
                                 {/*  Card 4 */}
                                 <button
                                     value={value}
-                                    className='hover:opacity-80 duration-150 ease-in-out transform transition-transform hover:scale-110 cursor-pointer p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
+                                    className='hover:opacity-80 duration-150 ease-in-out transform transition-transform hover:scale-110 cursor-pointer p-2 lg:p-5 bg-blue9 text-white rounded-lg shadow-blackA9 shadow-[0_4px_7px] text-xs lg:text-base'
                                     onClick={handleAccManager}
                                 >
-                                    <h1 className='font-semibold'>Contact account manager</h1>
+                                    <span className='font-semibold'>Contact account manager</span>
                                 </button>
 
                             </article>
@@ -136,8 +136,8 @@ const PixelCareSection = (props: Props) => {
                                         return (
                                             <div>
                                                 <ShinyText text={'Theme/Template Updates'} />
-                                                <div className='flex items-center justify-center'>
-                                                    <div className='w-[50%]'>
+                                                <div className='flex items-center w-full lg:justify-center'>
+                                                    <div className='lg:w-[50%]'>
                                                         <InputForms
                                                             label={'Subject'}
                                                             valueMissingMessage={'Subject is missing'}
@@ -156,8 +156,8 @@ const PixelCareSection = (props: Props) => {
                                         return (
                                             <div>
                                                 <ShinyText text={'Content Update'} />
-                                                <div className='flex items-center justify-center'>
-                                                    <div className='w-[50%]'>
+                                                <div className='flex items-center w-full lg:justify-center'>
+                                                    <div className='lg:w-[50%]'>
                                                         <InputForms
                                                             label={'Subject'}
                                                             valueMissingMessage={'Subject is missing'}
@@ -176,8 +176,8 @@ const PixelCareSection = (props: Props) => {
                                         return (
                                             <div>
                                                 <ShinyText text={'Advanced Content Update'} />
-                                                <div className='flex items-center justify-center'>
-                                                    <div className='w-[50%]'>
+                                                <div className='flex items-center w-full lg:justify-center'>
+                                                    <div className='lg:w-[50%]'>
                                                         <InputForms
                                                             label={'Subject'}
                                                             valueMissingMessage={'Subject is missing'}
@@ -196,8 +196,8 @@ const PixelCareSection = (props: Props) => {
                                         return (
                                             <div>
                                                 <ShinyText text={'Contact Account Manager'} />
-                                                <div className='flex items-center justify-center'>
-                                                    <div className='w-[50%]'>
+                                                <div className='flex items-center w-full lg:justify-center'>
+                                                    <div className='lg:w-[50%]'>
                                                         <InputForms
                                                             label={'Subject'}
                                                             valueMissingMessage={'Subject is missing'}
