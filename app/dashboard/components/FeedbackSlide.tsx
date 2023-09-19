@@ -52,11 +52,11 @@ const FeedbackSlide = (props: Props) => {
     };
     return (
         <>
-            <form className='w-full p-5'>
+            <form className='w-full lg:p-5'>
                 {currentQuestion === questions.length - 1 ?
                     <div>
                         <div>
-                            <h1 className='flex justify-center text-slate10 text-3xl mb-5 text-center'>
+                            <h1 className='flex justify-center text-slate10 text-sm lg:text-3xl mb-5 text-center'>
                                 Thank you for completing our survey! We truley value and take into account your feedback.
                             </h1>
                             <p className='text-center mb-5'>
@@ -69,13 +69,13 @@ const FeedbackSlide = (props: Props) => {
                     :
                     <div className='flex flex-col'>
                         {/* Question */}
-                        <div className='flex justify-center w-full mb-10'>
-                            <h1 className=' text-slate10 text-3xl'>
+                        <div className='flex justify-center w-full mb-5 lg:mb-10'>
+                            <h1 className='text-slate10 text-sm lg:text-3xl'>
                                 {questions[currentQuestion].question}
                             </h1>
                         </div>
                         {/* Answers */}
-                        <div className='flex justify-evenly'>
+                        <div className='flex flex-col gap-3.5 lg:gap-0 lg:flex-row justify-evenly'>
                             {questions[currentQuestion].answers.map((answer, i) => (
                                 <FeedbackAnswers key={i} answer={answer} />
                             ))}
@@ -97,7 +97,7 @@ const FeedbackSlide = (props: Props) => {
                         {currentQuestion === questions.length - 1 ?
                             ''
                             :
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 lg:w-6 lg:h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                             </svg>
                         }
@@ -114,7 +114,7 @@ const FeedbackSlide = (props: Props) => {
                                 Submit survey
                             </div>
                             :
-                            <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' className='w-6 h-6'>
+                            <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' className='w-4 h-4 lg:w-6 lg:h-6'>
                                 <path strokeLinecap='round' strokeLinejoin='round' d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3' />
                             </svg>
                         }

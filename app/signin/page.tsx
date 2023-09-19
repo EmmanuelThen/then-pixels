@@ -357,11 +357,11 @@ export default function Login() {
                 <>
                   <button
                     className={`${password === reEnterPassword ? 'mb-6' : ''} 
-                    ${!email || !password || !reEnterPassword || (password !== reEnterPassword) ?
+                    ${!email || !password || !reEnterPassword || (password !== reEnterPassword) || !orderId ?
                         'bg-slate9 text-white rounded px-4 py-2 cursor-not-allowed' :
                         'bg-blue9 hover:opacity-80 rounded px-4 py-2 text-white hover:cursor-pointer transition duration-150 ease-in-out'}`
                     }
-                    disabled={!email || !password || !reEnterPassword || (password !== reEnterPassword)}
+                    disabled={!email || !password || !reEnterPassword || (password !== reEnterPassword) || !orderId}
                   >
                     {loading ? 'Sign Up' : <LoaderRing />}
                   </button>

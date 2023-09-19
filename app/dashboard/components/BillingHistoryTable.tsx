@@ -37,7 +37,7 @@ const BillingHistoryTable = () => {
     return (
         <div className="max-h-72 overflow-y-auto w-full">
             {/* Test buttons for payment statuses */}
-            <div className="flex space-x-2 my-2">
+            <div className="hidden {flex} space-x-2 my-2">
                 <button onClick={() => addInvoiceToHistory(billingHistory, 'paid', 500)} className="text-white text-xs border border-1 p-2 rounded-lg bg-blue-500">
                     Test for new paid invoice
                 </button>

@@ -12,7 +12,7 @@ type Props = {
 
 const LabelDemo = ({ label, defaultValue, buttonDisplay, onChange }: Props) => (
   <div className="flex flex-col flex-wrap gap-[15px] w-full">
-    <Label.Root className="text-sm lg:text-[15px] font-medium" htmlFor="firstName">
+    <Label.Root className="text-sm lg:text-[15px] font-medium text-slate10" htmlFor="firstName">
       {label}
     </Label.Root>
     <div className='flex'>

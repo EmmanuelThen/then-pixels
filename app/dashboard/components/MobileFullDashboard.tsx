@@ -55,18 +55,27 @@ const MobileFullDashboard = (props: Props) => {
                         <div className='flex flex-col justify-between gap-10 p-2'>
                             <DashAccordion
                                 title1='production tracker'
-                                title2='PixelCare'
-                                title3='documents & invoices'
-                                title4='file sharing'
-                                title5='feedback'
-                                title6='performance'
+                                title2='documents & invoices'
+                                title3='file sharing'
+                                title4='feedback'
+                                title5={
+                                    <span className='capitalize' id='text_gradient'>
+                                        insights
+                                    </span>
+                                }
+                                title6={
+                                    <span id='text_gradient'>
+                                        PixelCare
+                                    </span>
+                                }
+                                title7={
+                                    <span className='capitalize' id='text_gradient'>
+                                        support tickets
+                                    </span>
+                                }
+                                
                             />
-                            <div>
-                                <h1 className='flex justify-center'><ShinyText text='Any Questions?' /></h1>
-                                <div className='flex justify-center'>
-                                    <DashFileUpload />
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </Tabs.Content>

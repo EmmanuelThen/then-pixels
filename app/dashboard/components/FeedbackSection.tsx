@@ -13,7 +13,7 @@ type Props = {}
 const FeedbackSection = (props: Props) => {
     return (
         <div>
-            <div className="p-5 lg:p-0 lg:flex lg:items-center lg:justify-between lg:ml-2 ">
+            <div className="hidden p-5 lg:p-0 lg:flex lg:items-center lg:justify-between lg:ml-2 ">
                 <div className='text-center lg:text-left'>
                     <ShinyText text="Feedback" />
                 </div>
@@ -28,7 +28,7 @@ const FeedbackSection = (props: Props) => {
                 </div>
             </div>
             {/* First card */}
-            <div className='rounded-md border-b-[0.8px] border-slate4 text-xs lg:text-base p-5 mb-10'>
+            <div className='hidden lg:block rounded-md border-b-[0.8px] border-slate4 text-xs lg:text-base p-5 mb-10'>
                 <h1 className='text-blue9 font-semibold'>Overall Experience</h1>
                 <h1 className='text-slate10 mb-10'>
                     We're thrilled to have you here! Please answer the following questions below, your feedback is greatly appreciated!
@@ -71,7 +71,7 @@ const FeedbackSection = (props: Props) => {
             </div>
 
             {/* Second card */}
-            <div className='rounded-md border-b-[0.8px] border-slate4 text-xs lg:text-base p-5'>
+            <div className='lg:rounded-b lg:border-b-[0.8px] border-slate4 text-xs lg:text-base lg:p-5'>
                 <h1 className='text-blue9 font-semibold'>Development Experience</h1>
                 <div className='flex justify-between mt-5'>
                     <FeedbackSlide />

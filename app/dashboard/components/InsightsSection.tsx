@@ -139,7 +139,7 @@ const InsightsSection = (props: Props) => {
 
     return (
         <div className='overflow-x-hidden'>
-            <div className="p-5 lg:p-0 lg:flex lg:items-center lg:justify-between lg:ml-2 ">
+            <div className="hidden lg:p-0 lg:flex lg:items-center lg:justify-between lg:ml-2 ">
                 <div className='text-center lg:text-left'>
                     <ShinyText text='Insights' />
                 </div>
@@ -154,10 +154,10 @@ const InsightsSection = (props: Props) => {
                 </div>
             </div>
             {/** Big Card */}
-            <div className='flex justify-between rounded-md border-b-[0.8px] border-slate4 p-5'>
-                <div className='flex flex-col'>
+            <div className='flex rounded-b border-b-[0.8px] border-slate4 lg:p-5'>
+                <div className='flex flex-col w-full'>
                     <h1 className='text-blue9 font-semibold mb-5 lg:mb-10 text-sm lg:text-base'>Pagespeed Insights</h1>
-                    <div className='flex flex-col lg:flex-row w-full'>
+                    <div className='flex flex-col lg:flex-row w-full px-2 lg:px-0'>
                         <div className='flex justify-around lg:justify-between flex-col'>
                             <div className='flex justify-center mt-5 lg:mt-0'>
                                 <LabelDemo
@@ -201,8 +201,8 @@ const InsightsSection = (props: Props) => {
                             </div>
                         </div>
                     </div>
-                    <div className='flex '>
-                        <div className='flex justify-center  mt-5 gap-5 w-full'>
+                    <div className='flex justify-center lg:justify-normal mb-5 lg:mb-0'>
+                        <div className='flex justify-center  mt-5 gap-5 '>
                             <div className='flex items-center'>
                                 <div className='rounded-full h-3 w-[12px] bg-red-500 mr-2'></div>
                                 <div className='font-light text-sm lg:text-base'>
@@ -225,9 +225,9 @@ const InsightsSection = (props: Props) => {
                     </div>
 
                 </div>
-                <div className='svg-container hidden md:block' id='svgIllustration'>
-                    {/* <InsightsSVG /> */}
-                </div>
+                {/* <div className='svg-container hidden md:block' id='svgIllustration'>
+
+                </div> */}
             </div>
             <div>
                 {isLoading ? (

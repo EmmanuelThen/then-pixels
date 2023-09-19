@@ -6,18 +6,32 @@ import { ChevronDownIcon } from '@radix-ui/react-icons';
 import DashProgress from './DashProgress';
 import DashPixelCare from './DashPixelCare';
 import DashOrderHistory from './DashOrderHistory';
+import PixelCareSection from './PixelCareSection';
+import DocumentsSection from './DocumentsSection';
+import UploadsSection from './UploadsSection';
+import FeedbackSection from './FeedbackSection';
+import InsightsSection from './InsightsSection';
 
 type Props = {
     title1: string,
     title2: string,
     title3: string,
     title4: string,
-    title5: string,
-    title6: string,
+    title5: any,
+    title6: any,
+    title7: any,
 }
 
 
-const DashAccordion = ({ title1, title2, title3, title4, title5, title6 }: Props) => (
+const DashAccordion = ({
+    title1,
+    title2,
+    title3,
+    title4,
+    title5,
+    title6,
+    title7,
+}: Props) => (
     <Accordion.Root
         className=" w-full rounded-md shadow-[0_2px_10px] shadow-black/5"
         type="single"
@@ -56,38 +70,44 @@ const DashAccordion = ({ title1, title2, title3, title4, title5, title6 }: Props
         <AccordionItem value="item-2">
             <AccordionTrigger>{title2}</AccordionTrigger>
             <AccordionContent>
-                <DashPixelCare />
+                <DocumentsSection />
             </AccordionContent>
         </AccordionItem>
 
         <AccordionItem value="item-3">
             <AccordionTrigger>{title3}</AccordionTrigger>
             <AccordionContent>
-                <DashOrderHistory />
+                <UploadsSection />
             </AccordionContent>
         </AccordionItem>
 
         <AccordionItem value="item-4">
             <AccordionTrigger>{title4}</AccordionTrigger>
             <AccordionContent>
-                Yes! You can animate the Accordion with CSS or JavaScript.
+                <FeedbackSection />
             </AccordionContent>
         </AccordionItem>
 
         <AccordionItem value="item-5">
             <AccordionTrigger>{title5}</AccordionTrigger>
             <AccordionContent>
-                if maintenance member display:
-                else display: sign up today button!
+                <InsightsSection />
             </AccordionContent>
         </AccordionItem>
 
         <AccordionItem value="item-6">
             <AccordionTrigger>{title6}</AccordionTrigger>
             <AccordionContent>
+                <PixelCareSection />
+            </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-7">
+            <AccordionTrigger>{title7}</AccordionTrigger>
+            <AccordionContent>
                 Yes! You can animate the Accordion with CSS or JavaScript.
             </AccordionContent>
         </AccordionItem>
+        
 
     </Accordion.Root>
 );
@@ -108,7 +128,7 @@ const AccordionItem = React.forwardRef(({ children, className, ...props }: any, 
 const AccordionTrigger = React.forwardRef(({ children, className, ...props }: any, forwardedRef) => (
     <Accordion.Header className="flex">
         <Accordion.Trigger
-        id='back-ground'
+            id='back-ground'
             className={classNames(
                 'shadow-blackA9 shadow-[0_4px_7px] text-slate10  hover:bg-slate2 font-medium group flex h-[45px] flex-1 cursor-pointer items-center justify-between bg-white px-5 text-[15px] leading-none  outline-none capitalize',
                 className
@@ -127,7 +147,7 @@ const AccordionTrigger = React.forwardRef(({ children, className, ...props }: an
 
 const AccordionContent = React.forwardRef(({ children, className, ...props }: any, forwardedRef) => (
     <Accordion.Content
-    id='back-ground'
+        id='back-ground'
         className={classNames(
             'text-slate10 bg-slate2 data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-[15px]',
             className

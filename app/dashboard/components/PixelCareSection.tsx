@@ -60,7 +60,7 @@ const PixelCareSection = (props: Props) => {
     return (
         <div>
             <div className="p-5 lg:p-0 lg:flex lg:items-center lg:justify-between lg:ml-2 ">
-                <div className='text-center lg:text-left'>
+                <div className='hidden lg:block text-center lg:text-left'>
                     <ShinyText text="PixelCare" />
                 </div>
                 <div className='hidden lg:block notificationBell relative'>
@@ -91,7 +91,7 @@ const PixelCareSection = (props: Props) => {
                             <h1 className='text-slate10 mb-5'>
                                 Select a perk below to begin
                             </h1>
-                            <article className='grid grid-cols-4 gap-5'>
+                            <article className='grid grid-cols-4 gap-2 lg:gap-5'>
                                 {/*  Card 1 */}
                                 <button
                                     value={value}
